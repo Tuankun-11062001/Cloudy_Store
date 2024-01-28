@@ -1,0 +1,34 @@
+// =========================================================================
+//   > Reset scss
+// =========================================================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: $font_size;
+}
+
+a {
+  @include AnchorElement;
+}
+
+ul {
+  list-style: none;
+}
+
+.logo {
+  width: 10rem;
+  height: 5rem;
+  .content {
+    @include Logo;
+  }
+}

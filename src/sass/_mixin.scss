@@ -1,0 +1,56 @@
+@mixin dynamicAlign(
+  $justify: flex-start,
+  $align: flex-start,
+  $gap: 1rem,
+  $direction: row,
+  $wrap: no-warp
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin AnchorElement {
+  text-decoration: none;
+  color: $color_black;
+  font-size: $font_size;
+  transition: $transition;
+  &.active {
+    color: $color_green;
+  }
+  &:hover {
+    color: $color_green;
+  }
+}
+
+@mixin Logo {
+  background: url("../app/logo.png");
+  display: block;
+  width: 10rem;
+  height: 5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin gridSys($repeat: 4, $margin: $margin, $gap: $margin, $row_gap: $margin) {
+  display: grid;
+  grid-template-columns: repeat($repeat, 1fr);
+  grid-gap: $gap;
+  grid-row-gap: $row_gap;
+  margin: $margin;
+}
+
+@mixin longText($line: 3) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}

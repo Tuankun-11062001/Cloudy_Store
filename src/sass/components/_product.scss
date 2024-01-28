@@ -1,0 +1,122 @@
+.list_product {
+  @include gridSys($repeat: 2, $gap: $margin);
+  @include xl {
+    @include gridSys($repeat: 5, $gap: $margin);
+  }
+}
+
+.list_product_shop {
+  @include gridSys($repeat: 2, $gap: $margin);
+  width: 100%;
+  @include md {
+    @include gridSys($repeat: 2, $gap: $margin);
+  }
+  @include lg {
+    @include gridSys($repeat: 3, $gap: $margin);
+  }
+  @include xl {
+    @include gridSys($repeat: 5, $gap: $margin);
+  }
+}
+.product {
+  &_img {
+    width: 100%;
+    background-color: $color_gray_light;
+    img {
+      width: 15rem;
+      height: 15rem;
+      object-fit: contain;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    @include xl {
+      img {
+        width: 30rem;
+        height: 30rem;
+      }
+    }
+  }
+  &_info {
+    text-align: center;
+    font-size: $font_size;
+    h3 {
+      font-weight: 300;
+      font-size: $font_size;
+    }
+    span {
+      font-size: $font_size - 0.2rem;
+    }
+    @include xl {
+      h3 {
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.product_detail {
+  &_back {
+    margin-top: $margin * 3;
+    @include xl {
+      margin: $margin * 5 $margin * 5;
+    }
+    display: block;
+    &::before {
+      content: "<";
+      margin-right: $margin - 0.5;
+    }
+  }
+  &_image {
+    width: 100%;
+    .swiper_container {
+      margin-top: 0;
+    }
+    @include xl {
+      width: 80rem;
+    }
+  }
+
+  &_content {
+    margin-left: 0;
+    @include xl {
+      margin-left: $margin * 5;
+    }
+    h1 {
+      margin: $margin 0;
+    }
+    h3 {
+      font-size: $font_size + 0.5rem;
+      font-weight: 500;
+    }
+    .des {
+      margin: $margin * 3 0;
+      line-height: 3rem;
+    }
+    .color {
+      @include dynamicAlign();
+      span:first-child {
+        margin-right: $margin * 5;
+        background: unset;
+      }
+      span {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 3rem;
+      }
+    }
+
+    .btn_navigate {
+      margin: $margin * 3 0;
+      padding: $padding 2rem;
+      font-size: $font_size;
+      border-radius: 3rem;
+      background: $color_green;
+      color: $color_white;
+      border: 0.1rem solid $color_green;
+      cursor: pointer;
+    }
+  }
+}

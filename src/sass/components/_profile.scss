@@ -1,0 +1,155 @@
+.profile {
+  &_banner {
+    width: 100%;
+    height: 90dvh;
+    position: relative;
+    margin-top: $margin * 2;
+    animation: beggining 2s ease;
+    @keyframes beggining {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-position: bottom;
+      object-fit: cover;
+    }
+    .content {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -65%);
+      @include dynamicAlign($direction: column, $align: center);
+      width: 100%;
+      @include xl {
+        transform: translate(-50%, -70%);
+        width: 50%;
+        @include dynamicAlign();
+      }
+      .image {
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+        overflow: hidden;
+        transition: $transition;
+        @include xl {
+          width: 35rem;
+          height: 35rem;
+        }
+        &:hover {
+          border-radius: 2rem;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+        }
+      }
+      .text {
+        width: 100%;
+        @include dynamicAlign($direction: column, $gap: 1rem);
+        h3 {
+          color: $color_gray;
+          font-weight: 550;
+        }
+        h1 {
+          color: $color_white;
+          font-size: $font_size + 1rem;
+          -webkit-text-stroke: 0.1vw $color_gray;
+          // text-transform: uppercase;
+          position: relative;
+          &::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            color: $color_green;
+            -webkit-text-stroke: 0vw $color_gray;
+            border-right: 2px solid $color_green;
+            overflow: hidden;
+            animation: animate 6s linear infinite;
+            @keyframes animate {
+              0%,
+              10%,
+              100% {
+                width: 0;
+              }
+              70%,
+              90% {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .des {
+          color: $color_gray;
+        }
+        @include xl {
+          margin-left: 5rem;
+          flex: 1;
+          @include dynamicAlign($direction: column, $gap: 2rem);
+          h1 {
+            -webkit-text-stroke: 0.05vw $color_gray;
+          }
+        }
+
+        .motivation {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: $color_green;
+        }
+        ul {
+          @include dynamicAlign($wrap: wrap);
+          @include xl {
+            @include dynamicAlign();
+          }
+
+          li {
+            a {
+              display: block;
+              width: max-content;
+              @include dynamicAlign($align: center);
+              border-radius: 1rem;
+              border: 0.1rem solid $color_gray;
+              padding: $padding - 0.5rem;
+              img {
+                width: 2rem;
+                height: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_title_post {
+    width: 100%;
+    @include dynamicAlign($align: center, $gap: 2rem, $justify: center);
+    margin-top: $margin * 5;
+    h2 {
+      color: $color_green;
+      font-size: $font_size + 0.4rem;
+      @include xl {
+        color: $color_green;
+      }
+    }
+    span {
+      display: inline-block;
+      width: 10rem;
+      height: 0.1rem;
+      background: $color_green;
+      @include xl {
+        width: 20rem;
+      }
+    }
+  }
+}

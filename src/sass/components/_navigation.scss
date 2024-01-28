@@ -1,0 +1,208 @@
+.navigation {
+  .midle {
+    @include dynamicAlign($wrap: wrap, $justify: center);
+    column-gap: 3rem;
+    a:nth-child(3) {
+      order: -1;
+      width: 100%;
+    }
+  }
+  .phone {
+    @include dynamicAlign($align: center);
+  }
+
+  .search {
+    display: none;
+  }
+
+  @include lg {
+    @include dynamicAlign($justify: space-between, $align: center);
+    position: relative;
+    .phone {
+      @include dynamicAlign($justify: center, $align: center);
+    }
+    .midle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      @include dynamicAlign($justify: center, $align: center, $gap: 5rem);
+      a:nth-child(3) {
+        order: unset;
+        width: unset;
+      }
+    }
+
+    .search {
+      @include dynamicAlign($justify: center, $align: center);
+      padding: $padding;
+      border-radius: 3rem;
+      box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.25);
+      input {
+        outline: none;
+        background: transparent;
+        border: none;
+      }
+    }
+  }
+
+  @include xl {
+    @include dynamicAlign($justify: space-between, $align: center);
+    position: relative;
+    .phone {
+      @include dynamicAlign($justify: center, $align: center);
+    }
+    .midle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      @include dynamicAlign($justify: center, $align: center, $gap: 5rem);
+      a:nth-child(3) {
+        order: unset;
+        width: unset;
+      }
+    }
+
+    .search {
+      @include dynamicAlign($justify: center, $align: center);
+      padding: $padding;
+      border-radius: 3rem;
+      input {
+        outline: none;
+        background: transparent;
+        border: none;
+      }
+    }
+  }
+}
+
+.nav_category {
+  margin: $margin * 5 $margin * 3;
+  span {
+    text-transform: uppercase;
+    font-size: $font_size + 0.4rem;
+    color: $color_gray;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition;
+    &::after {
+      content: "/";
+      display: inline-block;
+      margin: 0 $margin;
+    }
+    &:last-child::after {
+      display: none;
+    }
+    &:hover {
+      color: $color_green;
+    }
+    &.active {
+      color: $color_green;
+    }
+  }
+}
+
+.nav_shop_mobile {
+  position: fixed;
+  left: 2rem;
+  top: 12rem;
+  z-index: 9;
+  background: $color_gray_light;
+  border-radius: 3rem;
+  border: 0.1rem solid $color_gray_light;
+  width: 4rem;
+  height: 4rem;
+
+  @include md {
+    display: none;
+  }
+}
+
+.nav_shop_overlay {
+  position: fixed;
+  top: 0;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  transition: $transition;
+  &.active {
+    width: 100%;
+  }
+  z-index: 1;
+  @include md {
+    display: none;
+  }
+}
+
+.nav_shop {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  width: 65%;
+  background: $color_gray_light;
+  padding: $padding * 2;
+  border-radius: $padding * 2;
+  left: -25rem;
+  opacity: 0;
+  transition: $transition;
+  @include dynamicAlign($gap: $margin * 2, $direction: column);
+  &.active {
+    left: 2rem;
+    opacity: 1;
+  }
+  @include md {
+    position: unset;
+    opacity: 1;
+    width: 50%;
+    background: $color_gray_light;
+    top: unset;
+    transform: unset;
+
+    @include dynamicAlign($direction: column, $gap: $padding * 2);
+  }
+
+  @include xl {
+    position: unset;
+    opacity: 1;
+    width: 30%;
+    background: $color_gray_light;
+
+    @include dynamicAlign($direction: column, $gap: $padding * 2);
+  }
+  h3 {
+    font-weight: 500;
+  }
+
+  div {
+    width: 100%;
+  }
+  li {
+    padding: 0.5rem 1rem;
+    color: $color_gray;
+    transition: $transition;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    &.active {
+      background: $color_white;
+      border-radius: 2rem;
+      color: $color_green;
+    }
+    &:hover {
+      background: $color_white;
+      border-radius: 2rem;
+      color: $color_green;
+    }
+  }
+
+  select {
+    margin-top: $margin;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    outline: none;
+    font-size: $font_size;
+  }
+}

@@ -1,0 +1,83 @@
+.support {
+  margin-top: $margin * 10;
+  animation: begin 2s linear;
+  @keyframes begin {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .content {
+    @include dynamicAlign($direction: column-reverse);
+    @include xl {
+      @include dynamicAlign();
+    }
+    .left {
+      width: 100%;
+      @include xl {
+        flex: 1;
+      }
+      @include dynamicAlign($direction: column);
+      border: 0.1rem solid $color_gray_light;
+      padding: $padding * 2;
+      border-radius: 2rem;
+
+      h3 {
+        color: $color_green;
+      }
+      p {
+        color: $color_gray;
+      }
+      .form {
+        @include dynamicAlign($direction: column);
+        width: 100%;
+        input {
+          width: 100%;
+          padding: $padding;
+          border-radius: 1rem;
+          border: 0.1rem solid $color_gray;
+          font-size: $font_size;
+          outline: none;
+        }
+        textarea {
+          width: 100%;
+          height: 30rem;
+          resize: none;
+          border-radius: 1rem;
+          border: 0.1rem solid $color_gray;
+          font-size: $font_size;
+          padding: $padding;
+          outline: none;
+        }
+      }
+      button {
+        padding: $padding $padding * 3;
+        font-size: $font_size;
+        border: 0.1rem solid $color_gray;
+        border-radius: 1rem;
+        background-color: transparent;
+        transition: $transition;
+        cursor: pointer;
+        &:hover {
+          border: 0.1rem solid $color_green;
+
+          background: $color_green;
+          color: $color_white;
+        }
+      }
+    }
+    .image {
+      flex: 1;
+      height: 100%;
+      border-radius: 2rem;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

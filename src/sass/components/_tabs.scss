@@ -1,0 +1,50 @@
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    &:hover {
+      background-color: #ddd;
+    }
+    &.active {
+      background-color: #ccc;
+    }
+  }
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  animation: fadeEffect 1s;
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  h3 {
+    margin: $margin * 2 0;
+  }
+  p {
+    margin: $margin * 2 0;
+  }
+  ul {
+    list-style: disc;
+    li {
+      margin: $margin $margin * 2;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.post_detail {
+  &_back {
+    margin-top: $margin * 3;
+    @include xl {
+      margin: $margin $margin * 2;
+    }
+    display: block;
+    &::before {
+      content: "<";
+      margin-right: $margin - 0.5;
+    }
+  }
+  .content {
+    @include dynamicAlign($direction: column, $justify: center, $align: center);
+    width: 90%;
+    @include xl {
+      width: 70%;
+    }
+    margin: auto;
+    .head {
+      @include dynamicAlign($direction: column, $align: center);
+      .avata {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .title {
+      font-size: $font_size * 2;
+      font-weight: 500;
+      margin: $margin * 2 0;
+      text-align: center;
+      @include xl {
+        font-size: $font_size * 3;
+      }
+    }
+    .space {
+      display: inline-block;
+      width: 30rem;
+      border-radius: 2rem;
+      background: $color_green;
+      height: 0.1rem;
+      margin: $margin * 2 0;
+    }
+  }
+}
+.post_list {
+  @include xl {
+    @include gridSys(
+      $repeat: 4,
+      $gap: $margin,
+      $margin: $margin * 4 auto,
+      $row_gap: $margin * 4
+    );
+  }
+}
+
+.post {
+  width: 35rem;
+
+  img {
+    width: 100%;
+    height: 20rem;
+    background: gray;
+  }
+
+  .content {
+    @include dynamicAlign($direction: column);
+    width: 100%;
+    h3 {
+      @include longText(2);
+    }
+    .description {
+      @include longText();
+    }
+    .bottom {
+      width: inherit;
+      @include dynamicAlign($justify: space-between);
+    }
+  }
+}

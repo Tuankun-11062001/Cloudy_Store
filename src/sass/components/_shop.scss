@@ -1,0 +1,4 @@
+.shop {
+  margin-top: $margin * 5;
+  @include dynamicAlign($gap: $margin * 4);
+}
