@@ -1,6 +1,9 @@
 import Navigation from "@/components/navigation";
 import { Poppins } from "next/font/google";
 import "../sass/global.scss";
+import { Provider } from "react-redux";
+import store from "@/redux/store";
+import ProviderStore from "@/redux/provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,8 +21,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className + " main_layout"}>
-        <Navigation />
-        {children}
+        <ProviderStore>
+          <Navigation />
+          {children}
+        </ProviderStore>
       </body>
     </html>
   );

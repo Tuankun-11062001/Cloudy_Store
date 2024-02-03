@@ -5,6 +5,10 @@ const ProductAPI = {
     const response = await axios.get(`${url}/product`);
     return response.data.data;
   },
+  getProductById: async (id) => {
+    const response = await axios.get(`${url}/product/find/${id}`);
+    return response.data.data;
+  },
 };
 
 export default ProductAPI;

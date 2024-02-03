@@ -9,9 +9,9 @@ const BannerFollow = () => {
   return (
     <div className="banner_follow">
       <p>
-        Cảm ơn bạn đã ghé thăm trang web của chúng tôi! Tại đây, chúng tôi tận
-        tâm tạo ra những mẫu áo độc đáo và chất lượng. Hãy cùng chúng tôi khám
-        phá thế giới thời trang đẳng cấp!
+        Thank you for visit my website! Here, we are dedicated to creating
+        unique and quality shirts. Join us to explore the world of classy
+        fashion!
       </p>
       <div>
         <a href="https://facebook.com">

@@ -2,38 +2,54 @@
 import NavCategory from "@/components/navCategory";
 import Product from "@/components/product";
 import { SwiperSlideBanner } from "@/components/swiper";
-import React, { useEffect, useState } from "react";
-import ProductAPI from "@/restAPI/product";
+import React, { useEffect } from "react";
 import BannerFollow from "@/components/bannerFollow";
 import Loading from "./loading";
+import { useSelector, useDispatch } from "react-redux";
+import { getProductsAsync, setFilters } from "@/redux/slices/productSlice";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.product);
+  const { products, loading, filterKey, filters } = product;
+
   useEffect(() => {
-    (async () => {
-      const response = await ProductAPI.getProducts();
-      setProducts(response);
-    })();
+    dispatch(getProductsAsync());
   }, []);
+
+  useEffect(() => {
+    if (filterKey.toLowerCase() === "all" && products.length > 0) {
+      dispatch(setFilters(products));
+      return;
+    } else {
+      dispatch(
+        setFilters(
+          products.filter(
+            (product) =>
+              product.category.title.toLowerCase() === filterKey.toLowerCase()
+          )
+        )
+      );
+    }
+  }, [filterKey]);
+
   return (
-    <div>
-      <SwiperSlideBanner />
-      <NavCategory />
-      <div className="list_product">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        {/* {products?.map((product) => (
-          <Product key={product._id} data={product} />
-        ))} */}
-      </div>
-      <BannerFollow />
-    </div>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div>
+          <SwiperSlideBanner />
+          <NavCategory />
+          <div className="list_product">
+            {filters?.map((product) => (
+              <Product key={product._id} data={product} />
+            ))}
+          </div>
+          <BannerFollow />
+        </div>
+      )}
+    </>
   );
 };
 

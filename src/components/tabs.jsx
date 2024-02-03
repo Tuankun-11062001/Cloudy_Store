@@ -2,7 +2,7 @@
 import React from "react";
 
 const Tabs = () => {
-  const openCity = (evt, cityName) => {
+  const openTab = (evt, cityName) => {
     console.log("click");
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -26,18 +26,21 @@ const Tabs = () => {
   return (
     <div>
       <div className="tab">
-        <button className="tablinks" onClick={(e) => openCity(e, "timeShip")}>
-          Thoi gian giao hang
+        <button
+          className="tablinks"
+          onClick={(e) => openTab(e, "DeliveryTime")}
+        >
+          Delivery time
         </button>
-        <button className="tablinks" onClick={(e) => openCity(e, "MoneyShip")}>
-          Phi van chuyen
-        </button>
-        <button className="tablinks" onClick={(e) => openCity(e, "Tokyo")}>
-          Tokyo
+        <button
+          className="tablinks"
+          onClick={(e) => openTab(e, "TransportFee")}
+        >
+          Transport fee
         </button>
       </div>
 
-      <div id="timeShip" className="tabcontent">
+      <div id="DeliveryTime" className="tabcontent">
         <h3>Thời gian giao hàng</h3>
         <p>
           Sau khi Printub nhận được thông tin đơn đặt hàng, chúng tôi sẽ tiến
@@ -61,7 +64,7 @@ const Tabs = () => {
         </ul>
       </div>
 
-      <div id="MoneyShip" className="tabcontent">
+      <div id="TransportFee" className="tabcontent">
         <h3>Phí vận chuyển</h3>
         <p>
           Printub sử dụng dịch vụ vận chuyển của Giao Hàng Tiết Kiệm (GHTK) và
@@ -80,11 +83,6 @@ const Tabs = () => {
             Đơn hàng sử dụng dịch vụ giao hàng của Giao Hàng Nhanh: 28.000đ
           </li>
         </ul>
-      </div>
-
-      <div id="Tokyo" className="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
       </div>
     </div>
   );

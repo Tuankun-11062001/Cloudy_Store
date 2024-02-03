@@ -1,0 +1,17 @@
+.empty {
+  @include dynamicAlign($direction: column, $align: center);
+  width: 100%;
+  .image {
+    width: 30rem;
+    height: 30rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  p {
+    font-size: $font_size + 0.4rem;
+    color: $color_gray;
+  }
+}

@@ -22,6 +22,29 @@
   &_img {
     width: 100%;
     background-color: $color_gray_light;
+    position: relative;
+    animation: beggining 1.5s linear;
+    @keyframes beggining {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .partner {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: $color_green;
+      color: $color_white;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: $font_size - 0.4rem;
+      @include xl {
+        font-size: $font_size - 0.2rem;
+      }
+    }
     img {
       width: 15rem;
       height: 15rem;
@@ -117,6 +140,8 @@
       color: $color_white;
       border: 0.1rem solid $color_green;
       cursor: pointer;
+      display: block;
+      width: max-content;
     }
   }
 }

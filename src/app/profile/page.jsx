@@ -1,12 +1,23 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import facebook from "../../svgs/facebook.svg";
 import youtube from "../../svgs/youtube.svg";
 import instagram from "../../svgs/instagram.svg";
 import tiktok from "../../svgs/tiktok.svg";
 import Posts from "@/components/posts";
+import { useSelector, useDispatch } from "react-redux";
+import Loading from "../loading";
+import { getPostsAsync } from "@/redux/slices/postSlice";
 
 const ProfilePage = () => {
+  const dispatch = useDispatch();
+  const { posts, loading } = useSelector((state) => state.post);
+
+  useEffect(() => {
+    dispatch(getPostsAsync());
+  }, []);
+
   return (
     <div className="profile">
       <div className="profile_banner">
@@ -19,13 +30,13 @@ const ProfilePage = () => {
             <h3>Welcome to my Website</h3>
             <h1 data-text="June.Cloudy">June.Cloudy</h1>
             <p className="des">
-              Tôi là người sáng lập trang web chuyên bán áo thun với những mẫu
-              teen đẹp và độc đáo. Đồng thời, tôi cũng quản lý một kênh YouTube
-              về âm nhạc và lập trình. Trong thế giới thời trang của tôi, bạn sẽ
-              tìm thấy những sản phẩm phong cách và thú vị. Trên YouTube, tôi
-              chia sẻ đam mê âm nhạc qua các video độc đáo, cũng như kinh nghiệm
-              lập trình thông qua hướng dẫn thú vị. Hãy ghé thăm và khám phá
-              cùng tôi!
+              I am the founder of a website specializing in selling t-shirts
+              with beautiful and unique teen designs. At the same time, I also
+              manage a YouTube channel about music and programming. In my
+              fashion world you will find stylish and interesting products. On
+              YouTube, I share my passion for music through unique videos, as
+              well as my programming experience through fun tutorials. Come
+              visit and explore with me!
             </p>
             <p className="motivation">
               When writing the story of your life, don’t let anyone else hold
@@ -65,14 +76,15 @@ const ProfilePage = () => {
         <h2>My List Blog</h2>
         <span></span>
       </div>
-      <div className="profile_layout post_list">
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
-      </div>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="profile_layout post_list">
+          {posts.map((post) => (
+            <Posts key={post._id} data={post} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

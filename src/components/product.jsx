@@ -21,16 +21,11 @@ const Product = ({ data }) => {
   return (
     <div className="product">
       <div className="product_img" onClick={changeImage}>
-        <img
-          src={
-            product?.currentImage ||
-            "https://scontent.fsgn2-11.fna.fbcdn.net/v/t39.30808-6/410760710_745678484118832_8351439430070632770_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=3635dc&_nc_ohc=wMlsCxgO7ZkAX9w6gWe&_nc_ht=scontent.fsgn2-11.fna&oh=00_AfDyWRBPzLwHv5TQlvUEbv7XoB7lyVPFQcxQ03cl7BPtuw&oe=65B383A9"
-          }
-          alt="product"
-        />
+        <img src={product?.currentImage} alt="product" />
+        <p className="partner">{product.partner.title}</p>
       </div>
       <div className="product_info">
-        <Link href="/shop/id_product">
+        <Link href={`/shop/${product?._id}`}>
           <h3>{product?.title || "title"}</h3>
           <div className="product_price">
             <span>{product?.price || "prices"}</span>

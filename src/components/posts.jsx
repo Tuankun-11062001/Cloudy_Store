@@ -1,23 +1,30 @@
+import { plusOneView } from "@/redux/slices/postSlice";
 import Link from "next/link";
 import React from "react";
+import { useDispatch } from "react-redux";
 
-const Posts = () => {
+const Posts = ({ data }) => {
+  const dispatch = useDispatch();
   return (
-    <Link href="/profile/123">
+    <Link
+      href={`/profile/${data._id}`}
+      onClick={() =>
+        dispatch(plusOneView({ ...data, views: parseInt(data.views) + 1 }))
+      }
+    >
       <div className="post">
-        <img />
+        <img src={data.thumbnail} alt="image_post" />
         <div className="content">
-          <h3>title</h3>
-          <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Asperiores, autem, consequuntur corporis delectus doloremque dolorum
-            eos expedita facere fugit harum impedit ipsam itaque laudantium
-            maiores maxime minima nobis nobis odit quaerat quasi quidem quisquam
-            quod repellendus repudiandae, repellendus, rerum saepe
-          </p>
+          <h3>{data.title}</h3>
+          <p className="description">{data.description}</p>
           <div className="bottom">
-            <p>date</p>
-            <p>view</p>
+            <p>
+              {new Date(data.createdAt).getDay() +
+                "/" +
+                new Date(data.createdAt).getMonth() +
+                1}
+            </p>
+            <p>{data.views}</p>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import search from "../svgs/search.svg";
 
 const Navigation = () => {
   const pathName = usePathname();
+
   return (
     <div className="navigation">
       <a href="tel:0826901362" type="0826901362" className="phone">
@@ -19,7 +20,7 @@ const Navigation = () => {
           Home
         </Link>
         <Link href="/shop" className={pathName == "/shop" ? "active" : ""}>
-          Shop
+          Store
         </Link>
         <Link href="/" className="logo">
           <div className="content"></div>
