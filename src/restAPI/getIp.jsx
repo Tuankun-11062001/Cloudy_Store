@@ -7,7 +7,10 @@ const VistorAPI = {
     return rest;
   },
   postVisitor: async (data) => {
-    const response = await axios.post(`${url}/visitor/add`, data);
+    const response = await axios.post(
+      `https://twin-s.vercel.app/visitor/add`,
+      data
+    );
     return response.data.data;
   },
 };
