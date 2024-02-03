@@ -7,7 +7,7 @@ const VistorAPI = {
   },
   postVisitor: async (data) => {
     const response = await axios.post(
-      `${NEXT_PUBLIC_URL_SERVER}/visitor/add`,
+      `${process.env.NEXT_PUBLIC_URL_SERVER}/visitor/add`,
       data
     );
     return response.data.data;

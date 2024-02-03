@@ -1,18 +1,20 @@
 import axios from "axios";
 const PostAPI = {
   getPosts: async () => {
-    const response = await axios.get(`${NEXT_PUBLIC_URL_SERVER}/blog`);
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_URL_SERVER}/blog`
+    );
     return response.data.data;
   },
   getPostById: async (id) => {
     const response = await axios.get(
-      `${NEXT_PUBLIC_URL_SERVER}/blog/find/${id}`
+      `${process.env.NEXT_PUBLIC_URL_SERVER}/blog/find/${id}`
     );
     return response.data.data;
   },
   plusOneView: async (payload) => {
     const response = await axios.put(
-      `${url}/blog/edit/${payload._id}`,
+      `${process.env.NEXT_PUBLIC_URL_SERVER}/blog/edit/${payload._id}`,
       payload
     );
     return response.data.data;
