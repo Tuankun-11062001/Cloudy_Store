@@ -5,8 +5,8 @@ const SupportPage = () => {
     <div className="support_layout support">
       <div className="content">
         <div className="left">
-          <h3>Hi! I'm Support Team</h3>
-          <p>Can i help you?</p>
+          <h3>{`Hi! I'm Support Team`}</h3>
+          <p>{`Can i help you?`}</p>
           <div className="form">
             <input type="text" placeholder="Your Name" />
             <input type="text" placeholder="Your Email" />
