@@ -1,8 +1,7 @@
 import axios from "axios";
-import { url } from "./url";
 const CategoryAPI = {
   getCategories: async () => {
-    const response = await axios.get(`https://twin-s.vercel.app/category`);
+    const response = await axios.get(`${NEXT_PUBLIC_URL_SERVER}/category`);
     return response.data.data;
   },
 };

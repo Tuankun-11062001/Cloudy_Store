@@ -1,13 +1,12 @@
 import axios from "axios";
-import { url } from "./url";
 const PostAPI = {
   getPosts: async () => {
-    const response = await axios.get(`https://twin-s.vercel.app/blog`);
+    const response = await axios.get(`${NEXT_PUBLIC_URL_SERVER}/blog`);
     return response.data.data;
   },
   getPostById: async (id) => {
     const response = await axios.get(
-      `https://twin-s.vercel.app/blog/find/${id}`
+      `${NEXT_PUBLIC_URL_SERVER}/blog/find/${id}`
     );
     return response.data.data;
   },

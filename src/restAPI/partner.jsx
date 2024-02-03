@@ -1,8 +1,7 @@
 import axios from "axios";
-import { url } from "./url";
 const PartnerAPI = {
   getPartners: async () => {
-    const response = await axios.get(`https://twin-s.vercel.app/partner`);
+    const response = await axios.get(`${NEXT_PUBLIC_URL_SERVER}/partner`);
     return response.data.data;
   },
 };
