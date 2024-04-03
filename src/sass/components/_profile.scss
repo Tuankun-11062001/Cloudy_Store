@@ -1,155 +1,182 @@
 .profile {
-  &_banner {
-    width: 100%;
-    height: 90dvh;
-    position: relative;
-    margin-top: $margin * 2;
-    animation: beggining 2s ease;
-    @keyframes beggining {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+  @include xl {
+    padding-top: unset;
+  }
+  .profile_slide {
+    margin: 0 -1rem;
+    .swiper_container {
+      margin-top: unset;
     }
+    @include xl {
+      margin: 0 -5rem;
+    }
+  }
+  .slide {
+    // margin-top: 6rem;
+    position: relative;
     img {
       width: 100%;
-      height: 100%;
-      object-position: bottom;
+      height: 50dvh;
+      overflow: hidden;
       object-fit: cover;
     }
     .content {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -65%);
-      @include dynamicAlign($direction: column, $align: center);
-      width: 100%;
-      @include xl {
-        transform: translate(-50%, -70%);
-        width: 50%;
-        @include dynamicAlign();
-      }
-      .image {
-        width: 15rem;
-        height: 15rem;
-        border-radius: 50%;
-        overflow: hidden;
-        transition: $transition;
-        @include xl {
-          width: 35rem;
-          height: 35rem;
-        }
-        &:hover {
-          border-radius: 2rem;
-        }
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: top;
-        }
-      }
-      .text {
-        width: 100%;
-        @include dynamicAlign($direction: column, $gap: 1rem);
-        h3 {
-          color: $color_gray;
-          font-weight: 550;
-        }
-        h1 {
+      @include dynamicPosition($pos: absolute, $left: 2rem, $bottom: 2rem);
+      @include dynamicAlign($direction: column, $gap: 1rem);
+      .feature {
+        @include dynamicAlign($align: center);
+        p {
           color: $color_white;
-          font-size: $font_size + 1rem;
-          -webkit-text-stroke: 0.1vw $color_gray;
-          // text-transform: uppercase;
-          position: relative;
-          &::before {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            color: $color_green;
-            -webkit-text-stroke: 0vw $color_gray;
-            border-right: 2px solid $color_green;
-            overflow: hidden;
-            animation: animate 6s linear infinite;
-            @keyframes animate {
-              0%,
-              10%,
-              100% {
-                width: 0;
-              }
-              70%,
-              90% {
-                width: 100%;
-              }
-            }
-          }
-        }
-        .des {
-          color: $color_gray;
-        }
-        @include xl {
-          margin-left: 5rem;
-          flex: 1;
-          @include dynamicAlign($direction: column, $gap: 2rem);
-          h1 {
-            -webkit-text-stroke: 0.05vw $color_gray;
-          }
         }
 
-        .motivation {
-          font-size: 1.5rem;
-          font-weight: 600;
-          color: $color_green;
+        span {
+          width: 1rem;
+          height: 1rem;
+          border-radius: 2rem;
+          display: block;
+          background: $color_white;
         }
-        ul {
-          @include dynamicAlign($wrap: wrap);
-          @include xl {
-            @include dynamicAlign();
-          }
+      }
 
-          li {
-            a {
-              display: block;
-              width: max-content;
-              @include dynamicAlign($align: center);
-              border-radius: 1rem;
-              border: 0.1rem solid $color_gray;
-              padding: $padding - 0.5rem;
-              img {
-                width: 2rem;
-                height: 2rem;
-              }
-            }
-          }
-        }
+      h1 {
+        font-size: 2rem;
+        font-weight: 400;
+        color: $color_white;
+        text-shadow: 1rem 0 1rem rgba($color_black, 0.8);
+      }
+
+      .des {
+        font-size: $font-size;
+        color: $color_white;
+        font-weight: 200;
+        line-height: 2rem;
+        width: 50%;
+        @include longText($line: 2);
       }
     }
   }
 
-  &_title_post {
-    width: 100%;
-    @include dynamicAlign($align: center, $gap: 2rem, $justify: center);
-    margin-top: $margin * 5;
+  .content {
     h2 {
-      color: $color_green;
-      font-size: $font_size + 0.4rem;
-      @include xl {
-        color: $color_green;
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin: 5rem 0;
+    }
+  }
+
+  .list_blog {
+    @include gridSys($repeat: 1);
+  }
+
+  @include xl {
+    .slide {
+      margin: 0 -5rem;
+      img {
+        width: 100%;
+        height: 100dvh;
+        border-radius: 2rem;
+        overflow: hidden;
+        object-fit: cover;
+      }
+      .content {
+        @include dynamicPosition($pos: absolute, $left: 10rem, $bottom: 5rem);
+        @include dynamicAlign($direction: column, $gap: 2rem);
+        .feature {
+          @include dynamicAlign($align: center);
+          p {
+            color: $color_white;
+          }
+
+          span {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 2rem;
+            display: block;
+            background: $color_white;
+          }
+        }
+
+        h1 {
+          font-size: 3rem;
+          font-weight: 400;
+          color: $color_white;
+          text-shadow: 1rem 0 1rem rgba($color_black, 0.8);
+        }
+
+        .des {
+          font-size: 2rem;
+          color: $color_white;
+          font-weight: 200;
+          line-height: 3rem;
+          width: 60%;
+        }
       }
     }
-    span {
+    .list_blog {
+      @include gridSys($repeat: 5);
+    }
+  }
+}
+
+.profile_detail {
+  .content {
+    @include dynamicAlign($direction: column, $justify: center, $align: center);
+    width: 90%;
+    margin: 15dvh auto;
+    @include xl {
+      width: 70%;
+    }
+
+    .head {
+      @include dynamicAlign($direction: column, $align: center);
+      .avata {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .title {
+      font-size: $font_size * 2;
+      font-weight: 500;
+      margin: $margin * 2 0;
+      text-align: center;
+      @include xl {
+        font-size: $font_size * 3;
+      }
+    }
+    .space {
       display: inline-block;
-      width: 10rem;
-      height: 0.1rem;
+      width: 30rem;
+      border-radius: 2rem;
       background: $color_green;
-      @include xl {
-        width: 20rem;
+      height: 0.1rem;
+      margin: $margin * 2 0;
+    }
+    .body {
+      width: 100%;
+      @include dynamicAlign($direction: column);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
     }
+  }
+}
+
+.profile_list {
+  @include xl {
+    @include gridSys(
+      $repeat: 4,
+      $gap: $margin,
+      $margin: $margin * 4 auto,
+      $row_gap: $margin * 4
+    );
   }
 }

@@ -1,0 +1,84 @@
+{
+  "Index": {
+    "title": "Xin chao"
+  },
+  "Navigation": {
+    "home": "Trang chủ",
+    "store": "Cửa hàng",
+    "profile": "Cá nhân",
+    "support": "Hỗ trợ"
+  },
+  "Hero": {
+    "info_1": "Chào mừng bạn đến với Cloudy Melody!",
+    "info_2": "Chào mừng bạn đến với Cloudy Melody! Tại đây, chúng tôi mang đến cho bạn không chỉ những chiếc áo thun đẹp mắt mà còn là những câu chuyện, trải nghiệm thú vị trong cuộc sống. Hãy cùng chúng tôi khám phá và tạo nên những khoảnh khắc đáng nhớ, từ những dòng sản phẩm độc đáo đến những câu chuyện tinh thần sâu lắng.",
+    "info_3": "Chúng tôi hy vọng rằng bạn sẽ tận hưởng mỗi khoảnh khắc ở đây và tìm thấy sự thoải mái và hứng khởi trong mỗi sản phẩm và câu chuyện mà chúng tôi chia sẻ.Hãy bắt đầu hành trình của bạn tại Cloudy Melody ngay hôm nay và để chúng tôi làm nên những giai điệu đầy màu sắc cùng bạn!",
+    "info_4": "Trân trọng,",
+    "info_5": "Đội ngũ Cloudy Melody",
+    "title_1": "kHÁM PHÁ",
+    "title_2": "THIẾT KẾ MỚI NHẤT",
+    "title_3": "CLOUDY MELODY",
+    "detail": "Khám phá những thiết kế mới nhất tại Cloudy Melody! Bộ sưu tập mới của chúng tôi mang đến cho bạn những mẫu áo thun độc đáo và sáng tạo. Hãy tìm kiếm sự phù hợp hoàn hảo và thể hiện cá tính của bạn với những chiếc áo thun được chúng tôi chăm chút tỉ mỉ. Mua ngay và nâng cấp tủ đồ của bạn với những sản phẩm mới nhất từ chúng tôi!"
+  },
+  "Working": {
+    "title": "Cách chúng tôi hoạt động",
+    "description": "Chúng tôi chuyên thiết kế độc đáo và sáng tạo, được truyền cảm hứng từ tính cá nhân và những trải nghiệm hàng ngày. Mặc dù chúng tôi không sản xuất sản phẩm trực tiếp, nhưng chúng tôi làm việc chặt chẽ với các đối tác đáng tin cậy để thực hiện những thiết kế của mình. Khám phá bộ sưu tập của chúng tôi để tìm áo thun phản ánh phong cách của bạn một cách hoàn hảo!",
+    "thank": "Cảm ơn bạn đã ghé thăm Cloudy Melody!",
+    "item_1_title": "Chọn áo",
+    "item_1_description": "Chọn áo bạn muốn mua",
+    "item_2_title": "Đi đến đối tác",
+    "item_2_description": "Bạn sẽ đặt áo ở web đối tác",
+    "item_3_title": "Đối tác xử lý",
+    "item_3_description": "Đối tác sẽ nhận order của bạn và sẽ tạo áo cho bạn",
+    "item_4_title": "Đối tác sẽ gửi áo cho bạn",
+    "item_4_description": "Khi làm xong thì đối tác sẽ gửi nó đến cho bạn",
+    "item_5_title": "Bạn nhận áo",
+    "item_5_description": "Bạn trả tiền và nhận áo. Xong!"
+  },
+  "Season": {
+    "title": "Thiết kế theo mùa",
+    "left_description_1": "Tại Cloudy Melody, chúng tôi tự hào giới thiệu các bộ sưu tập áo thun được thiết kế theo mùa, mang đến sự đa dạng và phong phú cho tủ đồ của bạn. Mỗi mùa, chúng tôi đem lại những thiết kế mới lạ và sáng tạo, được lấy cảm hứng từ tinh thần của thời tiết và môi trường xung quanh.",
+    "left_description_2": "Từ những mẫu áo thun mát mẻ và tươi sáng cho mùa hè đến những chiếc áo ấm áp và dễ chịu cho mùa đông, chúng tôi luôn đảm bảo rằng mỗi sản phẩm của chúng tôi không chỉ thời trang mà còn phản ánh đúng bản chất của mùa trong từng đường nét.",
+    "left_description_3": "Hãy khám phá các bộ sưu tập của chúng tôi và tìm kiếm những chiếc áo thun phù hợp với phong cách và nhu cầu của bạn trong mọi mùa!",
+    "right_tab_spring": "Mùa Xuân",
+    "right_tab_summer": "Mùa Hạ",
+    "right_tab_autumn": "Mùa Thu",
+    "right_tab_winter": "Mùa Đông",
+    "right_time_spring_string_1": "Tháng 3",
+    "right_time_spring_string_2": "Tháng 5",
+    "right_time_summer_string_1": "Tháng 6",
+    "right_time_summer_string_2": "Tháng 8",
+    "right_time_autumn_string_1": "Tháng 9",
+    "right_time_autumn_string_2": "Tháng 11",
+    "right_time_winter_string_1": "Tháng 12",
+    "right_time_winter_string_2": "Tháng 2",
+    "right_description_spring": "Hòa mình vào vẻ đẹp tươi mới và năng động của mùa, với những thiết kế mới nhất của chúng tôi. Từ họa tiết hoa tươi sáng đến gam màu pastel dịu dàng, bộ sưu tập Mùa Xuân của chúng tôi mang lại một cảm giác mới mẻ và phong cách cho tủ đồ của bạn.",
+    "right_description_summer": "Mùa thu đã đến và chúng tôi rất vui được giới thiệu bộ sưu tập mới nhất dành cho mùa này. Với sự kết hợp giữa sắc màu ấm áp và phong cách độc đáo, các sản phẩm của chúng tôi không chỉ mang lại sự thoải mái mà còn thể hiện phong cách riêng biệt của bạn.",
+    "right_description_autumn": "Mùa đông đã đến, và chúng tôi tự hào giới thiệu bộ sưu tập mới nhất dành cho mùa này. Với sự kết hợp của sự ấm áp và phong cách độc đáo, những sản phẩm mới nhất của chúng tôi không chỉ mang lại cảm giác thoải mái mà còn thể hiện phong cách cá nhân của bạn.",
+    "right_description_winter": "Khi mùa đông đang đến gần, chúng tôi rất hào hứng để ra mắt bộ sưu tập mới nhất, được thiết kế đặc biệt cho mùa này. Những thiết kế mới nhất của chúng tôi lấy cảm hứng từ vẻ đẹp của mùa đông, kết hợp giữa sự thoải mái ấm áp và phong cách sang trọng. Từ áo len ấm áp đến áo khoác thanh lịch, mỗi mẫu trong bộ sưu tập mùa đông của chúng tôi đều được chăm chút kỹ lưỡng và tinh tế.",
+    "right_list_title_spring": "Top thiết kế mùa Xuân",
+    "right_list_title_summer": "Top thiết kế mùa Hạ",
+    "right_list_title_autumn": "Top thiết kế mùa Thu",
+    "right_list_title_winter": "Top thiết kế mùa Đông"
+  },
+  "Partner": {
+    "title": "Đối tác",
+    "partner_content_1": "Bằng cách kết hợp sự sáng tạo của đội ngũ thiết kế của chúng tôi với chất lượng sản xuất tốt nhất từ các đối tác uy tín trên thế giới, chúng tôi đã tạo ra những mẫu áo thun độc đáo và chất lượng cao, phản ánh sứ mệnh của chúng tôi trong việc mang lại sự hài lòng tối đa cho khách hàng.",
+    "partner_content_2": "Bằng cách liên tục nỗ lực và không ngừng tìm kiếm các cơ hội hợp tác mới, chúng tôi cam kết tiếp tục mang đến những sản phẩm đẳng cấp và đáng tin cậy nhất cho cộng đồng của chúng tôi.",
+    "partner_content_3": "Hãy khám phá sức mạnh của sự hợp tác tại Cloudy Melody và cùng chúng tôi trải nghiệm những sản phẩm tuyệt vời nhất!"
+  },
+  "Blog": {
+    "title": "Blog",
+    "blog_left_content_1": "Tại Cloudy Melody, chúng tôi không chỉ là về việc thiết kế các sản phẩm thời trang độc đáo và sáng tạo; chúng tôi cũng đam mê chia sẻ những hiểu biết về thiết kế web. Từ những thiết kế header lôi cuốn đến những slider động và các bố cục thẻ người dùng thân thiện, chúng tôi tin rằng thiết kế web xuất sắc làm tăng trải nghiệm người dùng tổng thể.",
+    "blog_left_content_2": "Blog của chúng tôi được dành riêng để chia sẻ mẹo, kinh nghiệm và cảm hứng cho những người đam mê thiết kế web. Dù bạn là một nhà thiết kế có kinh nghiệm hay mới bắt đầu, chúng tôi nhằm mục tiêu cung cấp nội dung có giá trị để giúp bạn tạo ra các trang web đẹp mắt và hiệu quả.",
+    "blog_left_content_3": "Hãy cùng chúng tôi khám phá thế giới của thiết kế web, và cùng nhau nâng cao trải nghiệm trực tuyến một cách từng bước.",
+    "blog_left_content_4": "Cảm ơn bạn đã là một phần của cộng đồng Cloudy Melody!"
+  },
+  "Support": {
+    "title": "Đội hỗ trợ",
+    "description": "Tại Cloudy Melody, chúng tôi luôn sẵn lòng hỗ trợ bạn trong mọi tình huống. Nếu bạn gặp phải bất kỳ lỗi nào hoặc có thắc mắc về sản phẩm, vui lòng liên hệ với đội ngũ dịch vụ khách hàng của chúng tôi. Chúng tôi cam kết sẽ giải quyết mọi vấn đề của bạn một cách nhanh chóng và hiệu quả, đảm bảo bạn có trải nghiệm mua sắm trực tuyến tốt nhất tại Cloudy Melody. Hãy để chúng tôi biết nếu có bất kỳ cách nào chúng tôi có thể giúp bạn!",
+    "support_form_name": "Tên của bạn ...",
+    "support_form_email": "Email của bạn ...",
+    "support_form_problem": "Bạn đang gặp vấn đề gì?...",
+    "support_form_submit": "Gửi"
+  }
+}

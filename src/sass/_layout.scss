@@ -2,6 +2,17 @@
 //   > Layout
 // =========================================================================
 
+.home_layout,
+.shop_layout,
+.shop_detail,
+.profile_layout {
+  padding-top: 13rem;
+  margin: 0 1rem;
+  @include xl {
+    margin: 0 5rem;
+  }
+}
+
 .main_layout {
   padding: $padding * 2;
   &_swiper {
@@ -16,29 +27,6 @@
 
   @include xl {
     @include dynamicAlign();
-    margin: $margin * 5;
-  }
-}
-
-.profile_layout {
-  width: 100%;
-  @include dynamicAlign(
-    $align: center,
-    $gap: 2rem,
-    $justify: center,
-    $direction: column
-  );
-  margin-top: $margin * 5;
-  @include xl {
-    margin: $margin * 4 auto;
-    width: 80%;
-  }
-}
-
-.post_detail_layout {
-  margin: $margin * 5 0;
-
-  @include xl {
     margin: $margin * 5;
   }
 }

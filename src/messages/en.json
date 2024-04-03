@@ -1,0 +1,88 @@
+{
+  "Index": {
+    "title": "Hello World!"
+  },
+  "Navigation": {
+    "home": "Home",
+    "store": "Store",
+    "profile": "Profile",
+    "support": "Support"
+  },
+  "Hero": {
+    "info_1": "Welcome to Cloudy Melody!",
+    "info_2": "Here, we offer more than just stylish t-shirts; we bring you stories and experiences that enrich your life. Join us in exploring and creating memorable moments, from unique apparel to profound narratives.",
+    "info_3": "We hope you'll cherish every moment here, finding comfort and inspiration in our products and stories. Start your journey with Cloudy Melody today, and let's craft colorful melodies together!",
+    "info_4": "Warm regards",
+    "info_5": "The Cloudy Melody Team",
+    "title_1": "DISCOVER LATEST",
+    "title_2": "NEW DESIGN OF",
+    "title_3": "CLOUDY MELODY",
+    "detail": "Discover the latest designs at Cloudy Melody! Our new collection offers a fresh take on style, with unique patterns and creative designs. Find your perfect fit and express your individuality with our meticulously crafted t-shirts. Shop now and elevate your wardrobe with our latest arrivals!"
+  },
+  "Working": {
+    "title": "How it works",
+    "description": "We specialize in unique and creative designs inspired by individuality and everyday experiences. While we don't manufacture our products directly, we work closely with trusted partners to bring our designs to life. Explore our collection to find t-shirts that reflect your style perfectly!",
+    "thank": "Thank you for visiting Cloudy Melody!",
+    "item_1_title": "Choose Shirt",
+    "item_1_description": "Choose the T-shirt you want to buy",
+    "item_2_title": "Go to Partner",
+    "item_2_description": "Go to partner and order your Shirt",
+    "item_3_title": "Partner working",
+    "item_3_description": "Partner recive your order & working shirt",
+    "item_4_title": "Partner Send Your Shirt",
+    "item_4_description": "When your order done then partner send it to you!",
+    "item_5_title": "You Recive your shirt",
+    "item_5_description": "You pay money and get Shirt DONE!"
+  },
+
+  "Season": {
+    "title": "Seasonal Design",
+    "left_description_1": "At Cloudy Melody, we take pride in introducing seasonal collections of t-shirts designed to bring diversity and richness to your wardrobe. Each season, we bring forth fresh and creative designs inspired by the spirit of the weather and the surrounding environment.",
+    "left_description_2": "From cool and vibrant t-shirts for summer to warm and cozy ones for winter, we ensure that each of our products not only exudes fashion but also reflects the true essence of the season in every detail.",
+    "left_description_3": "Explore our collections and discover t-shirts that suit your style and needs for every season",
+    "right_tab_spring": "Spring",
+    "right_tab_summer": "Summer",
+    "right_tab_autumn": "Autumn",
+    "right_tab_winter": "Winter",
+    "right_time_spring_string_1": "March",
+    "right_time_spring_string_2": "May",
+    "right_time_summer_string_1": "June",
+    "right_time_summer_string_2": "August",
+    "right_time_autumn_string_1": "September",
+    "right_time_autumn_string_2": "November",
+    "right_time_winter_string_1": "December",
+    "right_time_winter_string_2": "February",
+    "right_description_spring": "Embrace the season's blooming beauty and vibrant energy with our newest designs. From fresh floral prints to soft pastel tones, our Spring Collection brings a sense of renewal and style to your wardrobe.",
+    "right_description_summer": "Summer has arrived, and we are proud to introduce our latest collection for this season. With creative and unique designs, our products bring freshness and personality to your wardrobe.",
+    "right_description_autumn": "Autumn has arrived, and we are delighted to introduce our latest collection for this season. Combining warm hues and unique styles, our products not only bring comfort but also showcase your individuality.",
+    "right_description_winter": "As the winter season unfolds, we are thrilled to unveil our latest collection tailored for this time of year. Our newest designs capture the essence of winter, blending cozy comfort with chic style. From snug sweaters to elegant outerwear, each piece in our winter collection is crafted with care and attention to detail.",
+    "right_list_title_spring": "Top Design in Spring",
+    "right_list_title_summer": "Top Design in Summer",
+    "right_list_title_autumn": "Top Design in Autumn",
+    "right_list_title_winter": "Top Design in Winter"
+  },
+
+  "Partner": {
+    "title": "Partner",
+    "partner_content_1": "By merging the creativity of our design team with the highest manufacturing standards from reputable global partners, we've crafted unique, high-quality t-shirts that reflect our mission of maximizing customer satisfaction.",
+    "partner_content_2": "Through continuous effort and the pursuit of new collaborative opportunities, we are committed to consistently delivering top-tier, reliable products to our community.",
+    "partner_content_3": "Discover the power of collaboration at Cloudy Melody and join us in experiencing the best products!"
+  },
+
+  "Blog": {
+    "title": "Blog",
+    "blog_left_content_1": "At Cloudy Melody, we're not just about designing unique and creative apparel; we're also passionate about sharing insights into web design. From captivating header designs to dynamic sliders and user-friendly card layouts, we believe that great web design enhances the overall user experience.",
+    "blog_left_content_2": "Our blog is dedicated to sharing tips, tricks, and inspiration for web design enthusiasts. Whether you're a seasoned designer or just starting out, we aim to provide valuable content to help you create stunning and effective websites.",
+    "blog_left_content_3": "Join us as we explore the world of web design together, and let's elevate the online experience one design element at a time.",
+    "blog_left_content_4": "Thank you for being part of the Cloudy Melody community!"
+  },
+
+  "Support": {
+    "title": "Support Team",
+    "description": "At Cloudy Melody, we're always here to support you in any situation. If you encounter any errors or have additional questions about our products, please don't hesitate to a out to our customer service team. We are committed to addressing any issues promptly and effectively, ensuring you have the best online shopping experience at Cloudy Melody. Let us know how we can assist you!",
+    "support_form_name": "Your Name ...",
+    "support_form_email": "Your Email ...",
+    "support_form_problem": "Your Problem...",
+    "support_form_submit": "Submit"
+  }
+}

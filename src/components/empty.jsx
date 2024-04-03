@@ -3,10 +3,8 @@ import React from "react";
 const Empty = () => {
   return (
     <div className="empty">
-      <div className="image">
-        <img src="/empty.gif" alt="empty" />
-      </div>
-      <p>No Result?</p>
+      <img src="/emptyCloudy.gif" />
+      <p>Empty Box</p>
     </div>
   );
 };

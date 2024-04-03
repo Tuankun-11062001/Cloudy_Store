@@ -1,31 +1,26 @@
-import { plusOneView } from "@/redux/slices/postSlice";
-import Link from "next/link";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { createSharedPathnamesNavigation } from "next-intl/navigation";
+
+export const locales = ["en", "vn"];
+export const localePrefix = "always"; // Default
+
+export const { Link, redirect, usePathname, useRouter } =
+  createSharedPathnamesNavigation({ locales, localePrefix });
 
 const Posts = ({ data }) => {
-  const dispatch = useDispatch();
   return (
-    <Link
-      href={`/profile/${data._id}`}
-      onClick={() =>
-        dispatch(plusOneView({ ...data, views: parseInt(data.views) + 1 }))
-      }
-    >
+    <Link href={`/profile/${data._id}`}>
       <div className="post">
         <img src={data.thumbnail} alt="image_post" />
-        <div className="content">
+        <div className="content_post">
           <h3>{data.title}</h3>
           <p className="description">{data.description}</p>
-          <div className="bottom">
-            <p>
-              {new Date(data.createdAt).getDay() +
-                "/" +
-                new Date(data.createdAt).getMonth() +
-                1}
-            </p>
-            <p>{data.views}</p>
-          </div>
+          <p>
+            {new Date(data.createdAt).getDay() +
+              "/" +
+              new Date(data.createdAt).getMonth() +
+              1}
+          </p>
         </div>
       </div>
     </Link>

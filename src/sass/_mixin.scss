@@ -13,31 +13,33 @@
   flex-wrap: $wrap;
 }
 
+@mixin dynamicPosition(
+  $pos: absolute,
+  $left: unset,
+  $right: unset,
+  $top: unset,
+  $bottom: unset,
+  $transform: unset
+) {
+  position: $pos;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+  transform: $transform;
+}
+
 @mixin AnchorElement {
   text-decoration: none;
-  color: $color_black;
+  color: $color_gray_white;
   font-size: $font_size;
   transition: $transition;
   &.active {
-    color: $color_green;
+    color: $color_pink;
   }
   &:hover {
-    color: $color_green;
+    color: $color_pink;
   }
-}
-
-@mixin Logo {
-  background: url("../app/logo.png");
-  display: block;
-  width: 10rem;
-  height: 5rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @mixin gridSys($repeat: 4, $margin: $margin, $gap: $margin, $row_gap: $margin) {

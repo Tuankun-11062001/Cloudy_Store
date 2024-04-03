@@ -1,5 +1,5 @@
 .list_product {
-  @include gridSys($repeat: 2, $gap: $margin);
+  @include gridSys($repeat: 2, $gap: $margin, $margin: unset);
   @include xl {
     @include gridSys($repeat: 5, $gap: $margin);
   }
@@ -19,9 +19,11 @@
   }
 }
 .product {
+  box-shadow: -0.2rem 0.4rem 1rem rgba($color_pink, 0.2);
+  border-radius: 1rem;
   &_img {
     width: 100%;
-    background-color: $color_gray_light;
+    // background-color: $color_gray_light;
     position: relative;
     animation: beggining 1.5s linear;
     @keyframes beggining {
@@ -37,6 +39,20 @@
       top: 1rem;
       left: 1rem;
       background: $color_green;
+      color: $color_white !important;
+      border-radius: 0.5rem;
+      padding: 0.1rem 1rem;
+      font-size: $font_size - 0.4rem;
+      font-weight: 300;
+      @include xl {
+        font-size: $font_size -0.2rem;
+      }
+    }
+    .hot {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: $color_pink;
       color: $color_white;
       border-radius: 0.5rem;
       padding: 0.5rem 1rem;
@@ -64,84 +80,23 @@
   &_info {
     text-align: center;
     font-size: $font_size;
+    padding: 1rem;
     h3 {
       font-weight: 300;
       font-size: $font_size;
+      @include longText(2);
     }
     span {
       font-size: $font_size - 0.2rem;
+      color: $color_pink;
     }
     @include xl {
       h3 {
         font-weight: 300;
       }
-    }
-  }
-}
-
-.product_detail {
-  &_back {
-    margin-top: $margin * 3;
-    @include xl {
-      margin: $margin * 5 $margin * 5;
-    }
-    display: block;
-    &::before {
-      content: "<";
-      margin-right: $margin - 0.5;
-    }
-  }
-  &_image {
-    width: 100%;
-    .swiper_container {
-      margin-top: 0;
-    }
-    @include xl {
-      width: 80rem;
-    }
-  }
-
-  &_content {
-    margin-left: 0;
-    @include xl {
-      margin-left: $margin * 5;
-    }
-    h1 {
-      margin: $margin 0;
-    }
-    h3 {
-      font-size: $font_size + 0.5rem;
-      font-weight: 500;
-    }
-    .des {
-      margin: $margin * 3 0;
-      line-height: 3rem;
-    }
-    .color {
-      @include dynamicAlign();
-      span:first-child {
-        margin-right: $margin * 5;
-        background: unset;
-      }
       span {
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 3rem;
+        font-size: 1.6rem;
       }
-    }
-
-    .btn_navigate {
-      margin: $margin * 3 0;
-      padding: $padding 2rem;
-      font-size: $font_size;
-      border-radius: 3rem;
-      background: $color_green;
-      color: $color_white;
-      border: 0.1rem solid $color_green;
-      cursor: pointer;
-      display: block;
-      width: max-content;
     }
   }
 }

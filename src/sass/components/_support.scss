@@ -25,7 +25,7 @@
       border-radius: 2rem;
 
       h3 {
-        color: $color_green;
+        color: $color_pink;
       }
       p {
         color: $color_gray;
@@ -61,9 +61,9 @@
         transition: $transition;
         cursor: pointer;
         &:hover {
-          border: 0.1rem solid $color_green;
+          border: 0.1rem solid $color_pink;
 
-          background: $color_green;
+          background: $color_pink;
           color: $color_white;
         }
       }

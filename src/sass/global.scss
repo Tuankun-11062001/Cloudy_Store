@@ -4,13 +4,14 @@
 @import "common";
 @import "layout";
 
-@import "components/navigation";
+@import "components/header";
+@import "components/home";
 @import "components/swiper";
 @import "components/product";
-@import "components/bannerFollow";
 @import "components/shop";
-@import "components/tabs";
 @import "components/profile";
 @import "components/post";
 @import "components/support";
 @import "components/empty";
+@import "components/footer";
+@import "components/loading";
