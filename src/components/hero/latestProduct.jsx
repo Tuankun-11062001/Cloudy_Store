@@ -3,7 +3,7 @@ import { handlerGetLatestProduct } from "@/api/products";
 import { useTranslations } from "next-intl";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { useEffect, useState } from "react";
-import LoadingClient from "../LoadingClient";
+import LoadingClient from "../loadingClient";
 import { SwiperProduct } from "../swiper";
 
 export const locales = ["en", "vn"];
