@@ -298,7 +298,11 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
           <div className="filter_group category">
             <h3>Category</h3>
             {categories?.data?.map((category) => (
-              <div className="checkbox_item" onClick={handleCheckCategory}>
+              <div
+                className="checkbox_item"
+                onClick={handleCheckCategory}
+                key={categories._id}
+              >
                 <input
                   type="checkbox"
                   value={categories._id}
@@ -313,7 +317,11 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
           <div className="filter_group partner">
             <h3>Partner</h3>
             {partners?.data?.map((partner) => (
-              <div className="checkbox_item" onClick={handleCheckPartner}>
+              <div
+                className="checkbox_item"
+                onClick={handleCheckPartner}
+                key={partner._id}
+              >
                 <input
                   type="checkbox"
                   value={partner._id}
@@ -328,8 +336,12 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
           {/* Season */}
           <div className="filter_group season">
             <h3>Season</h3>
-            {dataSeason?.map((season) => (
-              <div className="checkbox_item" onClick={handleCheckSeason}>
+            {dataSeason?.map((season, index) => (
+              <div
+                className="checkbox_item"
+                onClick={handleCheckSeason}
+                key={index}
+              >
                 <input
                   type="checkbox"
                   value={season}
