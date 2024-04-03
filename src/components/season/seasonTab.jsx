@@ -6,6 +6,7 @@ import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { handleGetSeason } from "@/api/products";
 import LoadingClient from "../loadingClient";
 import Empty from "../empty";
+import { SwiperProduct } from "../swiper";
 
 export const locales = ["en", "vn"];
 export const localePrefix = "always"; // Default
@@ -100,9 +101,7 @@ const SeasonTab = () => {
             <Empty />
           ) : (
             <div className="list_product">
-              {products?.data?.map((product) => (
-                <Product key={product._id} data={product} />
-              ))}
+              <SwiperProduct data={products} />
             </div>
           )}
         </div>
@@ -123,9 +122,7 @@ const SeasonTab = () => {
             <Empty />
           ) : (
             <div className="list_product">
-              {products?.data?.map((product) => (
-                <Product key={product._id} data={product} />
-              ))}
+              <SwiperProduct data={products} />
             </div>
           )}
         </div>
@@ -146,9 +143,7 @@ const SeasonTab = () => {
             <Empty />
           ) : (
             <div className="list_product">
-              {products?.data?.map((product) => (
-                <Product key={product._id} data={product} />
-              ))}
+              <SwiperProduct data={products} />
             </div>
           )}
         </div>
@@ -169,9 +164,7 @@ const SeasonTab = () => {
             <Empty />
           ) : (
             <div className="list_product">
-              {products?.data?.map((product) => (
-                <Product key={product._id} data={product} />
-              ))}
+              <SwiperProduct data={products} />
             </div>
           )}
         </div>

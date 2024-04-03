@@ -337,6 +337,7 @@
       }
       .right {
         flex: 1;
+        width: 100%;
         .season_tap {
           @include dynamicAlign(
             $justify: space-between,
@@ -391,6 +392,14 @@
               color: $color_pink;
               font-weight: 300;
             }
+
+            .list_product {
+              display: unset;
+              width: 100%;
+              .product {
+                box-shadow: unset;
+              }
+            }
           }
         }
       }
@@ -410,6 +419,7 @@
           }
         }
         .right {
+          width: 50%;
           .season_tap {
             li {
               padding: 0.5rem 2rem;
