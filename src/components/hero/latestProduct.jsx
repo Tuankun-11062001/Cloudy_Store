@@ -1,6 +1,5 @@
 "use client";
-import handlerGetProduct, { handlerGetLatestProduct } from "@/api/products";
-import Product from "../product";
+import { handlerGetLatestProduct } from "@/api/products";
 import { useTranslations } from "next-intl";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { useEffect, useState } from "react";
@@ -13,7 +12,7 @@ export const localePrefix = "always"; // Default
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation({ locales, localePrefix });
 
-const LatestProduct = ({ data }) => {
+const LatestProduct = () => {
   const [latestProduct, setLatestProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
