@@ -40,7 +40,6 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
     (async () => {
       try {
         const res = await handleGetPartner();
-        console.log("res partner", res);
         if (res) {
           setPartners(res);
         }
@@ -108,7 +107,6 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
         }
       }
     })();
-    console.log(filter);
   }, [filter]);
 
   const changeLayoutProduct = (num) => {

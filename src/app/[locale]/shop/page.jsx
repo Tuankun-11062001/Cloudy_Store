@@ -22,7 +22,7 @@ const ShopPage = () => {
   return (
     <>
       <div className="shop">
-        <img src="/s3.jpg" className="banner" />
+        <img src="/S3.jpg" className="banner" />
         <div className="shop_content shop_layout">
           <NavShop
             filterProducts={setProducts}

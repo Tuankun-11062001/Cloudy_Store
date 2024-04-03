@@ -86,16 +86,19 @@ const Header = () => {
         <div className="right">
           <img src="/search.svg" />
           <LocalSwich />
-          <a href="https://facebook.com" target="_blank">
+          <a
+            href="https://www.facebook.com/profile.php?id=61553832912429"
+            target="_blank"
+          >
             <img src="/faceIcon.svg" />
           </a>
-          <a href="https://facebook.com" target="_blank">
+          <a href="https://www.instagram.com/junenguyen11" target="_blank">
             <img src="/instagramIcon.svg" />
           </a>
-          <a href="https://facebook.com" target="_blank">
+          <a href="https://www.youtube.com/@cloudymelody11_06" target="_blank">
             <img src="/youtubeIcon.svg" />
           </a>
-          <a href="https://facebook.com" target="_blank">
+          <a href="https://www.tiktok.com/@junetshirt" target="_blank">
             <img src="/tiktokIcon.svg" />
           </a>
         </div>

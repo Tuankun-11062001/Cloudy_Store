@@ -112,7 +112,7 @@ const DetailProduct = () => {
             <ul>
               <li>
                 <a
-                  href="http://facebook.com"
+                  href="https://www.facebook.com/profile.php?id=61553832912429"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -121,7 +121,7 @@ const DetailProduct = () => {
               </li>
               <li>
                 <a
-                  href="http://instagram.com"
+                  href="https://www.instagram.com/junenguyen11"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -130,7 +130,7 @@ const DetailProduct = () => {
               </li>
               <li>
                 <a
-                  href="http://youtube.com"
+                  href="https://www.youtube.com/@cloudymelody11_06"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -139,7 +139,7 @@ const DetailProduct = () => {
               </li>
               <li>
                 <a
-                  href="http://facebook.com"
+                  href="https://www.tiktok.com/@junetshirt"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

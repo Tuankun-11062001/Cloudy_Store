@@ -21,8 +21,6 @@ export async function handlerGetLatestProduct() {
     const response = await fetch(`https://twin-s.vercel.app/product/latest`);
     const data = await response.json();
 
-    console.log("data latest", data);
-
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
