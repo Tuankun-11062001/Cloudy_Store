@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Noto_Sans_JP } from "next/font/google";
 import "@/sass/global.scss";
 import Header from "@/components/header";
@@ -21,6 +22,7 @@ export default function RootLayout({ children, params: { locale } }) {
             <Header />
             {children}
             {/* <Footer /> */}
+            <Analytics />
           </NextIntlClientProvider>
         </div>
       </body>
