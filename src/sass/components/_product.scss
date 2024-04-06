@@ -83,6 +83,9 @@
       font-size: $font_size;
       @include longText(2);
       color: $color_gray;
+      &:hover {
+        color: $color_pink;
+      }
     }
     span {
       font-size: $font_size - 0.2rem;
