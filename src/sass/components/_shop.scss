@@ -242,6 +242,17 @@
 
         .laylout_list_product {
           @include dynamicAlign($align: center, $gap: 2rem);
+          li {
+            color: $color_gray;
+            transition: $transition;
+            cursor: pointer;
+            &:hover {
+              color: $color_pink;
+            }
+            &.active {
+              color: $color_pink;
+            }
+          }
         }
 
         .shop_filter {
@@ -356,7 +367,7 @@
       }
     }
     &_list_product {
-      @include gridSys();
+      @include gridSys($repeat: 5);
       // lyout
       &.layout_4 {
         @include gridSys();

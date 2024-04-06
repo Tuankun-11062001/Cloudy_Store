@@ -109,8 +109,10 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
     })();
   }, [filter]);
 
-  const changeLayoutProduct = (num) => {
+  const changeLayoutProduct = (evt, num) => {
     const listProduct = document.querySelector(".shop_list_product");
+    const liParents = document.querySelectorAll(".laylout_list_product li");
+    const liElement = evt.target;
     if (listProduct.classList.contains("layout_4")) {
       listProduct.classList.remove("layout_4");
     } else if (listProduct.classList.contains("layout_5")) {
@@ -118,7 +120,10 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
     } else {
       listProduct.classList.remove("layout_6");
     }
+
+    liParents.forEach((li) => li.classList.remove("active"));
     listProduct.classList.add(`layout_${num}`);
+    liElement.classList.add("active");
   };
 
   // useEffect(() => {
@@ -281,9 +286,9 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
       <div className="right">
         <p className="total_product">{totalProduct} Products</p>
         <ul className="laylout_list_product">
-          <li onClick={() => changeLayoutProduct(6)}>6</li>
-          <li onClick={() => changeLayoutProduct(5)}>5</li>
-          <li onClick={() => changeLayoutProduct(4)}>4</li>
+          <li onClick={(e) => changeLayoutProduct(e, 6)}>6</li>
+          <li onClick={(e) => changeLayoutProduct(e, 5)}>5</li>
+          <li onClick={(e) => changeLayoutProduct(e, 4)}>4</li>
         </ul>
         <img src="/filter.svg" onClick={handleToggleFilter} />
         {/* nav filter */}

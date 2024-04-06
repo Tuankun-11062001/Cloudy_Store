@@ -37,7 +37,7 @@ const LatestProduct = () => {
       <h2 className="title">
         {t("title_1")} <span>{t("title_2")} </span> {t("title_3")}
       </h2>
-      <p>{t("detail")}</p>
+      <p className="description">{t("detail")}</p>
       {loading ? (
         <LoadingClient />
       ) : (

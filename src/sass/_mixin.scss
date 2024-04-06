@@ -42,7 +42,12 @@
   }
 }
 
-@mixin gridSys($repeat: 4, $margin: $margin, $gap: $margin, $row_gap: $margin) {
+@mixin gridSys(
+  $repeat: 4,
+  $margin: $margin,
+  $gap: $margin,
+  $row_gap: $grid_row_gap
+) {
   display: grid;
   grid-template-columns: repeat($repeat, 1fr);
   grid-gap: $gap;

@@ -32,10 +32,10 @@ export async function handleGetSeason(season) {
   try {
     // Gọi API từ server của bạn
     // const response = await fetch(
-    //   `http://localhost:3001/product/search?season=${season}`
+    //   `http://localhost:3001/product/latestSeason?season=${season}`
     // );
     const response = await fetch(
-      `https://twin-s.vercel.app/product/search?season=${season}`
+      `https://twin-s.vercel.app/product/latestSeason?season=${season}`
     );
     const data = await response.json();
 
