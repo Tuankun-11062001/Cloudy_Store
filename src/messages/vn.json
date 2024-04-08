@@ -80,5 +80,22 @@
     "support_form_email": "Email của bạn ...",
     "support_form_problem": "Bạn đang gặp vấn đề gì?...",
     "support_form_submit": "Gửi"
+  },
+  "Shop": {
+    "all_product": "Tất cả sản phẩm",
+    "hot_product": "Sản phẩm hot",
+    "new_product": "Sản phẩm mới",
+    "sale_product": "Sản phẩm giảm giá",
+    "product": "Sản phẩm",
+    "shop_filter": "Lọc Sản Phẩm",
+    "shop_nav_category": "Thể loại",
+    "shop_nav_partner": "Đối tác",
+    "shop_nav_season": "Mùa",
+    "go_to_partner": "Đi Đến Đối Tác",
+    "detail_category": "Thể loại",
+    "detail_Partner": "Đối tác",
+    "detail_relative": "Sản phẩm liên quan",
+    "detail_see_more": "Xem thêm",
+    "detail_escap": "Thu gọn"
   }
 }

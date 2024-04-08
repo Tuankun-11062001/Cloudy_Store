@@ -84,5 +84,23 @@
     "support_form_email": "Your Email ...",
     "support_form_problem": "Your Problem...",
     "support_form_submit": "Submit"
+  },
+
+  "Shop": {
+    "all_product": "All Product",
+    "hot_product": "Hot Product",
+    "new_product": "New Product",
+    "sale_product": "Sale Product",
+    "product": "Product",
+    "shop_filter": "Filter",
+    "shop_nav_category": "Category",
+    "shop_nav_partner": "Partner",
+    "shop_nav_season": "Season",
+    "go_to_partner": "Go To Partner",
+    "detail_category": "Category",
+    "detail_Partner": "Partner",
+    "detail_relative": "Relative Product",
+    "detail_see_more": "See more",
+    "detail_escap": "Escap"
   }
 }

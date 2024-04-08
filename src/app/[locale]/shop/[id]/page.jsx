@@ -7,6 +7,7 @@ import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { handleFindProduct, handlerGetLatestProduct } from "@/api/products";
 import LoadingClient from "@/components/loadingClient";
 import Product from "@/components/product";
+import { useTranslations } from "next-intl";
 
 export const locales = ["en", "vn"];
 export const localePrefix = "always"; // Default
@@ -15,6 +16,7 @@ export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation({ locales, localePrefix });
 
 const DetailProduct = () => {
+  const t = useTranslations("Shop");
   const params = useParams();
   const [data, setData] = useState({});
   const [relativeData, setRelativeData] = useState([]);
@@ -78,7 +80,7 @@ const DetailProduct = () => {
 
             <p className="des">{data?.description}</p>
             <span onClick={handleSeeMore} className="btn_see_more">
-              {seeMore ? "escap" : "See more"}
+              {seeMore ? t("detail_escap") : t("detail_see_more")}
             </span>
 
             {/* color */}
@@ -94,15 +96,15 @@ const DetailProduct = () => {
             <h3>{data?.price}</h3>
 
             <a href={data.linkProduct} target="_blank" className="btn_navigate">
-              Go to partner
+              {t("go_to_partner")}
             </a>
             <div className="category">
               <div className="category_group">
-                <p>Category</p>
+                <p>{t("detail_category")}</p>
                 <p>{data?.category?.title}</p>
               </div>
               <div className="category_group">
-                <p>Partner</p>
+                <p>{t("detail_Partner")}</p>
                 <p>{data?.partner?.title}</p>
               </div>
             </div>
@@ -152,7 +154,7 @@ const DetailProduct = () => {
       )}
 
       <div className="relative_product">
-        <p className="title">Relative Product</p>
+        <p className="title">{t("detail_relative")}</p>
         {loading ? (
           <LoadingClient />
         ) : (

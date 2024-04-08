@@ -6,8 +6,10 @@ import {
   handlerGetLatestProduct,
 } from "@/api/products";
 import React, { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const NavShop = ({ filterProducts, load, totalProduct }) => {
+  const t = useTranslations("Shop");
   const [categories, setCategories] = useState([]);
   const [partners, setPartners] = useState([]);
   const [filter, setFilter] = useState({
@@ -271,20 +273,22 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
     <div className="shop_nav">
       <div className="left">
         <li className="active" onClick={handleLeftNav} data-typeproduct="all">
-          All Product
+          {t("all_product")}
         </li>
         <li onClick={handleLeftNav} data-typeproduct="hot">
-          Hot product
+          {t("hot_product")}
         </li>
         <li onClick={handleLeftNav} data-typeproduct="new">
-          New Product
+          {t("new_product")}
         </li>
         <li onClick={handleLeftNav} data-typeproduct="sale">
-          Sale Product
+          {t("sale_product")}
         </li>
       </div>
       <div className="right">
-        <p className="total_product">{totalProduct} Products</p>
+        <p className="total_product">
+          {totalProduct} {t("product")}
+        </p>
         <ul className="laylout_list_product">
           <li onClick={(e) => changeLayoutProduct(e, 6)}>6</li>
           <li onClick={(e) => changeLayoutProduct(e, 5)}>5</li>
@@ -294,12 +298,12 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
         {/* nav filter */}
         <div className="shop_filter">
           <div className="head">
-            <h2>Filter</h2>
+            <h2>{t("shop_filter")}</h2>
             <img src="/icon_close.svg" onClick={handleToggleFilter} />
           </div>
           {/* category */}
           <div className="filter_group category">
-            <h3>Category</h3>
+            <h3>{t("shop_nav_category")}</h3>
             {categories?.data?.map((category) => (
               <div
                 className="checkbox_item"
@@ -318,7 +322,7 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
           </div>
           {/* partner */}
           <div className="filter_group partner">
-            <h3>Partner</h3>
+            <h3>{t("shop_nav_partner")}</h3>
             {partners?.data?.map((partner) => (
               <div
                 className="checkbox_item"
@@ -338,7 +342,7 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
 
           {/* Season */}
           <div className="filter_group season">
-            <h3>Season</h3>
+            <h3>{t("shop_nav_season")}</h3>
             {dataSeason?.map((season, index) => (
               <div
                 className="checkbox_item"

@@ -20,6 +20,7 @@ const Partner = () => {
         <img src="/redbubble.png" />
         <img src="/shopee.png" />
         <img src="/tiktok-shop.png" />
+        <img src="/amazon.png" />
       </div>
     </div>
   );

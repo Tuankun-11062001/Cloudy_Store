@@ -39,11 +39,41 @@
       top: 0;
       left: 1rem;
       background: $color_green;
-      color: $color_white !important;
+      color: $color_white;
       border-radius: 0.5rem;
       padding: 0.5rem 1rem !important;
       font-size: $font_size - 0.4rem;
       font-weight: 300;
+      &.Shopee {
+        background-color: #f2572c;
+        color: $color_white;
+        box-shadow: 0 0 1rem rgba(#f2572c, 0.5);
+      }
+      &.Amazon {
+        background-color: $color_black;
+        color: $color_white;
+        box-shadow: 0 0 1rem rgba($color_black, 0.5);
+      }
+      &.Redbubble {
+        background-color: #e31422;
+        color: $color_white;
+        box-shadow: 0 0 1rem rgba(#e31422, 0.5);
+      }
+      &.Printify {
+        background-color: $color_green;
+        color: $color_white;
+        box-shadow: 0 0 1rem rgba($color_green, 0.5);
+      }
+      &.Tiktok {
+        background-color: $color_black;
+        color: $color_white;
+        box-shadow: 0 0 1rem rgba($color_black, 0.5);
+      }
+      &.Printub {
+        background-color: #1975d1;
+        color: $color_white;
+        box-shadow: 0 0 1rem rgba(#1975d1, 0.5);
+      }
     }
     .hot {
       position: absolute;

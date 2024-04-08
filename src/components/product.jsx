@@ -12,7 +12,7 @@ const Product = ({ data }) => {
     <div className="product">
       <div className="product_img">
         <img src={data?.currentImage} alt="product" />
-        <p className="partner">{data.partner.title}</p>
+        <p className={`partner ${data.partner.title}`}>{data.partner.title}</p>
         {data?.hotProduct ? <p className="hot">Hot</p> : ""}
       </div>
       <div className="product_info">
