@@ -54,6 +54,8 @@
         opacity: 0;
         z-index: -1;
         transition: 0.5s linear;
+        height: 100dvh;
+        overflow: auto;
         &.active {
           opacity: 1;
           z-index: 15;
@@ -270,6 +272,8 @@
           opacity: 0;
           transition: 0.5s linear;
           z-index: -1;
+          height: 65dvh;
+          overflow: auto;
           &.active {
             opacity: 1;
             z-index: 9;

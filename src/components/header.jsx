@@ -84,7 +84,7 @@ const Header = () => {
           </div>
         </div>
         <div className="right">
-          <img src="/search.svg" />
+          {/* <img src="/search.svg" /> */}
           <LocalSwich />
           <a
             href="https://www.facebook.com/profile.php?id=61553832912429"

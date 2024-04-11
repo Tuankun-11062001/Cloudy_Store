@@ -29,6 +29,26 @@ ul {
 //   > common scss
 // =========================================================================
 
+/* width */
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color_pink;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .title_app {
   @include dynamicAlign($align: center, $direction: column);
 
