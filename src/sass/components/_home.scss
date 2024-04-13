@@ -646,6 +646,14 @@
           color: $color_pink;
         }
       }
+      .message {
+        &.error {
+          color: $color_pink;
+        }
+        &.success {
+          color: #16aa47;
+        }
+      }
       button {
         padding: 1rem 3rem;
         color: $color_pink;

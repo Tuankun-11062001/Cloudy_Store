@@ -83,7 +83,10 @@
     "support_form_name": "Your Name ...",
     "support_form_email": "Your Email ...",
     "support_form_problem": "Your Problem...",
-    "support_form_submit": "Submit"
+    "support_form_submit": "Submit",
+    "success": "Submit Successfully",
+    "missing_field": "Missing Field ",
+    "emaill_incorrect": "Email Incorrect :("
   },
 
   "Shop": {

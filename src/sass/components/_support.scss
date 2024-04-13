@@ -30,41 +30,58 @@
       p {
         color: $color_gray;
       }
-      .form {
-        @include dynamicAlign($direction: column);
+      .support_form {
+        @include dynamicAlign($direction: column, $align: center, $gap: 2rem);
         width: 100%;
         input {
           width: 100%;
-          padding: $padding;
+          padding: 1rem 0.5rem;
           border-radius: 1rem;
+          outline: none;
           border: 0.1rem solid $color_gray;
           font-size: $font_size;
-          outline: none;
+          transition: 0.3s ease;
+          &:focus {
+            border: 0.1rem solid $color_pink;
+            color: $color_pink;
+          }
         }
         textarea {
           width: 100%;
-          height: 30rem;
-          resize: none;
+          padding: 1rem 0.5rem;
           border-radius: 1rem;
-          border: 0.1rem solid $color_gray;
-          font-size: $font_size;
-          padding: $padding;
           outline: none;
+          border: 0.1rem solid $color_gray;
+          height: 20rem;
+          resize: none;
+          font-size: $font_size;
+          transition: 0.3s ease;
+          &:focus {
+            border: 0.1rem solid $color_pink;
+            color: $color_pink;
+          }
         }
-      }
-      button {
-        padding: $padding $padding * 3;
-        font-size: $font_size;
-        border: 0.1rem solid $color_gray;
-        border-radius: 1rem;
-        background-color: transparent;
-        transition: $transition;
-        cursor: pointer;
-        &:hover {
+        .message {
+          &.error {
+            color: $color_pink;
+          }
+          &.success {
+            color: #16aa47;
+          }
+        }
+        button {
+          padding: 1rem 3rem;
+          color: $color_pink;
+          border-radius: 1rem;
           border: 0.1rem solid $color_pink;
-
-          background: $color_pink;
-          color: $color_white;
+          font-size: $font_size;
+          background: transparent;
+          cursor: pointer;
+          transition: 0.3s ease;
+          &:hover {
+            background: $color_pink;
+            color: $color_white;
+          }
         }
       }
     }

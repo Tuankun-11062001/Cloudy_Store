@@ -79,7 +79,10 @@
     "support_form_name": "Tên của bạn ...",
     "support_form_email": "Email của bạn ...",
     "support_form_problem": "Bạn đang gặp vấn đề gì?...",
-    "support_form_submit": "Gửi"
+    "support_form_submit": "Gửi",
+    "success": "Gửi Thành Công",
+    "missing_field": "Bạn điền thiếu rồi",
+    "emaill_incorrect": "Email Không chính xác rồi :("
   },
   "Shop": {
     "all_product": "Tất cả sản phẩm",

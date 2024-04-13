@@ -1,3 +1,4 @@
+import SupportForm from "@/components/support/supportForm";
 import React from "react";
 
 const SupportPage = () => {
@@ -7,12 +8,7 @@ const SupportPage = () => {
         <div className="left">
           <h3>Hi! I am Support Team</h3>
           <p>Can i help you?</p>
-          <div className="form">
-            <input type="text" placeholder="Your Name" />
-            <input type="text" placeholder="Your Email" />
-            <textarea placeholder="What is your problem..." />
-          </div>
-          <button>Send</button>
+          <SupportForm />
         </div>
         <div className="image">
           <img src="/support.gif" />
