@@ -14,7 +14,7 @@ export default async function handleCreateSupport(payload) {
     //   referrerPolicy: "no-referrer",
     //   body: JSON.stringify(payload),
     // });
-    const response = await fetch(`http://localhost:3001/support/create`, {
+    const response = await fetch(`https://twin-s.vercel.app/support/create`, {
       method: "POST",
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
