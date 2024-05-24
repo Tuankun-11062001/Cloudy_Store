@@ -91,7 +91,7 @@ export const SwiperProduct = ({ data }) => {
       >
         {data?.data?.map((product) => (
           <SwiperSlide key={product._id}>
-            <Product data={product} key={product._id} />
+            <Product data={product} key={product._id} hide="hide" />
           </SwiperSlide>
         ))}
       </Swiper>

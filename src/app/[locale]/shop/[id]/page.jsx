@@ -28,7 +28,6 @@ const DetailProduct = () => {
       try {
         setLoading(true);
         const res = await handleFindProduct(params.id);
-        console.log(res);
         if (res.status === 200) {
           setData(res.data);
           setLoading(false);

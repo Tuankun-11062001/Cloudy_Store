@@ -22,7 +22,13 @@ const ShopPage = () => {
   return (
     <>
       <div className="shop">
-        <img src="/S3.jpg" className="banner" />
+        <div className="banner">
+          <div className="content">
+            <h1 data-text="Welcome🌴to⛱️summer">Welcome🌴to⛱️summer</h1>
+            <p>Wishing you a happy summer!</p>
+          </div>
+          <img src="/summer_beach.jpg" />
+        </div>
         <div className="shop_content shop_layout">
           <NavShop
             filterProducts={setProducts}

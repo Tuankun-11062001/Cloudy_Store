@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Noto_Sans_JP } from "next/font/google";
 import "@/sass/global.scss";
 import Header from "@/components/header";
@@ -24,6 +25,7 @@ export default function RootLayout({ children, params: { locale } }) {
             {/* <Footer /> */}
             <Analytics />
           </NextIntlClientProvider>
+          <SpeedInsights />
         </div>
       </body>
     </html>
