@@ -74,7 +74,8 @@
     "blog_left_content_4": "Cảm ơn bạn đã là một phần của cộng đồng Cloudy Melody!"
   },
   "Support": {
-    "title": "Đội hỗ trợ",
+    "title": "Xin Chào! Tớ là đội hỗ trợ",
+    "title_small": "Tớ có thể giúp gì cho bạn?",
     "description": "Tại Cloudy Melody, chúng tôi luôn sẵn lòng hỗ trợ bạn trong mọi tình huống. Nếu bạn gặp phải bất kỳ lỗi nào hoặc có thắc mắc về sản phẩm, vui lòng liên hệ với đội ngũ dịch vụ khách hàng của chúng tôi. Chúng tôi cam kết sẽ giải quyết mọi vấn đề của bạn một cách nhanh chóng và hiệu quả, đảm bảo bạn có trải nghiệm mua sắm trực tuyến tốt nhất tại Cloudy Melody. Hãy để chúng tôi biết nếu có bất kỳ cách nào chúng tôi có thể giúp bạn!",
     "support_form_name": "Tên của bạn ...",
     "support_form_email": "Email của bạn ...",
@@ -82,7 +83,9 @@
     "support_form_submit": "Gửi",
     "success": "Gửi Thành Công",
     "missing_field": "Bạn điền thiếu rồi",
-    "emaill_incorrect": "Email Không chính xác rồi :("
+    "emaill_incorrect": "Email Không chính xác rồi :(",
+    "cloudy_info": "Cảm ơn quý vị đã ghé thăm trang web của chúng tôi. Hy vọng các sản phẩm của chúng tôi sẽ phù hợp với quý vị. Nếu quý vị có đóng góp hay phản hồi, xin vui lòng điền vào các ô trống bên cạnh. Những đóng góp của quý vị giúp ích rất nhiều cho sự phát triển của chúng tôi trong tương lai. Cảm ơn quý vị!",
+    "cloudy_follow": "Theo dõi tớ"
   },
   "Shop": {
     "all_product": "Tất cả sản phẩm",

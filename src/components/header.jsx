@@ -16,7 +16,7 @@ const Header = () => {
   const path = usePathname();
 
   const handleToggleNav = () => {
-    const nav = document.querySelector(".header .nav");
+    const nav = document.querySelector(".header .header_content_mobile");
     nav.classList.toggle("active");
   };
   useEffect(() => {
@@ -58,11 +58,69 @@ const Header = () => {
           <button onClick={handleToggleNav} className="button_nav">
             <img src="/icon_menu.svg" />
           </button>
-          <div className="nav">
+
+          <div className="header_content_mobile">
             <button onClick={handleToggleNav} className="button_nav">
               <img src="/icon_close.svg" />
             </button>
 
+            <img className="mobile_bg" src="/summer_mobile.png" />
+
+            <h1>🌴 Cloudy Melody 🍉</h1>
+
+            <div className="mobile_nav">
+              <Link href="/" className={path == "/" ? "active" : ""}>
+                {t("home")}
+              </Link>
+              <Link href="/shop" className={path == "/shop" ? "active" : ""}>
+                {t("store")}
+              </Link>
+              <Link
+                href="/profile"
+                className={path == "/profile" ? "active" : ""}
+              >
+                {t("profile")}
+              </Link>
+              <Link
+                href="/support"
+                className={path == "/support" ? "active" : ""}
+              >
+                {t("support")}
+              </Link>
+            </div>
+            <div className="mobile_language">
+              <h3>Language</h3>
+              <LocalSwich />
+            </div>
+            <div className="mobile_social">
+              <h3>Follow me</h3>
+              <div className="list">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61553832912429"
+                  target="_blank"
+                >
+                  <img src="/faceIcon.svg" />
+                </a>
+                <a
+                  href="https://www.instagram.com/junenguyen11"
+                  target="_blank"
+                >
+                  <img src="/instagramIcon.svg" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@cloudymelody11_06"
+                  target="_blank"
+                >
+                  <img src="/youtubeIcon.svg" />
+                </a>
+                <a href="https://www.tiktok.com/@junetshirt" target="_blank">
+                  <img src="/tiktokIcon.svg" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="nav">
             <Link href="/" className={path == "/" ? "active" : ""}>
               {t("home")}
             </Link>

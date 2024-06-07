@@ -31,14 +31,6 @@
   }
 }
 
-.support_layout {
-  width: 90%;
-  margin: auto;
-  @include xl {
-    width: 80%;
-  }
-}
-
 .loading_layout {
   @include dynamicAlign($align: center, $justify: center, $direction: column);
   height: 100dvh;

@@ -25,7 +25,7 @@ export default async function Home() {
       <Partner />
 
       {/* blog */}
-      <Blog />
+      {/* <Blog /> */}
 
       {/* support */}
 

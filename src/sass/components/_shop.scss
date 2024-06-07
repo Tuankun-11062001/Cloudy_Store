@@ -1,4 +1,5 @@
 .shop {
+  padding-bottom: 10rem;
   .banner {
     position: relative;
     height: 40dvh;
@@ -119,7 +120,9 @@
         transition: 0.5s linear;
         height: 100dvh;
         overflow: auto;
+        visibility: hidden;
         &.active {
+          visibility: visible;
           opacity: 1;
           z-index: 15;
         }
@@ -463,6 +466,14 @@
       &.layout_6 {
         @include gridSys($repeat: 6);
       }
+    }
+  }
+
+  &_load_infinite {
+    width: inherit;
+    @include dynamicAlign(center, center);
+    img {
+      width: 6rem;
     }
   }
 }

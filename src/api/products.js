@@ -1,13 +1,15 @@
 // pages/api/filterData.js
 
-export default async function handlerGetProduct() {
+export default async function handlerGetProduct(page) {
   try {
     // Gọi API từ server của bạn
-    // const response = await fetch(`http://localhost:3001/product`);
-    const response = await fetch(`https://twin-s.vercel.app/product`);
+    // const response = await fetch(`http://localhost:3001/product?page=${page}`);
+    const response = await fetch(
+      `https://twin-s.vercel.app/product?page=${page}`
+    );
     const data = await response.json();
 
-    return data;
+    return data.data;
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Server error" });
@@ -21,7 +23,7 @@ export async function handlerGetLatestProduct() {
     const response = await fetch(`https://twin-s.vercel.app/product/latest`);
     const data = await response.json();
 
-    return data;
+    return data.data;
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Server error" });
@@ -39,7 +41,7 @@ export async function handleGetSeason(season) {
     );
     const data = await response.json();
 
-    return data;
+    return data.data;
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Server error" });
@@ -73,7 +75,7 @@ export async function handleFilter(str = "") {
     const response = await fetch(`https://twin-s.vercel.app/product/${str}`);
     const data = await response.json();
 
-    return data;
+    return data.data;
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Server error" });

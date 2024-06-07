@@ -9,7 +9,7 @@ const ListProduct = ({ data }) => {
         <Empty />
       ) : (
         <div className="shop_list_product">
-          {data?.data?.map((product) => (
+          {data?.map((product) => (
             <Product key={product._id} data={product} />
           ))}
         </div>

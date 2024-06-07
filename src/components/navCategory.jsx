@@ -23,7 +23,6 @@ const NavCategory = () => {
     for (let i = 0; i < spans.length; i++) {
       spans[i].classList.remove("active");
     }
-    console.log("click");
     // add active
     e.target.classList.add("active");
     dispatch(setFilterKey(e.target.textContent));

@@ -89,7 +89,7 @@ export const SwiperProduct = ({ data }) => {
         modules={[Autoplay]}
         className="mySwiper2 swiper_layout"
       >
-        {data?.data?.map((product) => (
+        {data?.map((product) => (
           <SwiperSlide key={product._id}>
             <Product data={product} key={product._id} hide="hide" />
           </SwiperSlide>

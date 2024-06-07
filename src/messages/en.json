@@ -78,7 +78,8 @@
   },
 
   "Support": {
-    "title": "Support Team",
+    "title": "Hi! I am Support Team",
+    "title_small": "Can I help you?",
     "description": "At Cloudy Melody, we're always here to support you in any situation. If you encounter any errors or have additional questions about our products, please don't hesitate to a out to our customer service team. We are committed to addressing any issues promptly and effectively, ensuring you have the best online shopping experience at Cloudy Melody. Let us know how we can assist you!",
     "support_form_name": "Your Name ...",
     "support_form_email": "Your Email ...",
@@ -86,7 +87,9 @@
     "support_form_submit": "Submit",
     "success": "Submit Successfully",
     "missing_field": "Missing Field ",
-    "emaill_incorrect": "Email Incorrect :("
+    "emaill_incorrect": "Email Incorrect :(",
+    "cloudy_info": "Thank you for visiting our website. We hope our products meet your expectations. If you have any feedback or suggestions, please fill out the form beside. Your input greatly aids our future development. Thank you!",
+    "cloudy_follow": "Follow me"
   },
 
   "Shop": {

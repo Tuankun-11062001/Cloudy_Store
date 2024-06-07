@@ -1,5 +1,12 @@
 .support {
-  margin-top: $margin * 10;
+  // margin-top: $margin * 10;
+  height: 100dvh;
+  position: relative;
+  .background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   animation: begin 2s linear;
   @keyframes begin {
     0% {
@@ -10,22 +17,67 @@
     }
   }
   .content {
-    @include dynamicAlign($direction: column-reverse);
+    @include dynamicPosition(
+      $pos: absolute,
+      $left: 50%,
+      $top: 50%,
+      $transform: translate(-50%, -50%)
+    );
+
+    background: rgba($color_white, 0.25);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    width: 90%;
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    @include dynamicAlign();
+
+    .btn_cloudy {
+      @include dynamicPosition($pos: absolute, $right: 2rem);
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      border: 0.1rem solid $color_gray_light;
+      @include dynamicAlign(center, center);
+      cursor: pointer;
+      z-index: 9;
+      img {
+        width: 2.5rem;
+        pointer-events: none;
+      }
+      transition: 0.3s ease;
+      &:hover {
+        background: $color_pink;
+      }
+      @include xl {
+        display: none;
+      }
+    }
+
     @include xl {
       @include dynamicAlign();
+      width: 50%;
     }
     .left {
-      width: 100%;
+      flex: 1;
       @include xl {
         flex: 1;
       }
+
       @include dynamicAlign($direction: column);
-      border: 0.1rem solid $color_gray_light;
-      padding: $padding * 2;
-      border-radius: 2rem;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 3;
+      &.active {
+        visibility: visible;
+        opacity: 1;
+      }
 
       h3 {
-        color: $color_pink;
+        color: $color_white;
       }
       p {
         color: $color_gray;
@@ -85,15 +137,83 @@
         }
       }
     }
-    .image {
-      flex: 1;
-      height: 100%;
-      border-radius: 2rem;
-      overflow: hidden;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .right {
+      @include dynamicPosition(
+        $pos: absolute,
+        $left: 50%,
+        $top: 50%,
+        $transform: translate(-50%, -50%)
+      );
+      width: 80%;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 0.5s ease;
+
+      &.active {
+        opacity: 1;
+      }
+
+      @include dynamicAlign(
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 3rem
+      );
+
+      .cloudy {
+        width: 15rem;
+      }
+
+      p {
+        text-align: center;
+        line-height: 3rem;
+        font-weight: 300;
+        color: $color_black;
+        font-size: 1.6rem;
+      }
+
+      .follow {
+        font-size: 2rem;
+        font-weight: 500;
+        color: $color_white;
+        text-shadow: 0.2rem 0.2rem 1rem rgba($color_black, 0.7);
+        position: relative;
+        &::after {
+          content: "";
+          display: block;
+          width: 5rem;
+          height: 0.2rem;
+          background: $color_gray;
+          @include dynamicPosition($pos: absolute, $right: 110%, $top: 60%);
+        }
+        &::before {
+          content: "";
+          display: block;
+          width: 5rem;
+          height: 0.2rem;
+          background: $color_gray;
+          @include dynamicPosition($pos: absolute, $left: 110%, $top: 60%);
+        }
+      }
+
+      ul {
+        @include dynamicAlign();
+      }
+
+      @include xl {
+        flex: 1;
+        opacity: 1;
+        position: unset;
+        transform: unset;
+        .cloudy {
+          width: 20rem;
+        }
+        .follow {
+          display: block;
+        }
+        ul {
+          display: flex;
+        }
       }
     }
   }

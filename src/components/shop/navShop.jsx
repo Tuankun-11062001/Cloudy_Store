@@ -8,7 +8,12 @@ import {
 import React, { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
-const NavShop = ({ filterProducts, load, totalProduct }) => {
+const NavShop = ({
+  filterProducts,
+  totalProduct,
+  filterActive,
+  setInitHasMore,
+}) => {
   const t = useTranslations("Shop");
   const [categories, setCategories] = useState([]);
   const [partners, setPartners] = useState([]);
@@ -60,8 +65,18 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
         filter.partner === "" &&
         filter.season === ""
       ) {
-        const res = await handleFilter();
-        filterProducts(res);
+        if (filterActive.state) {
+          filterActive.action(false);
+          setInitHasMore(true);
+        }
+      }
+      if (
+        filter.category !== "" ||
+        filter.partner !== "" ||
+        filter.season !== ""
+      ) {
+        filterActive.action(true);
+        setInitHasMore(false);
       }
       if (filter.category && filter.partner) {
         const res = await handleFilter(
@@ -225,66 +240,9 @@ const NavShop = ({ filterProducts, load, totalProduct }) => {
 
   // nav left
 
-  const handleLeftNav = async (e) => {
-    const liTarget = e.target;
-    const liEls = document.querySelectorAll(".shop_nav .left li");
-    liEls.forEach((li) => li.classList.remove("active"));
-    liTarget.classList.add("active");
-    const type = liTarget.dataset.typeproduct;
-    console.log(liTarget);
-    console.log(type);
-    if (type === "hot") {
-      try {
-        const res = await handleFilter(`search?hotProduct=true`);
-        filterProducts(res);
-      } catch (error) {
-        console.log("cant res hot");
-      }
-    }
-    if (type === "new") {
-      try {
-        const res = await handlerGetLatestProduct();
-        filterProducts(res);
-      } catch (error) {
-        console.log("cant res new");
-      }
-    }
-
-    if (type === "sale") {
-      try {
-        const res = await handleFilter(`search?saleProduct=true`);
-        filterProducts(res);
-      } catch (error) {
-        console.log("cant res sale");
-      }
-    }
-
-    if (type === "all") {
-      try {
-        const res = await handleFilter();
-        filterProducts(res);
-      } catch (error) {
-        console.log("cant res sale");
-      }
-    }
-  };
-
   return (
     <div className="shop_nav">
-      <div className="left">
-        <li className="active" onClick={handleLeftNav} data-typeproduct="all">
-          {t("all_product")}
-        </li>
-        <li onClick={handleLeftNav} data-typeproduct="hot">
-          {t("hot_product")}
-        </li>
-        <li onClick={handleLeftNav} data-typeproduct="new">
-          {t("new_product")}
-        </li>
-        <li onClick={handleLeftNav} data-typeproduct="sale">
-          {t("sale_product")}
-        </li>
-      </div>
+      <div className="left"></div>
       <div className="right">
         <p className="total_product">
           {totalProduct} {t("product")}
