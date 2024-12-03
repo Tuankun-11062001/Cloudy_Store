@@ -84,7 +84,7 @@ export const AdsBottom = () => {
   );
 };
 
-export const AdsVertical = ({ data }) => {
+export const AdsVertical = ({ data, key }) => {
   const toggleContent = (e) => {
     const content = e.target
       .closest(".ads_vertical")
@@ -93,7 +93,7 @@ export const AdsVertical = ({ data }) => {
     e.target.closest(".ads_vertical_head").classList.toggle("active");
   };
   return (
-    <div className="ads_vertical">
+    <div className="ads_vertical" key={key}>
       <div className="ads_vertical_head">
         <p onClick={toggleContent}>{appSvg.arrowDown}</p>
       </div>

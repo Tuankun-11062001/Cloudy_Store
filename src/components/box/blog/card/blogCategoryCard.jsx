@@ -7,9 +7,9 @@ export const localePrefix = "always"; // Default
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation({ locales, localePrefix });
 
-export const BlogCategoryGridCard = ({ data }) => {
+export const BlogCategoryGridCard = ({ data, key }) => {
   return (
-    <div className="blog_category_grid_card">
+    <div className="blog_category_grid_card" key={key}>
       <img src={data.categoryImage} alt="" />
       <div className="info">
         <span>{data.categoryName}</span>

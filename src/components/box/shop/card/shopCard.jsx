@@ -6,9 +6,9 @@ export const localePrefix = "always"; // Default
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation({ locales, localePrefix });
 
-export const ShopSliderCard = ({ data }) => {
+export const ShopSliderCard = ({ data, key }) => {
   return (
-    <div className="shop_slider_card">
+    <div className="shop_slider_card" key={key}>
       <div className="info">
         <h1>{data.title}</h1>
         <div>{data.description}</div>
@@ -28,9 +28,9 @@ export const ShopSliderCard = ({ data }) => {
   );
 };
 
-export const ShopCategoryDetailSliderCard = ({ data }) => {
+export const ShopCategoryDetailSliderCard = ({ data, key }) => {
   return (
-    <div className="shop_category_detail_slider_card">
+    <div className="shop_category_detail_slider_card" key={key}>
       <div className="info">
         <h1>{data.title}</h1>
         <p>{data.description}</p>
@@ -50,17 +50,17 @@ export const ShopCategoryDetailSliderCard = ({ data }) => {
   );
 };
 
-export const ShopDetailSliderCard = ({ data }) => {
+export const ShopDetailSliderCard = ({ data, key }) => {
   return (
-    <div className="shop_detail_slider_card">
+    <div className="shop_detail_slider_card" key={key}>
       <img src={data.linkImage} />
     </div>
   );
 };
 
-export const ShopCategoryCard = ({ data }) => {
+export const ShopCategoryCard = ({ data, key }) => {
   return (
-    <div className="shop_category_card">
+    <div className="shop_category_card" key={key}>
       <Link
         href={{
           pathname: `/shop/category/${data.categoryName}`,
@@ -74,9 +74,9 @@ export const ShopCategoryCard = ({ data }) => {
   );
 };
 
-export const ShopProductCard = ({ data }) => {
+export const ShopProductCard = ({ data, key }) => {
   return (
-    <div className="shop_product_card">
+    <div className="shop_product_card" key={key}>
       <Link
         href={{
           pathname: `/shop/${data?._id}`,
@@ -95,9 +95,9 @@ export const ShopProductCard = ({ data }) => {
   );
 };
 
-export const ShopPartnerCard = ({ data }) => {
+export const ShopPartnerCard = ({ data, key }) => {
   return (
-    <div className="shop_partner_card">
+    <div className="shop_partner_card" key={key}>
       <img src={data.partnerImage} />
     </div>
   );

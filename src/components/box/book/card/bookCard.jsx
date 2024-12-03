@@ -9,9 +9,9 @@ export const localePrefix = "always"; // Default
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation({ locales, localePrefix });
 
-export const BookSliderCard = ({ data }) => {
+export const BookSliderCard = ({ data, key }) => {
   return (
-    <div className="book_slider_card">
+    <div className="book_slider_card" key={key}>
       <div className="info">
         <h1>{data.title}</h1>
         <h3>{data.author}</h3>
@@ -45,9 +45,9 @@ export const BookSliderCard = ({ data }) => {
   );
 };
 
-export const BookCategoryCard = ({ data }) => {
+export const BookCategoryCard = ({ data, key }) => {
   return (
-    <div className="book_category_card">
+    <div className="book_category_card" key={key}>
       <Link
         href={{
           pathname: `/book/category/${data.categoryName}`,
@@ -60,12 +60,12 @@ export const BookCategoryCard = ({ data }) => {
   );
 };
 
-export const BookCard = async ({ data }) => {
+export const BookCard = async ({ data, key }) => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const demo = await fetch(`${baseUrl}/chapters/${data?.chapters[0]?.chapter}`);
   const resDemo = await demo.json();
   return (
-    <div className="book_card">
+    <div className="book_card" key={key}>
       <img className="book_card_image" src={data?.thumbnail} />
       <div className="info">
         <Link
@@ -147,9 +147,9 @@ export const BookCard = async ({ data }) => {
   );
 };
 
-export const BookCardHorizal = ({ data }) => {
+export const BookCardHorizal = ({ data, key }) => {
   return (
-    <div className="book_card_horizal">
+    <div className="book_card_horizal" key={key}>
       <Link
         href={{
           pathname: `/book/${data?._id}`,
@@ -167,9 +167,9 @@ export const BookCardHorizal = ({ data }) => {
   );
 };
 
-export const BookCategorySliderCard = ({ data }) => {
+export const BookCategorySliderCard = ({ data, key }) => {
   return (
-    <div className="book_category_slider_card">
+    <div className="book_category_slider_card" key={key}>
       <div className="info">
         <h1>{data.title}</h1>
         <h3>{data.author}</h3>

@@ -30,45 +30,35 @@ export const LyricsCard = ({ data }) => {
   );
 };
 
-export const LyricsSliderCard = ({ data }) => {
+export const LyricsSliderCard = ({ data, key }) => {
   return (
-    <>
-      <Head>
-        <title>{data.title}</title>
-        <meta
-          name={data.title}
-          content={`${data.title} - ${data.description}`}
-        />
-      </Head>
-
-      <div className="lyrics_slider_card">
-        <img src={data.thumbnailBanner} />
-        <div className="info">
-          <div className="info_head">
-            <span>{data.category.categoryName}</span>
-            <span>Trending</span>
-            <span>{data.release}</span>
-          </div>
-          <h1>{data.title}</h1>
-          <p>{data.description}</p>
-          <Link
-            href={{
-              pathname: `lyrics/${data._id}`,
-              query: { name: data.title, id: data._id },
-            }}
-            className="check"
-          >
-            Check it now!
-          </Link>
+    <div className="lyrics_slider_card" key={key}>
+      <img src={data.thumbnailBanner} />
+      <div className="info">
+        <div className="info_head">
+          <span>{data.category.categoryName}</span>
+          <span>Trending</span>
+          <span>{data.release}</span>
         </div>
+        <h1>{data.title}</h1>
+        <p>{data.description}</p>
+        <Link
+          href={{
+            pathname: `lyrics/${data._id}`,
+            query: { name: data.title, id: data._id },
+          }}
+          className="check"
+        >
+          Check it now!
+        </Link>
       </div>
-    </>
+    </div>
   );
 };
 
-export const LyricsSingerSliderCard = ({ data }) => {
+export const LyricsSingerSliderCard = ({ data, key }) => {
   return (
-    <div className="lyrics_singer_slider_card">
+    <div className="lyrics_singer_slider_card" key={key}>
       <Link
         href={{
           pathname: `/lyrics/${data._id}`,
@@ -145,9 +135,9 @@ export const LyricsCategoryCountryCard = ({ data }) => {
   );
 };
 
-export const LyricsDetailCategorySliderCard = ({ data }) => {
+export const LyricsDetailCategorySliderCard = ({ data, key }) => {
   return (
-    <div className="lyrics_detail_category_slider_card">
+    <div className="lyrics_detail_category_slider_card" key={key}>
       <Link
         href={{
           pathname: `/lyrics/${data._id}`,
@@ -160,9 +150,9 @@ export const LyricsDetailCategorySliderCard = ({ data }) => {
   );
 };
 
-export const LyricsDetailCategoryCountrySliderCard = ({ data }) => {
+export const LyricsDetailCategoryCountrySliderCard = ({ data, key }) => {
   return (
-    <div className="lyrics_detail_category_country_slider_card">
+    <div className="lyrics_detail_category_country_slider_card" key={key}>
       <Link
         href={{
           pathname: `/lyrics/${data._id}`,

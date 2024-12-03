@@ -4,9 +4,9 @@ import Feedback from "./feedback";
 import Loading from "@/app/[locale]/loading";
 import TrashCommunication from "./trashCommunication";
 
-const CommunicationCard = ({ data, userId }) => {
+const CommunicationCard = ({ data, userId, key }) => {
   return (
-    <div className="communication_card">
+    <div className="communication_card" key={key}>
       <div className="communication_card_head">
         <div className="communication_card_left">
           <img src={data.user.avatar} />

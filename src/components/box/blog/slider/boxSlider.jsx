@@ -7,9 +7,9 @@ export const localePrefix = "always"; // Default
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation({ locales, localePrefix });
 
-export const BoxSliderBlog = ({ data }) => {
+export const BoxSliderBlog = ({ data, key }) => {
   return (
-    <div className="box_slider_blog">
+    <div className="box_slider_blog" key={key}>
       <img src={data.thumbnail} />
       <div className="info">
         <h1>
@@ -42,9 +42,9 @@ export const BoxSliderBlog = ({ data }) => {
   );
 };
 
-export const BoxBlogCategorySlider = ({ data }) => {
+export const BoxBlogCategorySlider = ({ data, key }) => {
   return (
-    <div className="box_blog_category_slider">
+    <div className="box_blog_category_slider" key={key}>
       <img src={data.thumbnail} />
       <div className="info">
         <span>{data.category.categoryName}</span>

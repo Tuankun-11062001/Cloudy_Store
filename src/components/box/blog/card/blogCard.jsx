@@ -40,9 +40,9 @@ export const BlogMostViewCard = ({ data }) => {
   );
 };
 
-export const BlogCardHorizontal = ({ data }) => {
+export const BlogCardHorizontal = ({ data, key }) => {
   return (
-    <div className="blog_card_horizontal">
+    <div className="blog_card_horizontal" key={key}>
       <img src={data.thumbnail} />
       <div className="info">
         <h2>
@@ -72,9 +72,9 @@ export const BlogCardHorizontal = ({ data }) => {
   );
 };
 
-export const BlogCardVertical = ({ data, nameCategory }) => {
+export const BlogCardVertical = ({ data, nameCategory, key }) => {
   return (
-    <div className="blog_card_vertical">
+    <div className="blog_card_vertical" key={key}>
       <div className="blog_card_vertical_head">
         <div className="round_top"></div>
         <div className="round_bottom"></div>
@@ -147,7 +147,7 @@ export const BlogCardVertical = ({ data, nameCategory }) => {
   );
 };
 
-export const BlogCommentCard = ({ data, idUser, idBlog, setComments }) => {
+export const BlogCommentCard = ({ data, idUser, idBlog, setComments, key }) => {
   const handleAsk = (e) => {
     const boxAsk = e.target
       .closest(".blog_comment_card")
@@ -174,7 +174,7 @@ export const BlogCommentCard = ({ data, idUser, idBlog, setComments }) => {
     });
   };
   return (
-    <div className="blog_comment_card">
+    <div className="blog_comment_card" key={key}>
       <img src={data.user.avatar} />
       <div className="info">
         <h4>{data.user.userName}</h4>
