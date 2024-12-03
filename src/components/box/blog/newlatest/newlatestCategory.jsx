@@ -12,8 +12,8 @@ const BlogNewlatestCategory = async () => {
 
   return (
     <div className="blog_newlatest_list">
-      {latest.data.map((blog) => (
-        <div className="blog_newlatest_category">
+      {latest.data.map((blog, index) => (
+        <div className="blog_newlatest_category" key={blog._id || index}>
           <div className="blog_newlatest_category_head">
             <h2>Newlatest {blog.categoryInfo.categoryName}</h2>
           </div>

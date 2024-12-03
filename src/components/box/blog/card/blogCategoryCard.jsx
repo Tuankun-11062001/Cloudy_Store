@@ -27,9 +27,9 @@ export const BlogCategoryGridCard = ({ data, key }) => {
   );
 };
 
-export const BlogCategoryCard = ({ data }) => {
+export const BlogCategoryCard = ({ data, key }) => {
   return (
-    <div className="blog_category_card">
+    <div className="blog_category_card" key={key}>
       <Link
         href={{
           pathname: `/blog/category/${data.categoryName}`,

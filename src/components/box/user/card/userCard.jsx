@@ -1,9 +1,9 @@
 import { appSvg } from "@/data/svg";
 import React from "react";
 
-const UserCard = ({ data }) => {
+const UserCard = ({ data, key }) => {
   return (
-    <div className="user_card">
+    <div className="user_card" key={key}>
       <img src={data.avatar} />
       <div className="info">
         <h3>{data.userName}</h3>

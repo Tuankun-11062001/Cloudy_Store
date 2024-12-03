@@ -9,9 +9,9 @@ export const localePrefix = "always"; // Default
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation({ locales, localePrefix });
 
-export const LyricsCard = ({ data }) => {
+export const LyricsCard = ({ data, key }) => {
   return (
-    <div className="lyrics_card">
+    <div className="lyrics_card" key={key}>
       <Link
         href={{
           pathname: `/lyrics/${data?._id}`,
@@ -71,9 +71,9 @@ export const LyricsSingerSliderCard = ({ data, key }) => {
   );
 };
 
-export const SingerCard = ({ data }) => {
+export const SingerCard = ({ data, key }) => {
   return (
-    <div className="singer_card">
+    <div className="singer_card" key={key}>
       <Link
         href={{
           pathname: `/lyrics/singer/${data.singerName}`,
@@ -87,9 +87,9 @@ export const SingerCard = ({ data }) => {
   );
 };
 
-export const LyricsSingerCardHorizal = ({ data }) => {
+export const LyricsSingerCardHorizal = ({ data, key }) => {
   return (
-    <div className="lyrics_singer_card_horizal">
+    <div className="lyrics_singer_card_horizal" key={key}>
       <Link
         href={{
           pathname: `/lyrics/singer/${data.singerName}`,
@@ -103,9 +103,9 @@ export const LyricsSingerCardHorizal = ({ data }) => {
   );
 };
 
-export const LyricsCategoryCard = ({ data }) => {
+export const LyricsCategoryCard = ({ data, key }) => {
   return (
-    <div className="lyrics_category_card">
+    <div className="lyrics_category_card" key={key}>
       <Link
         href={{
           pathname: `/lyrics/category/${data.categoryName}`,
@@ -119,9 +119,9 @@ export const LyricsCategoryCard = ({ data }) => {
   );
 };
 
-export const LyricsCategoryCountryCard = ({ data }) => {
+export const LyricsCategoryCountryCard = ({ data, key }) => {
   return (
-    <div className="lyrics_category_country_card">
+    <div className="lyrics_category_country_card" key={key}>
       <Link
         href={{
           pathname: `/lyrics/category/country/${data.countryName}`,
