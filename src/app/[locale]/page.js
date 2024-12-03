@@ -1,35 +1,29 @@
-"use client";
-import HowWork from "@/components/howWork";
-import Season from "@/components/season/season";
-import Partner from "@/components/partner";
-import Blog from "@/components/blog";
-import Support from "@/components/support/support";
-import HeroLeft from "@/components/hero/hero";
-import LatestProduct from "@/components/hero/latestProduct";
+import Feeling from "@/components/box/home/feeling";
+import { Suspense } from "react";
+
+import CommunicationList from "@/components/box/home/list/communicationList";
+import { AdsHorizal, ListVertical } from "@/components/ads/ads";
+
+export const metadata = {
+  title: "Communication - Cloudy Melody",
+  description: "Can you share your feeling?",
+};
 
 export default async function Home() {
   return (
-    <div className="home home_layout">
-      <div className="home_hero">
-        <HeroLeft />
-        <LatestProduct />
+    <div className="home">
+      <div className="left">
+        <div className="home_content">
+          <Suspense fallback={<p>Loading...</p>}>
+            <Feeling />
+          </Suspense>
+          <CommunicationList />
+          <AdsHorizal />
+        </div>
       </div>
-      {/* how it work */}
-      <HowWork />
-
-      {/* season */}
-      <Season />
-
-      {/* parter */}
-
-      <Partner />
-
-      {/* blog */}
-      {/* <Blog /> */}
-
-      {/* support */}
-
-      <Support />
+      <div className="right">
+        <ListVertical />
+      </div>
     </div>
   );
 }

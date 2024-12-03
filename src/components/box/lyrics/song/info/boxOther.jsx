@@ -1,0 +1,75 @@
+"use client";
+import { lyricsApi } from "@/api/lyrics";
+import BoxShare from "@/components/box/home/boxShare";
+import { getCookie } from "@/components/cookies/getCookie";
+import { appSvg } from "@/data/svg";
+import React, { useEffect, useState } from "react";
+
+const BoxOther = ({ data }) => {
+  const [userId, setUserId] = useState();
+  const [like, setLike] = useState(false);
+
+  useEffect(() => {
+    const localId = getCookie("_CM_id");
+    setUserId(localId);
+    if (!localId) {
+      return;
+    }
+    const isLiked = data.cloudy.some((item) => item.user == localId);
+
+    setLike(isLiked);
+  }, []);
+  const toggleBoxShare = (e) => {
+    const boxShare = e.target
+      .closest(".lyrics_song_content_left_other_g")
+      .querySelector(".box_share");
+    boxShare.classList.toggle("active");
+  };
+  const cloudy = async (e) => {
+    if (!userId) {
+      return;
+    }
+
+    const cloud = e.target
+      .closest(".lyrics_song_content_left_other_g")
+      .querySelector(".cloudy");
+    cloud.classList.toggle("active");
+
+    const payload = {
+      idLyrics: data._id,
+      userId,
+    };
+
+    const res = await lyricsApi.cloudyLyrics(payload);
+    if (res.status === 200) {
+      setLike(!like);
+    }
+  };
+  return (
+    <div className="lyrics_song_content_left_other">
+      <div className="lyrics_song_content_left_other_g">
+        <h3>View</h3>
+        <p>{data.view}</p>
+      </div>
+      <div className="lyrics_song_content_left_other_g">
+        <h3>Cloudy</h3>
+        <p>
+          <span className={like ? "cloudy active" : "cloudy"} onClick={cloudy}>
+            {appSvg.cloud}
+          </span>
+          {data.cloudy.length}
+        </p>
+      </div>
+      <div className="lyrics_song_content_left_other_g">
+        <h3>Share</h3>
+        <p onClick={toggleBoxShare}>
+          <span>{appSvg.share}</span>
+          {data.share}
+        </p>
+        <BoxShare data={data} />
+      </div>
+    </div>
+  );
+};
+
+export default BoxOther;

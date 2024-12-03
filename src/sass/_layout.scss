@@ -2,35 +2,6 @@
 //   > Layout
 // =========================================================================
 
-.home_layout,
-.shop_layout,
-.shop_detail,
-.profile_layout {
-  padding-top: 13rem;
-  margin: 0 1rem;
-  @include xl {
-    margin: 0 5rem;
-  }
-}
-
-.main_layout {
-  padding: $padding * 2;
-  &_swiper {
-    padding: unset;
-    height: 50%;
-  }
-}
-
-.product_detail_layout {
-  @include dynamicAlign($direction: column);
-  margin: $margin * 5 0;
-
-  @include xl {
-    @include dynamicAlign();
-    margin: $margin * 5;
-  }
-}
-
 .loading_layout {
   @include dynamicAlign($align: center, $justify: center, $direction: column);
   height: 100dvh;
@@ -48,5 +19,49 @@
 
   p {
     color: $color_gray;
+  }
+}
+
+// new
+
+textarea {
+  font-family: "Open Sans", sans-serif;
+  white-space: pre-wrap;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: $color_gray;
+  .app_content {
+    height: 100%;
+    padding: $spacing;
+  }
+  @include xl {
+    margin-left: $spacing * 30;
+    border-radius: $spacing * 2;
+    height: 98dvh;
+    background: $color_white;
+
+    padding: $spacing $spacing $spacing 0;
+
+    .app_content {
+      height: 98dvh;
+      overflow: auto;
+      border-radius: $spacing * 2;
+      padding: $spacing * 4 $spacing $spacing $spacing * 4;
+      background: $color_gray;
+    }
+  }
+  &.darkmode {
+    @include darkMode {
+      background: $color_blue_dark;
+
+      @include xl {
+        background: $color_gray_dark;
+        .app_content {
+          background: $color_blue_dark;
+        }
+      }
+    }
   }
 }

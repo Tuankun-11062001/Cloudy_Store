@@ -1,92 +1,28 @@
-"use client";
-import ListProduct from "@/components/shop/listProduct";
-import NavShop from "@/components/shop/navShop";
-import { useCallback, useEffect, useRef, useState } from "react";
-import Loading from "../loading";
-import handlerGetProduct from "@/api/products";
-import Empty from "@/components/empty";
+import { ShopAllProduct } from "@/components/box/shop/allProduct/shopAllProduct";
+import ShopCategory from "@/components/box/shop/category/shopCategory";
+import { ShopMyDesign } from "@/components/box/shop/myDesign/shopMyDesign";
+import { ShopPartner } from "@/components/box/shop/partner/shopPartner";
+import { ShopSearch } from "@/components/box/shop/search/shopSearch";
+import { ShopSeason } from "@/components/box/shop/season/shopSeason";
+import { ShopSlider } from "@/components/box/shop/slider/shopSlider";
+
+export const metadata = {
+  title: "Store - Cloudy Melody",
+  description:
+    "🏬 Store: Ở đây, bạn sẽ tìm thấy những sản phẩm độc đáo mà tôi thiết kế, từ áo thun đến các món quà ý nghĩa. Tôi hy vọng rằng những sản phẩm này sẽ mang lại cho bạn niềm vui và phong cách riêng.",
+};
 
 const ShopPage = () => {
-  const [products, setProducts] = useState([]);
-  const [filters, setFilter] = useState([]);
-  const [filterActive, setFilterActive] = useState(false);
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
-  const isFetching = useRef(false);
-
-  const fetchItems = useCallback(async () => {
-    if (loading || isFetching.current) return;
-    setLoading(true);
-    try {
-      const response = await handlerGetProduct(page);
-      if (typeof response === "string" || response instanceof String) {
-        return setHasMore(false);
-      }
-
-      setProducts((prevItems) => [...prevItems, ...response]);
-      setHasMore(response.data.hasMore);
-    } catch (error) {
-      console.error("Error fetching items:", error);
-    } finally {
-      setLoading(false);
-    }
-  }, [page]);
-
-  useEffect(() => {
-    fetchItems();
-  }, [fetchItems]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (
-        window.innerHeight + document.documentElement.scrollTop + 1 >=
-          document.documentElement.scrollHeight &&
-        hasMore &&
-        !loading
-      ) {
-        console.log(page - 1);
-        setPage((prevPage) => prevPage + 1);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [hasMore, loading]);
-
   return (
-    <>
-      <div className="shop">
-        <div className="banner">
-          <div className="content">
-            <h1 data-text="Welcome🌴to⛱️summer">Welcome🌴to⛱️summer</h1>
-            <p>Wishing you a happy summer!</p>
-          </div>
-          <img src="/summer_beach.jpg" />
-        </div>
-        <div className="shop_content shop_layout">
-          <NavShop
-            filterProducts={setFilter}
-            totalProduct={products?.length}
-            filterActive={{ state: filterActive, action: setFilterActive }}
-            setInitHasMore={setHasMore}
-          />
-          {filterActive ? (
-            <ListProduct data={filters} />
-          ) : (
-            <>
-              <ListProduct data={products} />
-              {loading && (
-                <div className="shop_load_infinite">
-                  <img src="/loadInfinite.svg" />
-                </div>
-              )}
-              {!hasMore && <Empty />}
-            </>
-          )}
-        </div>
-      </div>
-    </>
+    <div className="shop_page">
+      <ShopSlider />
+      <ShopSearch />
+      <ShopSeason />
+      <ShopCategory />
+      <ShopMyDesign />
+      <ShopPartner />
+      <ShopAllProduct />
+    </div>
   );
 };
 

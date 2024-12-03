@@ -1,11 +1,10 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Noto_Sans_JP } from "next/font/google";
 import "@/sass/global.scss";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/components/header/header";
 import { NextIntlClientProvider, useMessages } from "next-intl";
-const SansJP = Noto_Sans_JP({ subsets: ["latin"] });
+import { Suspense } from "react";
+import { AdsBottom, AdsPopup } from "@/components/ads/ads";
 
 export const metadata = {
   title: "Cloudy melody",
@@ -14,19 +13,23 @@ export const metadata = {
 
 export default function RootLayout({ children, params: { locale } }) {
   const messages = useMessages();
+
   return (
     <html lang={locale}>
       <head></head>
-      <body className={SansJP.className}>
-        <div>
-          <NextIntlClientProvider messages={messages}>
-            <Header />
-            {children}
-            {/* <Footer /> */}
-            <Analytics />
-          </NextIntlClientProvider>
-          <SpeedInsights />
-        </div>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          <div className="app_content">{children}</div>
+
+          <Suspense>
+            <AdsBottom />
+            <AdsPopup />
+          </Suspense>
+
+          <Analytics />
+        </NextIntlClientProvider>
+        <SpeedInsights />
       </body>
     </html>
   );

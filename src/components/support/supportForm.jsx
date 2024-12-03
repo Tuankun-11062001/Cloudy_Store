@@ -1,97 +1,73 @@
 "use client";
-import React, { useState } from "react";
-import { useTranslations } from "next-intl";
-import { createSharedPathnamesNavigation } from "next-intl/navigation";
-import handleCreateSupport from "@/api/support";
+import { supportApi } from "@/api/support";
+import React, { useEffect, useState } from "react";
+import { getCookie } from "../cookies/getCookie";
 
-export const locales = ["en", "vn"];
-export const localePrefix = "always"; // Default
+const SupportForm = ({ data }) => {
+  const [dataSupport, setDataSupport] = useState(data);
 
-export const { Link, redirect, usePathname, useRouter } =
-  createSharedPathnamesNavigation({ locales, localePrefix });
-
-const SupportForm = () => {
-  const t = useTranslations("Support");
-  const [dataSupport, setDataSupport] = useState({
-    name: "",
-    email: "",
+  const [dataFeedback, setDataFeedback] = useState({
+    user: "",
     content: "",
   });
-  const [message, setMessage] = useState({
-    content: "",
-    status: "",
-  });
-  const handleChangeText = (e) => {
-    const { name, value } = e.target;
-    setDataSupport((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
 
-    setMessage((prev) => ({
-      ...prev,
-      content: "",
-      status: "",
-    }));
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const idLocal = getCookie("_CM_id");
+    if (!idLocal) {
+      setMessage("You must login first");
+    }
+    setDataFeedback((prev) => {
+      return {
+        ...prev,
+        user: idLocal,
+      };
+    });
+  }, []);
+
+  const handleChange = (e) => {
+    setDataFeedback((prev) => {
+      return {
+        ...prev,
+        content: e.target.value,
+      };
+    });
   };
 
-  const handleSubmit = async () => {
-    if (
-      dataSupport.name === "" ||
-      dataSupport.email === "" ||
-      dataSupport.content === ""
-    ) {
-      return setMessage((prev) => ({
-        ...prev,
-        content: t("missing_field"),
-        status: "error",
-      }));
+  const submit = async () => {
+    if (!dataFeedback.user) {
+      return;
+    }
+    const payload = {
+      ...data,
+      feedback: [...data.feedback, dataFeedback],
+    };
+
+    const res = await supportApi.addFeedback(payload);
+
+    if (res.status !== 200) {
+      setMessage("Can't send your problems");
     }
 
-    if (!dataSupport.email.includes("@gmail.com")) {
-      return setMessage((prev) => ({
-        ...prev,
-        content: t("emaill_incorrect"),
-        status: "error",
-      }));
-    }
-
-    try {
-      const res = await handleCreateSupport(dataSupport);
-      if (res.status === 200 && res.message === "success") {
-        return setMessage((prev) => ({
-          ...prev,
-          content: t("success"),
-          status: "success",
-        }));
-      }
-    } catch (error) {
-      console.log("error create support", error);
-    }
+    setMessage("Send your problems success");
   };
 
   return (
     <div className="support_form">
-      <input
-        placeholder={t("support_form_name")}
-        name="name"
-        value={dataSupport.name}
-        onChange={handleChangeText}
-      />
-      <input
-        placeholder={t("support_form_email")}
-        name="email"
-        value={dataSupport.email}
-        onChange={handleChangeText}
-      />
-      <textarea
-        placeholder={t("support_form_problem")}
-        name="content"
-        value={dataSupport.content}
-        onChange={handleChangeText}
-      />
-      <p className={`message ${message.status}`}>{message.content}</p>
-      <button onClick={handleSubmit}>{t("support_form_submit")}</button>
+      <h2>#Form</h2>
+      <span>{message}</span>
+      <div className="support_form_g">
+        <span>Your Issuse</span>
+        <textarea
+          placeholder="Your Issuse"
+          value={dataFeedback.content}
+          onChange={handleChange}
+        />
+      </div>
+      <p className="send" onClick={submit}>
+        Send
+      </p>
     </div>
   );
 };

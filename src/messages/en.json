@@ -6,7 +6,10 @@
     "home": "Home",
     "store": "Store",
     "profile": "Profile",
-    "support": "Support"
+    "support": "Support",
+    "lyrics": "Lyrics",
+    "blogs": "Blogs",
+    "book": "Books"
   },
   "Hero": {
     "info_1": "Welcome to Cloudy Melody!",
