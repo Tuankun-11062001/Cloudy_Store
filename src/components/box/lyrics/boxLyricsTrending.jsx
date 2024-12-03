@@ -27,8 +27,9 @@ const BoxLyricsTrending = async () => {
               pathname: `lyrics/${trending._id}`,
               query: { name: trending.title, id: trending._id },
             }}
+            key={trending._id}
           >
-            <div className="item" key={trending._id}>
+            <div className="item">
               <p className="item_no">{indx + 1}</p>
               <h4>{trending.title}</h4>
               <p className="item_singer">{trending.singer.singerName}</p>

@@ -181,8 +181,8 @@ export const BookDetailControl = ({ data, changeChapter, chapterState }) => {
         <div className="book_detail_control_right_chapter">
           {/* <p>{appSvg.arrowDown}</p> */}
           <select value={chapterState} onChange={changeChapter}>
-            {data.chapters.map((item) => (
-              <option value={item.chapter._id}>
+            {data.chapters.map((item, index) => (
+              <option value={item.chapter._id} key={item.chapter._id || index}>
                 {item.chapter.index} {item.chapter.title}
               </option>
             ))}

@@ -201,7 +201,11 @@ export const LyricsDetailCategorySliderControl = ({ data }) => {
 
       <div className="lyrics_detail_category_slider_control_dots">
         {data.map((_, indx) => (
-          <span className="active" onClick={(e) => handleDots(e, indx)}></span>
+          <span
+            className="active"
+            onClick={(e) => handleDots(e, indx)}
+            key={indx}
+          ></span>
         ))}
       </div>
       <p
@@ -320,7 +324,11 @@ export const LyricsDetailCategoryCountrySliderControl = ({ data }) => {
 
       <div className="lyrics_detail_category_country_slider_control_dots">
         {data.map((_, indx) => (
-          <span className="active" onClick={(e) => handleDots(e, indx)}></span>
+          <span
+            className="active"
+            onClick={(e) => handleDots(e, indx)}
+            key={indx}
+          ></span>
         ))}
       </div>
       <p

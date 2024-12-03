@@ -22,8 +22,8 @@ const SupportPage = async () => {
       <img className="support_page_head" src={data[0].banner} />
 
       <div className="support_page_content">
-        {data[0].content.map((item) => (
-          <div className="support_about">
+        {data[0].content.map((item, index) => (
+          <div className="support_about" key={item._id || index}>
             <h2>{item.titleContent}</h2>
             <div
               className="tiptap"

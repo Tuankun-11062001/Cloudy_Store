@@ -73,8 +73,8 @@ export const AdsBottom = () => {
       <div className="ads_bottom_content">
         <p onClick={handleAdsBottom}>Close Ads</p>
         <div className="list_content">
-          {ads.map((item) => (
-            <a href={item?.linkAds} target="_blank">
+          {ads.map((item, index) => (
+            <a href={item?.linkAds} target="_blank" key={item._id || index}>
               <img src={item?.imageAds} />
             </a>
           ))}

@@ -205,7 +205,11 @@ export const ShopCategoryDetailSliderControl = ({ data }) => {
 
       <div className="shop_category_detail_slider_control_dots">
         {data.map((_, index) => (
-          <span className="active" onClick={(e) => handleDots(e, index)}></span>
+          <span
+            className="active"
+            onClick={(e) => handleDots(e, index)}
+            key={index}
+          ></span>
         ))}
       </div>
       <p
@@ -313,7 +317,11 @@ export const ShopDetailSliderControl = ({ data }) => {
 
       <div className="shop_detail_slider_control_dots">
         {data.map((_, index) => (
-          <span className="active" onClick={(e) => handleDots(e, index)}></span>
+          <span
+            className="active"
+            onClick={(e) => handleDots(e, index)}
+            key={index}
+          ></span>
         ))}
       </div>
       <p className="shop_detail_slider_control_next" onClick={handleNext}>

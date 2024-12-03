@@ -28,8 +28,8 @@ const Members = () => {
         <Link href="/user">All user</Link>
       </div>
       <div className="list_member">
-        {users.map((user) => (
-          <abbr title={user.userName}>
+        {users.map((user, index) => (
+          <abbr title={user.userName} key={user._id || index}>
             <img src={user.avatar} key={user._id} />
           </abbr>
         ))}

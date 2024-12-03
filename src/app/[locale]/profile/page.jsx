@@ -36,8 +36,9 @@ const ProfilePage = async () => {
             <p>{data[0].userDetail}</p>
           </div>
           <div className="info_right">
-            {data[0].user.userSocial.map((item) => (
+            {data[0].user.userSocial.map((item, index) => (
               <a
+                key={item._id || index}
                 href={item.linkSocial}
                 target="_blank"
                 className={
@@ -53,8 +54,8 @@ const ProfilePage = async () => {
         </div>
       </div>
       <div className="profile_page_content">
-        {data[0].content.map((item) => (
-          <div className="profile_page_about">
+        {data[0].content.map((item, index) => (
+          <div className="profile_page_about" key={item._id || index}>
             <h2>{item.titleHead}</h2>
             <div
               className="tiptap"

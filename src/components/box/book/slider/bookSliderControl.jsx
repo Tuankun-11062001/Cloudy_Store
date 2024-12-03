@@ -94,7 +94,11 @@ export const BookSliderControl = ({ data }) => {
       <div className="book_slider_control">
         <div className="book_slider_control_dots">
           {data.map((item, indx) => (
-            <div className="dot_item" onClick={(e) => handleDots(e, indx)}>
+            <div
+              className="dot_item"
+              onClick={(e) => handleDots(e, indx)}
+              key={item._id || indx}
+            >
               <img src={item.thumbnailBanner} />
               <div className="dot_info">
                 <div className="left">
@@ -214,7 +218,11 @@ export const BookCategorySliderControl = ({ data }) => {
 
       <div className="book_category_slider_control_dots">
         {data.map((_, indx) => (
-          <span className="active" onClick={(e) => handleDots(e, indx)}></span>
+          <span
+            className="active"
+            onClick={(e) => handleDots(e, indx)}
+            key={indx}
+          ></span>
         ))}
       </div>
       <p className="book_category_slider_control_next" onClick={handleNext}>

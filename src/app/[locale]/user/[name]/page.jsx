@@ -186,8 +186,9 @@ const UserDetail = ({ searchParams }) => {
             </div>
           </div>
           <div className="info_right">
-            {infoUser?.userSocial?.map((item) => (
+            {infoUser?.userSocial?.map((item, index) => (
               <a
+                key={item._id || index}
                 href={item.linkSocial}
                 target="_blank"
                 className={

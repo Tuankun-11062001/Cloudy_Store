@@ -69,7 +69,14 @@ export const LyricsSliderCard = ({ data }) => {
 export const LyricsSingerSliderCard = ({ data }) => {
   return (
     <div className="lyrics_singer_slider_card">
-      <img src={data?.thumbnailBanner} />
+      <Link
+        href={{
+          pathname: `/lyrics/${data._id}`,
+          query: { name: data.title, id: data._id },
+        }}
+      >
+        <img src={data?.thumbnailBanner} />
+      </Link>
     </div>
   );
 };
@@ -141,7 +148,14 @@ export const LyricsCategoryCountryCard = ({ data }) => {
 export const LyricsDetailCategorySliderCard = ({ data }) => {
   return (
     <div className="lyrics_detail_category_slider_card">
-      <img src={data.thumbnailBanner} />
+      <Link
+        href={{
+          pathname: `/lyrics/${data._id}`,
+          query: { name: data.title, id: data._id },
+        }}
+      >
+        <img src={data.thumbnailBanner} />
+      </Link>
     </div>
   );
 };
@@ -149,7 +163,14 @@ export const LyricsDetailCategorySliderCard = ({ data }) => {
 export const LyricsDetailCategoryCountrySliderCard = ({ data }) => {
   return (
     <div className="lyrics_detail_category_country_slider_card">
-      <img src={data.thumbnailBanner} />
+      <Link
+        href={{
+          pathname: `/lyrics/${data._id}`,
+          query: { name: data.title, id: data._id },
+        }}
+      >
+        <img src={data.thumbnailBanner} />
+      </Link>
     </div>
   );
 };
