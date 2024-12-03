@@ -3,7 +3,6 @@ import { communicationApi } from "@/api/communication";
 import { userApi } from "@/api/user";
 import CommunicationCard from "@/components/box/home/card/communicationCard";
 import { getCookie } from "@/components/cookies/getCookie";
-import UserDetailTab from "@/components/user/userDetailTab";
 import { appSvg } from "@/data/svg";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
