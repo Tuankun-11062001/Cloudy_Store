@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { BlogCommentCard } from "../card/blogCard";
 import { blogsApi } from "@/api/blogs";
-import { getLocalStorage } from "@/components/storage/storage";
+import { getLocalStorage } from "@/components/storage/local";
 
 const BlogComments = ({ data }) => {
   const [dataLocal, setDataLocal] = useState(data);

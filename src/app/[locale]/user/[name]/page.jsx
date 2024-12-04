@@ -2,7 +2,8 @@
 import { communicationApi } from "@/api/communication";
 import { userApi } from "@/api/user";
 import CommunicationCard from "@/components/box/home/card/communicationCard";
-import { getLocalStorage } from "@/components/storage/storage";
+import { getLocalStorage } from "@/components/storage/local";
+
 import { appSvg } from "@/data/svg";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
