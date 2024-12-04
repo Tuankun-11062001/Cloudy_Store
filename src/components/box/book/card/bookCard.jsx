@@ -11,7 +11,7 @@ export const { Link, redirect, usePathname, useRouter } =
 
 export const BookSliderCard = ({ data, key }) => {
   return (
-    <div className="book_slider_card" key={key}>
+    <div className="book_slider_card" key={data._id || key}>
       <div className="info">
         <h1>{data.title}</h1>
         <h3>{data.author}</h3>
@@ -63,7 +63,7 @@ export const BookCategoryCard = ({ data, key }) => {
 export const BookCard = async ({ data, key }) => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const demo = await fetch(`${baseUrl}/chapters/${data?.chapters[0]?.chapter}`);
-  const resDemo = await demo.json();
+  const resDemo = await demo?.json();
   return (
     <div className="book_card" key={key}>
       <img className="book_card_image" src={data?.thumbnail} />

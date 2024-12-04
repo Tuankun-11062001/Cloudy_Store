@@ -26,7 +26,6 @@ const BoxListComment = ({ data, comment, messageLogin }) => {
   const handleSubmitReply = async (commentId) => {
     const localId = getLocalStorage("_CM_id");
     const info = getLocalStorage("_CM_info");
-    const userInfo = JSON.parse(info);
 
     const payload = {
       ...replyData,
@@ -35,7 +34,7 @@ const BoxListComment = ({ data, comment, messageLogin }) => {
     };
 
     const newReplyComment = {
-      ...userInfo,
+      ...info,
       content: replyData.content,
     };
 

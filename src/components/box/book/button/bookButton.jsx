@@ -61,7 +61,7 @@ export const BookDetailControl = ({ data, changeChapter, chapterState }) => {
     if (!localId || !info) {
       return;
     }
-    const user = JSON.parse(info);
+
     setUserId(localId);
     setDataComment((prev) => {
       return {
@@ -69,7 +69,7 @@ export const BookDetailControl = ({ data, changeChapter, chapterState }) => {
         userId: localId,
       };
     });
-    setUserInfo(user);
+    setUserInfo(info);
     const isLiked = data.cloudy.some((item) => item.user == localId);
 
     setLike(isLiked);

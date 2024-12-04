@@ -23,6 +23,9 @@ export async function generateMetadata({ params, searchParams }) {
 
   const { data } = await resProduct.json();
 
+  // Đảm bảo rằng hình ảnh thumbnail và dữ liệu khác có thể được lấy đúng
+  const thumbnailUrl = data.thumbnail && data.thumbnail[0];
+
   return {
     title: `${data.title} | Lyrics Song New Song Hits Song`,
     description: data.description,
@@ -30,14 +33,14 @@ export async function generateMetadata({ params, searchParams }) {
     openGraph: {
       title: data.title,
       description: data.description,
-      images: [data.thumbnail[0]],
+      images: [thumbnailUrl],
       url: `${baseUrl}/lyrics/${id}`,
       type: "website",
     },
     twitter: {
       title: data.title,
       description: data.description,
-      image: data.thumbnail[0],
+      image: thumbnailUrl,
       card: "summary_large_image",
     },
     icons: {

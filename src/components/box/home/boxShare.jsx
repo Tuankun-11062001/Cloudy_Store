@@ -5,7 +5,7 @@ const BoxShare = () => {
   const [url, setUrl] = useState();
 
   useEffect(() => {
-    const currentURL = window.location;
+    const currentURL = window.location.href;
     setUrl(currentURL);
   }, []);
   return (

@@ -25,13 +25,13 @@ const BoxCommentSong = ({ data }) => {
     if (!localId || !info) {
       return;
     }
-    const localInfo = JSON.parse(info);
+
     setUserId(localId);
     setNewComment((prev) => {
       return {
         ...prev,
-        userName: localInfo.userName,
-        avatar: localInfo.avatar,
+        userName: info.userName,
+        avatar: info.avatar,
       };
     });
 
