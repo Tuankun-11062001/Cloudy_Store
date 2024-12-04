@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from "react";
 import BoxFormComment from "./boxFormComment";
 import BoxListComment from "./boxListComment";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
 
 const BoxComment = ({ data }) => {
   const [messagelogin, setMessageLogin] = useState(false);
   const [addComment, setAddComment] = useState(null);
   useEffect(() => {
-    const localId = getCookie("_CM_id");
+    const localId = getLocalStorage("_CM_id");
     if (!localId) {
       return setMessageLogin(true);
     }

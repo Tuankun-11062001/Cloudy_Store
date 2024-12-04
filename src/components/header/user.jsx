@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Auth from "../auth/auth";
 import { getUserId } from "@/api/auth";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
-import { deleteCookie, getCookie } from "../cookies/getCookie";
+import { clearStorage, getLocalStorage } from "../storage/local";
 
 export const locales = ["en", "vn"];
 export const localePrefix = "always"; // Default
@@ -18,18 +18,18 @@ const User = () => {
   const [infoUser, setInfoUser] = useState(null);
 
   useEffect(() => {
-    const idLocal = getCookie("_CM_id");
+    const idLocal = getLocalStorage("_CM_id");
 
     if (!idLocal) {
       setUser(false);
-      return; // Không thực hiện gì thêm nếu không có cookie
+      return;
     }
     if (idLocal) {
       (async () => {
         try {
           const res = await getUserId(idLocal);
           if (res.status !== 200) {
-            deleteCookie("_CM_id");
+            clearStorage("_CM_id");
           }
           setInfoUser(res.data.data);
         } catch (error) {
@@ -50,8 +50,7 @@ const User = () => {
   };
 
   const handleExit = () => {
-    deleteCookie("_CM_id");
-    deleteCookie("_CM_info");
+    clearStorage();
     setUser(false);
     // Tải lại trang hiện tại
     window.location.reload();

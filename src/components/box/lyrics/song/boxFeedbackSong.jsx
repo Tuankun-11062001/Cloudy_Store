@@ -4,7 +4,7 @@ import { appSvg } from "@/data/svg";
 import React, { useEffect, useState } from "react";
 import BoxEditLyricsFeedback from "./addingLyricsFeedback/boxEditLyricsFeedback";
 import { lyricsApi } from "@/api/lyrics";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
 
 const BoxFeedbackSong = ({ data }) => {
   const [userInfo, setUserInfo] = useState();
@@ -13,7 +13,7 @@ const BoxFeedbackSong = ({ data }) => {
   const [queryLanguage, setQueryLanguage] = useState([]);
 
   useEffect(() => {
-    const localID = getCookie("_CM_id");
+    const localID = getLocalStorage("_CM_id");
     if (!localID) {
       return;
     }

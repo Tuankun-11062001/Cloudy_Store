@@ -3,7 +3,7 @@ import { appSvg } from "@/data/svg";
 import React, { useEffect, useState } from "react";
 import { communicationApi } from "@/api/communication";
 import Tiptap from "../editor/boxEditor";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
 
 const BoxFeeling = () => {
   const [data, setdata] = useState({
@@ -15,7 +15,7 @@ const BoxFeeling = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    const IdLocal = getCookie("_CM_id");
+    const IdLocal = getLocalStorage("_CM_id");
     if (!IdLocal) {
       return setMessage("You not Login");
     }
@@ -54,7 +54,7 @@ const BoxFeeling = () => {
 
   const handleSubmit = async () => {
     try {
-      const IdLocal = getCookie("_CM_id");
+      const IdLocal = getLocalStorage("_CM_id");
       if (!IdLocal) {
         return setMessage("You not Login");
       }

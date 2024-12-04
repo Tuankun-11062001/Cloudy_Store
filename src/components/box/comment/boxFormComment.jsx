@@ -1,5 +1,5 @@
 import { communicationApi } from "@/api/communication";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
 import { appSvg } from "@/data/svg";
 import React, { useEffect, useState } from "react";
 
@@ -12,8 +12,8 @@ const BoxFormComment = ({ data, comment }) => {
   });
 
   useEffect(() => {
-    const localInfo = getCookie("_CM_info");
-    const localId = getCookie("_CM_id");
+    const localInfo = getLocalStorage("_CM_info");
+    const localId = getLocalStorage("_CM_id");
 
     if (!localInfo && !localId) {
       return;

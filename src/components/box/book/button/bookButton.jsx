@@ -1,6 +1,7 @@
 "use client";
 import { bookApi } from "@/api/book";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
+
 import { appSvg } from "@/data/svg";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -55,8 +56,8 @@ export const BookDetailControl = ({ data, changeChapter, chapterState }) => {
     };
     increaseView();
 
-    const localId = getCookie("_CM_id");
-    const info = getCookie("_CM_info");
+    const localId = getLocalStorage("_CM_id");
+    const info = getLocalStorage("_CM_info");
     if (!localId || !info) {
       return;
     }

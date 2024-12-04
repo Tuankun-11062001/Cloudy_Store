@@ -2,7 +2,7 @@
 import { communicationApi } from "@/api/communication";
 import { userApi } from "@/api/user";
 import CommunicationCard from "@/components/box/home/card/communicationCard";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/storage";
 import { appSvg } from "@/data/svg";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -19,7 +19,7 @@ const UserDetail = ({ searchParams }) => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    const localId = getCookie("_CM_id");
+    const localId = getLocalStorage("_CM_id");
 
     if (!localId) {
       router.push("/");
@@ -136,7 +136,7 @@ const UserDetail = ({ searchParams }) => {
       return setMessage("Password Not Match");
     }
 
-    const localId = getCookie("_CM_id");
+    const localId = getLocalStorage("_CM_id");
 
     const payload = {
       ...infoUser,

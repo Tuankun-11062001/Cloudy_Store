@@ -1,6 +1,7 @@
 "use client";
 import { communicationApi } from "@/api/communication";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
+
 import { appSvg } from "@/data/svg";
 import React, { useEffect, useState } from "react";
 
@@ -23,8 +24,8 @@ const BoxListComment = ({ data, comment, messageLogin }) => {
   };
 
   const handleSubmitReply = async (commentId) => {
-    const localId = getCookie("_CM_id");
-    const info = getCookie("_CM_info");
+    const localId = getLocalStorage("_CM_id");
+    const info = getLocalStorage("_CM_info");
     const userInfo = JSON.parse(info);
 
     const payload = {

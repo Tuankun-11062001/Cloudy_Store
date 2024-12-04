@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { BlogCommentCard } from "../card/blogCard";
 import { blogsApi } from "@/api/blogs";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/storage";
 
 const BlogComments = ({ data }) => {
   const [dataLocal, setDataLocal] = useState(data);
@@ -16,8 +16,8 @@ const BlogComments = ({ data }) => {
   });
 
   useEffect(() => {
-    const localId = getCookie("_CM_id");
-    const localInfo = getCookie("_CM_info");
+    const localId = getLocalStorage("_CM_id");
+    const localInfo = getLocalStorage("_CM_info");
 
     if (!localId || !localInfo) {
       return;

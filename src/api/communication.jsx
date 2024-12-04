@@ -1,4 +1,4 @@
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
 import axios from "axios";
 
 const API = process.env.NEXT_PUBLIC_SERVER_URL;
@@ -16,7 +16,7 @@ export const communicationApi = {
     try {
       // check login
 
-      const idLocal = getCookie("_CM_id");
+      const idLocal = getLocalStorage("_CM_id");
 
       if (!idLocal) {
         return console.log("Not Login");
@@ -31,7 +31,7 @@ export const communicationApi = {
   cloudyCommunication: async (data) => {
     try {
       // check login
-      const idLocal = getCookie("_CM_id");
+      const idLocal = getLocalStorage("_CM_id");
 
       if (!idLocal) {
         return console.log("Not Login");
@@ -46,7 +46,7 @@ export const communicationApi = {
   commentCommunication: async (data) => {
     try {
       // check login
-      const idLocal = getCookie("_CM_id");
+      const idLocal = getLocalStorage("_CM_id");
 
       if (!idLocal) {
         return console.log("Not Login");
@@ -61,7 +61,7 @@ export const communicationApi = {
   commentReplyCommunication: async (data) => {
     try {
       // check login
-      const idLocal = getCookie("_CM_id");
+      const idLocal = getLocalStorage("_CM_id");
 
       if (!idLocal) {
         return console.log("Not Login");

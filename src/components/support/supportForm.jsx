@@ -1,7 +1,7 @@
 "use client";
 import { supportApi } from "@/api/support";
 import React, { useEffect, useState } from "react";
-import { getCookie } from "../cookies/getCookie";
+import { getLocalStorage } from "../storage/local";
 
 const SupportForm = ({ data }) => {
   const [dataSupport, setDataSupport] = useState(data);
@@ -14,7 +14,7 @@ const SupportForm = ({ data }) => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    const idLocal = getCookie("_CM_id");
+    const idLocal = getLocalStorage("_CM_id");
     if (!idLocal) {
       setMessage("You must login first");
     }

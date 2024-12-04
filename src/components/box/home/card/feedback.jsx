@@ -2,7 +2,8 @@
 import { communicationApi } from "@/api/communication";
 import BoxComment from "@/components/box/comment/boxComment";
 import BoxShare from "@/components/box/home/boxShare";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
+
 import { appSvg } from "@/data/svg";
 import React, { useEffect, useState } from "react";
 
@@ -11,7 +12,7 @@ const Feedback = ({ data }) => {
   const [boxComment, setBoxComment] = useState(false);
   const [like, setLike] = useState(false);
   useEffect(() => {
-    const localId = getCookie("_CM_id");
+    const localId = getLocalStorage("_CM_id");
     if (!localId) {
       return;
     }
@@ -27,7 +28,7 @@ const Feedback = ({ data }) => {
   };
 
   const handleCloudyLike = async (e) => {
-    const localId = getCookie("_CM_id");
+    const localId = getLocalStorage("_CM_id");
     if (!localId) {
       return console.log("you not login");
     }

@@ -1,6 +1,7 @@
 import { login, register } from "@/api/auth";
 import { appSvg } from "@/data/svg";
 import React, { useState } from "react";
+import { setLocalStorage } from "../storage/local";
 
 const Auth = ({ funcUser, closeFunc, stateAuth }) => {
   const [loginContent, setLoginContent] = useState(true);
@@ -54,11 +55,11 @@ const LoginContent = ({ funcUser, stateAuth, closeFunc, switchContent }) => {
 
       if (res.status === 200) {
         setLoginError(res.data.message);
-        document.cookie = `_CM_id=${res.data.data._id}`;
-        document.cookie = `_CM_info=${JSON.stringify({
+        setLocalStorage("_CM_id", res.data.data._id);
+        setLocalStorage("_CM_info", {
           avatar: res.data.data.avatar,
-          userName: res.data.data.userName,
-        })}`;
+          serName: res.data.data.userName,
+        });
 
         closeFunc();
         funcUser(true);

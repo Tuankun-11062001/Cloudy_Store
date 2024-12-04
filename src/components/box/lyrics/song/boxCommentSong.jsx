@@ -1,5 +1,6 @@
 import { lyricsApi } from "@/api/lyrics";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
+
 import { appSvg } from "@/data/svg";
 import React, { useEffect, useState } from "react";
 
@@ -19,8 +20,8 @@ const BoxCommentSong = ({ data }) => {
   });
 
   useEffect(() => {
-    const localId = getCookie("_CM_id");
-    const info = getCookie("_CM_info");
+    const localId = getLocalStorage("_CM_id");
+    const info = getLocalStorage("_CM_info");
     if (!localId || !info) {
       return;
     }

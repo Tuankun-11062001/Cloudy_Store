@@ -4,13 +4,13 @@ import BoxCommentSong from "./boxCommentSong";
 import BoxFeedbackSong from "./boxFeedbackSong";
 import BoxAddingLyricsFeedback from "./addingLyricsFeedback/boxAddingLyricsFeedback";
 import { lyricsApi } from "@/api/lyrics";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
 
 const BoxControlFeedback = ({ data }) => {
   const [showAddingFeedback, setShowAddingFeedback] = useState(false);
   const [userInfo, setUserInfo] = useState();
   useEffect(() => {
-    const localId = getCookie("_CM_id");
+    const localId = getLocalStorage("_CM_id");
     setUserInfo(localId);
 
     const plusView = async () => {

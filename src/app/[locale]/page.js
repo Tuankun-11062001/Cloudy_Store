@@ -3,6 +3,7 @@ import { Suspense } from "react";
 
 import CommunicationList from "@/components/box/home/list/communicationList";
 import { AdsHorizal, ListVertical } from "@/components/ads/ads";
+import { appSvg } from "@/data/svg";
 
 export const metadata = {
   title: "Communication - Cloudy Melody",
@@ -14,7 +15,9 @@ export default async function Home() {
     <div className="home">
       <div className="left">
         <div className="home_content">
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense
+            fallback={<div className="icon_loading">{appSvg.loading}</div>}
+          >
             <Feeling />
           </Suspense>
           <CommunicationList />

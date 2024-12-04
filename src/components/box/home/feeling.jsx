@@ -2,7 +2,7 @@
 import { appSvg } from "@/data/svg";
 import React, { Suspense, useEffect, useState } from "react";
 import BoxFeeling from "./boxFeeling";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
 
 const Feeling = () => {
   const [messagelogin, setMessageLogin] = useState(true);
@@ -13,12 +13,12 @@ const Feeling = () => {
   });
 
   useEffect(() => {
-    const localId = getCookie("_CM_id");
-    const userInfo = getCookie("_CM_info");
+    const localId = getLocalStorage("_CM_id");
+    const userInfo = getLocalStorage("_CM_info");
 
     if (localId) {
       setMessageLogin(false);
-      setUserInfo(JSON.parse(userInfo));
+      setUserInfo(userInfo);
     } else {
       setMessageLogin(true);
       setUserInfo(null);

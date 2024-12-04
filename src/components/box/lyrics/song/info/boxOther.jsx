@@ -1,7 +1,8 @@
 "use client";
 import { lyricsApi } from "@/api/lyrics";
 import BoxShare from "@/components/box/home/boxShare";
-import { getCookie } from "@/components/cookies/getCookie";
+import { getLocalStorage } from "@/components/storage/local";
+
 import { appSvg } from "@/data/svg";
 import React, { useEffect, useState } from "react";
 
@@ -10,7 +11,7 @@ const BoxOther = ({ data }) => {
   const [like, setLike] = useState(false);
 
   useEffect(() => {
-    const localId = getCookie("_CM_id");
+    const localId = getLocalStorage("_CM_id");
     setUserId(localId);
     if (!localId) {
       return;
