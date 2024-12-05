@@ -5,7 +5,7 @@ const BlogNewlatestCategory = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resNewLatest = await fetch(`${baseUrl}/blogs/lastestBlog`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const latest = await resNewLatest.json();

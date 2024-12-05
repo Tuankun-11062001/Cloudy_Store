@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API = process.env.NEXT_PUBLIC_SERVER_URL;
+// const API = process.env.NEXT_PUBLIC_SERVER_URL;
+const API = "http://localhost:3003";
 
 export const shopApi = {
   searchProduct: async (data) => {
@@ -28,9 +29,10 @@ export const shopApi = {
       return error;
     }
   },
-  viewProduct: async (data) => {
+  updateView: async (id) => {
     try {
-      const res = await axios.put(`${API}/shop/${data._id}`, data);
+      const res = await axios.post(`${API}/shop/updateView`, { id });
+
       return res;
     } catch (error) {
       return error;

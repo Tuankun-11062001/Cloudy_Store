@@ -123,6 +123,7 @@
 
       &_round_bottom_left {
         @include dynamicPosition($pos: absolute, $top: $spacing * 36, $left: 0);
+        background: red;
         width: $spacing * 4;
         height: $spacing * 4;
         border-bottom-left-radius: $spacing * 3;
@@ -176,7 +177,7 @@
       }
 
       &_round_bottom_left {
-        box-shadow: -$spacing $spacing 0 0px $color_blue_dark;
+        box-shadow: -$spacing $spacing 0 5px $color_blue_dark;
       }
       .search_blog {
         background: $color_blue_dark;

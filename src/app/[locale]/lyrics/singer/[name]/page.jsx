@@ -12,13 +12,13 @@ const DetailSinger = async ({ searchParams }) => {
 
   const lyrics = await fetch(`${baseUrl}/lyrics?singer=${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 
   const singers = await fetch(`${baseUrl}/lyrics/singer`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

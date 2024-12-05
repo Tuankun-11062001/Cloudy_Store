@@ -9,7 +9,7 @@ export const BookSlider = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resSlider = await fetch(`${baseUrl}/books?slider=true`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const sliders = await resSlider.json();

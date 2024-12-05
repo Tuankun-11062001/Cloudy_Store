@@ -9,21 +9,21 @@ const LyricsCategoryPage = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const lyricsCategories = await fetch(`${baseUrl}/category?q=lyrics`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const resCategory = await lyricsCategories.json();
 
   const lyricsContry = await fetch(`${baseUrl}/lyrics/country`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const resCountry = await lyricsContry.json();
 
   const bannerCategory = await fetch(`${baseUrl}/event`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const { data } = await bannerCategory.json();

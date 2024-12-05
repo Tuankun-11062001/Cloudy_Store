@@ -12,7 +12,7 @@ export const BlogPageCategory = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resCategory = await fetch(`${baseUrl}/category?q=blogs`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

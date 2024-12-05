@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API = process.env.NEXT_PUBLIC_SERVER_URL;
+// const API = process.env.NEXT_PUBLIC_SERVER_URL;
+const API = "http://localhost:3003";
 
 export const bookApi = {
   searchBook: async (data) => {
@@ -27,18 +28,20 @@ export const bookApi = {
       return error;
     }
   },
-  viewBook: async (data) => {
+
+  cloudyBook: async (data) => {
     try {
-      const res = await axios.put(`${API}/books/${data._id}`, data);
+      const res = await axios.post(`${API}/books/${data.id}/cloudy`, data);
       return res;
     } catch (error) {
       return error;
     }
   },
 
-  cloudyBook: async (data) => {
+  updateView: async (id) => {
     try {
-      const res = await axios.post(`${API}/books/${data.id}/cloudy`, data);
+      const res = await axios.post(`${API}/books/updateView`, { id });
+
       return res;
     } catch (error) {
       return error;

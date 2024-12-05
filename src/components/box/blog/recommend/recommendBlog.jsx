@@ -5,7 +5,7 @@ export const RecommendBlogDetail = async ({ idCategory, nameCategory }) => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resRecommend = await fetch(`${baseUrl}/blogs/recommend/${idCategory}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const res = await resRecommend.json();

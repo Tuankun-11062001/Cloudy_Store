@@ -5,7 +5,7 @@ export const ShopRelativeProduct = async ({ idCategory }) => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resRelative = await fetch(`${baseUrl}/shop?category=${idCategory}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const { data } = await resRelative.json();

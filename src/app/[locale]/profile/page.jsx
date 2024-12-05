@@ -11,7 +11,7 @@ const ProfilePage = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resProfile = await fetch(`${baseUrl}/profile`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

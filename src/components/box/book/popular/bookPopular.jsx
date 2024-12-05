@@ -5,7 +5,7 @@ const BookPopular = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resTopBook = await fetch(`${baseUrl}/books/lastestBlog`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const { data } = await resTopBook.json();

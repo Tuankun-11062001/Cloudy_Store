@@ -14,7 +14,7 @@ export async function generateMetadata({ params, searchParams }) {
 
   const resProduct = await fetch(`${serverUrl}/blogs/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 
@@ -49,7 +49,7 @@ const BlogDetail = async ({ params, searchParams }) => {
   const { name } = searchParams;
   const resBlog = await fetch(`${baseUrl}/blogs/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

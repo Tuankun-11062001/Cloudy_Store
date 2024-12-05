@@ -11,7 +11,7 @@ export const { Link, redirect, usePathname, useRouter } =
 const LyricsCategories = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   let categories = await fetch(`${baseUrl}/category?q=lyrics`, {
-    next: { revalidate: 1 },
+    next: { revalidate: 10 },
   });
   let res = await categories.json();
   return (

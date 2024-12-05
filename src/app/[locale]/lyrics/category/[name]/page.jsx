@@ -9,7 +9,7 @@ const LyricsDetailCategory = async ({ searchParams }) => {
 
   const lyricsCategory = await fetch(`${baseUrl}/lyrics/category/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const resLyrics = await lyricsCategory.json();

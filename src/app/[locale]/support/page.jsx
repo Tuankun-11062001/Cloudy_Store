@@ -11,7 +11,7 @@ const SupportPage = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resSupport = await fetch(`${baseUrl}/support`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

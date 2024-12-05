@@ -337,6 +337,9 @@
   }
 
   @include xl {
+    a {
+      padding: $spacing * 2 $spacing;
+    }
     img {
       width: 60%;
       height: 60%;

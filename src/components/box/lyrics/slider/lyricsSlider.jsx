@@ -17,7 +17,7 @@ export const LyricsSlider = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const lyricsSlider = await fetch(`${baseUrl}/lyrics?slider=true`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const res = await lyricsSlider.json();

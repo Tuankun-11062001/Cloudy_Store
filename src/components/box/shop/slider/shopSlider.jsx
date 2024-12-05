@@ -14,7 +14,7 @@ export const ShopSlider = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resSlider = await fetch(`${baseUrl}/shop?slider=true`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const sliders = await resSlider.json();
@@ -26,8 +26,8 @@ export const ShopSlider = async () => {
       </Suspense>
       <span className="shop_slider_decor"></span>
       <div className="shop_slider_items">
-        {sliders.data.map((slider) => (
-          <ShopSliderCard key={slider._id} data={slider} />
+        {sliders.data.map((slider, index) => (
+          <ShopSliderCard key={index} data={slider} />
         ))}
       </div>
     </div>

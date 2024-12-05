@@ -9,7 +9,7 @@ const ShopCategoryDetail = async ({ searchParams }) => {
 
   const resProduct = await fetch(`${baseUrl}/shop/category/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

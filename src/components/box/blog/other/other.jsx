@@ -10,12 +10,13 @@ const Other = ({ data }) => {
   const [like, setLike] = useState(false);
 
   useEffect(() => {
-    const viewData = {
-      ...data,
-      view: data.view + 1,
-    };
     const increaseView = async () => {
-      await blogsApi.viewBlogs(viewData);
+      try {
+        const res = await blogsApi.updateView(data._id);
+        console.log(res.data.message);
+      } catch (error) {
+        console.error("Error updating view:", error);
+      }
     };
     increaseView();
 

@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import HeaderMember from "../button/headerMember";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { userApi } from "@/api/user";
 
@@ -34,7 +33,6 @@ const Members = () => {
           </abbr>
         ))}
       </div>
-      <HeaderMember />
     </div>
   );
 };

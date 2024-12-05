@@ -21,6 +21,11 @@
         display: none;
       }
 
+      &_content {
+        height: 63dvh;
+        overflow: auto;
+      }
+
       .box_list_feedback_song_tab_content {
         display: none;
         &.active {
@@ -347,6 +352,11 @@
       .box_list_feedback_song {
         .feedback_song {
           padding: $spacing * 2;
+        }
+
+        &_content {
+          height: 63dvh;
+          overflow: auto;
         }
       }
     }

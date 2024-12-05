@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API = process.env.NEXT_PUBLIC_SERVER_URL;
+// const API = process.env.NEXT_PUBLIC_SERVER_URL;
+const API = "http://localhost:3003";
 
 export const lyricsApi = {
   searchLyrics: async (data) => {
@@ -11,14 +12,7 @@ export const lyricsApi = {
       return error;
     }
   },
-  viewLyrics: async (data) => {
-    try {
-      const res = await axios.put(`${API}/lyrics/${data._id}`, data);
-      return res;
-    } catch (error) {
-      return error;
-    }
-  },
+
   addTranslate: async (data) => {
     try {
       const res = await axios.put(`${API}/lyrics/${data._id}`, data);
@@ -56,6 +50,16 @@ export const lyricsApi = {
         `${API}/lyrics/${data.idLyrics}/cloudy`,
         data
       );
+      return res;
+    } catch (error) {
+      return error;
+    }
+  },
+
+  updateView: async (id) => {
+    try {
+      const res = await axios.post(`${API}/lyrics/updateView`, { id });
+
       return res;
     } catch (error) {
       return error;

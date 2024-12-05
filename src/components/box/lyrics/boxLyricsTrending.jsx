@@ -11,7 +11,7 @@ const BoxLyricsTrending = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const trendings = await fetch(`${baseUrl}/lyrics?trending=true`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const res = await trendings.json();

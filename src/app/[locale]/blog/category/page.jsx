@@ -4,10 +4,14 @@ import React, { Suspense } from "react";
 
 const BlogCategoryPage = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
-  const resCategory = await fetch(`${baseUrl}/category?q=blogs`);
+  const resCategory = await fetch(`${baseUrl}/category?q=blogs`, {
+    next: {
+      revalidate: 10,
+    },
+  });
   const resBannerCategory = await fetch(`${baseUrl}/event`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const category = await resCategory.json();

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import BoxCommentSong from "./boxCommentSong";
 import BoxFeedbackSong from "./boxFeedbackSong";
 import BoxAddingLyricsFeedback from "./addingLyricsFeedback/boxAddingLyricsFeedback";
-import { lyricsApi } from "@/api/lyrics";
 import { getLocalStorage } from "@/components/storage/local";
 
 const BoxControlFeedback = ({ data }) => {
@@ -12,15 +11,6 @@ const BoxControlFeedback = ({ data }) => {
   useEffect(() => {
     const localId = getLocalStorage("_CM_id");
     setUserInfo(localId);
-
-    const plusView = async () => {
-      const newData = {
-        ...data,
-        view: data.view + 1,
-      };
-      await lyricsApi.viewLyrics(newData);
-    };
-    plusView();
   }, []);
 
   const handleShowAddingFeedback = () => {

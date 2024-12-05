@@ -15,7 +15,7 @@ export async function generateMetadata({ params, searchParams }) {
 
   const resProduct = await fetch(`${serverUrl}/books/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 
@@ -44,12 +44,13 @@ export async function generateMetadata({ params, searchParams }) {
   };
 }
 
-const BookDetail = async ({ searchParams }) => {
-  const { name, id } = searchParams;
+const BookDetail = async ({ params, searchParams }) => {
+  const { id } = params;
+  const { name } = searchParams;
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resBook = await fetch(`${baseUrl}/books/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const { data } = await resBook.json();

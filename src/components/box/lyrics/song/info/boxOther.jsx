@@ -16,16 +16,35 @@ const BoxOther = ({ data }) => {
     if (!localId) {
       return;
     }
+
+    if (!data?._id) {
+      console.error("Invalid song ID");
+      return;
+    }
+
+    const updateView = async () => {
+      try {
+        const res = await lyricsApi.updateView(data._id);
+        console.log(res.data.message);
+      } catch (error) {
+        console.error("Error updating view:", error);
+      }
+    };
+
+    updateView();
+
     const isLiked = data.cloudy.some((item) => item.user == localId);
 
     setLike(isLiked);
   }, []);
+
   const toggleBoxShare = (e) => {
     const boxShare = e.target
       .closest(".lyrics_song_content_left_other_g")
       .querySelector(".box_share");
     boxShare.classList.toggle("active");
   };
+
   const cloudy = async (e) => {
     if (!userId) {
       return;

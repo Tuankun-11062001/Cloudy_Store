@@ -62,7 +62,14 @@ export const BookCategoryCard = ({ data, key }) => {
 
 export const BookCard = async ({ data, key }) => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
-  const demo = await fetch(`${baseUrl}/chapters/${data?.chapters[0]?.chapter}`);
+  const demo = await fetch(
+    `${baseUrl}/chapters/${data?.chapters[0]?.chapter}`,
+    {
+      next: {
+        revalidate: 10,
+      },
+    }
+  );
   const resDemo = await demo?.json();
   return (
     <div className="book_card" key={key}>

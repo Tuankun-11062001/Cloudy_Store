@@ -17,7 +17,7 @@ export async function generateMetadata({ params, searchParams }) {
 
   const resProduct = await fetch(`${serverUrl}/lyrics/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 100,
     },
   });
 
@@ -56,7 +56,7 @@ const LyricsSong = async ({ params, searchParams }) => {
 
   const lyricsSong = await fetch(`${baseUrl}/lyrics/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

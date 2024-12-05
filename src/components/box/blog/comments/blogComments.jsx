@@ -22,9 +22,9 @@ const BlogComments = ({ data }) => {
     if (!localId || !localInfo) {
       return;
     }
-    const user = JSON.parse(localInfo);
+
     setIdUser(localId);
-    setUserInfo(user);
+    setUserInfo(localInfo);
     setDataComment((prev) => {
       return {
         ...prev,

@@ -5,7 +5,7 @@ export const ShopPartner = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resPartner = await fetch(`${baseUrl}/partner`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const partners = await resPartner.json();

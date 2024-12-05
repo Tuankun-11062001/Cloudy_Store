@@ -10,7 +10,7 @@ const DetailCategory = async ({ searchParams }) => {
 
   const resCategory = await fetch(`${baseUrl}/blogs/recommend/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

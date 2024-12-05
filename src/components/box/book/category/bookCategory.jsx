@@ -5,7 +5,7 @@ const BookCategory = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resCategory = await fetch(`${baseUrl}/category?q=book`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const { data } = await resCategory.json();

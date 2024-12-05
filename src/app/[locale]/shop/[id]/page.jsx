@@ -13,7 +13,7 @@ export async function generateMetadata({ params, searchParams }) {
 
   const resProduct = await fetch(`${baseUrl}/shop/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 
@@ -49,7 +49,7 @@ const ShopDetail = async ({ params, searchParams }) => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resProduct = await fetch(`${baseUrl}/shop/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const { data } = await resProduct.json();

@@ -10,7 +10,7 @@ const BookDetailContent = ({ data }) => {
   useEffect(() => {
     const getContent = async () => {
       const res = await bookApi.findChapter(chapter);
-      console.log("res", res);
+
       setBookContent(res.data.data);
     };
     getContent();

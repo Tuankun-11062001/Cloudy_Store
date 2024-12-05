@@ -20,7 +20,7 @@ const BlogPage = async () => {
     `${process.env.NEXT_PUBLIC_SERVER_URL}/blogs?slider=true`,
     {
       next: {
-        revalidate: 1,
+        revalidate: 10,
       },
     }
   );
@@ -30,7 +30,7 @@ const BlogPage = async () => {
     `${process.env.NEXT_PUBLIC_SERVER_URL}/blogs/topblog`,
     {
       next: {
-        revalidate: 1,
+        revalidate: 10,
       },
     }
   );

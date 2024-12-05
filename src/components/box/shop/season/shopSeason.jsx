@@ -5,7 +5,7 @@ export const ShopSeason = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resTrending = await fetch(`${baseUrl}/shop?trending=true`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

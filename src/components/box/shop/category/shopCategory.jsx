@@ -6,7 +6,7 @@ const ShopCategory = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const resCategory = await fetch(`${baseUrl}/category?q=shop`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

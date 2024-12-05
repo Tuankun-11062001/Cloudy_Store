@@ -8,7 +8,7 @@ const LyricsDetailCategoryCountry = async ({ searchParams }) => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const lyricsCountry = await fetch(`${baseUrl}/lyrics/country/${id}`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
   const resLyricsCountry = await lyricsCountry.json();

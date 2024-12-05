@@ -7,13 +7,13 @@ const Singer = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const singers = await fetch(`${baseUrl}/lyrics/singerByCountry`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 
   const bannerSinger = await fetch(`${baseUrl}/event`, {
     next: {
-      revalidate: 1,
+      revalidate: 10,
     },
   });
 

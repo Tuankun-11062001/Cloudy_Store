@@ -21,6 +21,9 @@
     @include dynamicAlign($direction: column);
     height: $spacing * 30;
     overflow: auto;
+    a {
+      width: 100%;
+    }
     .item {
       @include dynamicAlign($align: center);
       width: 100%;
@@ -67,6 +70,7 @@
     &_list {
       .item {
         font-size: $spacing * 1.6;
+        width: 100%;
       }
     }
   }

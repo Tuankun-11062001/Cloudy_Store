@@ -47,12 +47,13 @@ export const BookDetailControl = ({ data, changeChapter, chapterState }) => {
   });
 
   useEffect(() => {
-    const viewData = {
-      ...data,
-      view: data.view + 1,
-    };
     const increaseView = async () => {
-      await bookApi.viewBook(viewData);
+      try {
+        const res = await bookApi.updateView(data._id);
+        console.log(res.data.message);
+      } catch (error) {
+        console.error("Error updating view:", error);
+      }
     };
     increaseView();
 

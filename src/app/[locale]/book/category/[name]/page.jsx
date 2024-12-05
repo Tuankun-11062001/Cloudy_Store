@@ -6,7 +6,11 @@ import React from "react";
 const DetailCategory = async ({ searchParams }) => {
   const { name, id } = searchParams;
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
-  const resCategory = await fetch(`${baseUrl}/books/recommend/${id}`);
+  const resCategory = await fetch(`${baseUrl}/books/recommend/${id}`, {
+    next: {
+      revalidate: 10,
+    },
+  });
   const { data } = await resCategory.json();
 
   const bookSlide = data
