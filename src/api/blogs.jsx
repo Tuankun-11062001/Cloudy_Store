@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const API = process.env.NEXT_PUBLIC_SERVER_URL;
-const API = "http://localhost:3003";
+const API = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export const blogsApi = {
   searchBlogs: async (data) => {
