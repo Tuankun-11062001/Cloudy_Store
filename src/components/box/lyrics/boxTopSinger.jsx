@@ -8,7 +8,7 @@ export const { Link, redirect, usePathname, useRouter } =
 
 const BoxTopSinger = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
-  let singers = await fetch(`${baseUrl}/lyrics/singer`, {
+  let singers = await fetch(`${baseUrl}/lyrics/singerTop`, {
     next: { revalidate: 10 },
   });
   let res = await singers.json();
