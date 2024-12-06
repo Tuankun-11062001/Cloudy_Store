@@ -5,10 +5,11 @@ import Header from "@/components/header/header";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { Suspense } from "react";
 import { AdsBottom, AdsPopup } from "@/components/ads/ads";
+import Adsence from "../../../components/adsence";
 
 export const metadata = {
   title: "Cloudy melody",
-  description: "Cloudy melody T-shirt Design",
+  description: "Cloudy melody ",
 };
 
 export default function RootLayout({ children, params: { locale } }) {
@@ -16,7 +17,9 @@ export default function RootLayout({ children, params: { locale } }) {
 
   return (
     <html lang={locale}>
-      <head></head>
+      <head>
+        <Adsence pId={process.env.NEXT_PUBLIC_ADSENCE} />
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <Header />
