@@ -6,6 +6,7 @@ import { NextIntlClientProvider, useMessages } from "next-intl";
 import { Suspense } from "react";
 import { AdsBottom, AdsPopup } from "@/components/ads/ads";
 import Adsence from "../../../components/adsence";
+import GoogleAnalytic from "../../../components/googleAnalytic";
 
 export const metadata = {
   title: "Cloudy melody",
@@ -18,6 +19,7 @@ export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
       <head>
+        <GoogleAnalytic />
         <Adsence pId={process.env.NEXT_PUBLIC_ADSENCE} />
       </head>
       <body>
