@@ -43,9 +43,14 @@ export const AdsPopup = () => {
     <div className="ads_popup">
       <div className="ads_popup_content">
         <p onClick={handleAdsPopup}>{appSvg.close}</p>
-        <a href={ads[0]?.linkAds} target="_blank">
-          <img src={ads[0]?.imageAds} />
-        </a>
+        <div className="container">
+          <a href={ads[0]?.linkAds} target="_blank">
+            <h4>{ads[0]?.title}</h4>
+
+            <img src={ads[0]?.imageAds} />
+            <span>{ads[0]?.detail}</span>
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -76,6 +81,7 @@ export const AdsBottom = () => {
           {ads.map((item, index) => (
             <a href={item?.linkAds} target="_blank" key={item._id || index}>
               <img src={item?.imageAds} />
+              <span>{item?.detail}</span>
             </a>
           ))}
         </div>
@@ -100,6 +106,7 @@ export const AdsVertical = ({ data, key }) => {
       <div className="ads_vertical_content">
         <a href={data?.linkAds} target="_blank">
           <img src={data?.imageVerticalAds} />
+          <span>{data?.detail}</span>
         </a>
       </div>
     </div>
@@ -131,7 +138,8 @@ export const AdsHorizal = () => {
       </div>
       <div className="ads_horizal_content">
         <a>
-          <img src="https://img.freepik.com/free-vector/flat-design-church-vertical-banner_23-2149670156.jpg?t=st=1732539275~exp=1732542875~hmac=7e9d4a8d5f4f1b52233b296622187a990add3931dca3fb6ad442923e8fdb7810&w=826" />
+          <img src={ads[0]?.imageAds} />
+          <span>{ads[0]?.detail}</span>
         </a>
       </div>
     </div>

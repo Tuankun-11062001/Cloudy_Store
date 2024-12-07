@@ -47,22 +47,33 @@
       }
     }
 
-    img {
-      width: 100%;
+    .container {
+      background: $color_white;
+      padding: $spacing * 2;
+      border-radius: $spacing * 2;
+      @include dynamicAlign($direction: column, $justify: center);
+
+      h4 {
+        color: $color_black;
+      }
+      img {
+        width: 100%;
+        height: $spacing * 30;
+        object-fit: contain;
+      }
+      span {
+        font-size: $spacing * 1.4;
+        color: $color_black;
+      }
     }
   }
 
   @include xl {
     &_content {
-      width: 40%;
+      width: 30%;
     }
   }
 
-  @include xl {
-    &_content {
-      width: 40%;
-    }
-  }
   body.darkmode & {
     p {
       border: 0.1rem solid $color_white;
@@ -80,6 +91,10 @@
           }
         }
       }
+    }
+    span,
+    h4 {
+      color: $color_white;
     }
   }
 }
@@ -116,6 +131,11 @@
       height: $spacing * 15;
       object-fit: contain;
     }
+    span {
+      margin-top: $spacing;
+      font-size: $spacing * 1.4;
+      color: $color_black;
+    }
   }
   @include xl {
     @include dynamicPosition(
@@ -139,6 +159,9 @@
         &:hover {
           color: $color_white;
         }
+      }
+      span {
+        color: $color_white;
       }
     }
   }
@@ -174,6 +197,11 @@
         height: 100%;
         object-fit: contain;
       }
+      span {
+        font-size: $spacing * 1.4;
+        color: $color_black;
+        margin-top: $spacing;
+      }
     }
   }
   @include xl {
@@ -184,6 +212,9 @@
       path {
         stroke: $color_white;
       }
+    }
+    span {
+      color: $color_white;
     }
   }
 }
@@ -219,6 +250,11 @@
         height: 100%;
         object-fit: contain;
       }
+      span {
+        font-size: $spacing * 1.4;
+        color: $color_black;
+        margin-top: $spacing;
+      }
     }
   }
 
@@ -230,6 +266,9 @@
       path {
         stroke: $color_white;
       }
+    }
+    span {
+      color: $color_white;
     }
   }
 }

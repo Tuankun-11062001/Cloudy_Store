@@ -7,10 +7,18 @@ import { Suspense } from "react";
 import { AdsBottom, AdsPopup } from "@/components/ads/ads";
 import Adsence from "../../../components/adsence";
 import GoogleAnalytic from "../../../components/googleAnalytic";
+import GoogleConsole from "../../../components/googleConsole";
 
 export const metadata = {
-  title: "Cloudy melody",
-  description: "Cloudy melody ",
+  title: "Cloudy Melody",
+  description:
+    "Cloudy Melody - A blog sharing song lyrics, lyric books, and a music store. Explore translations of songs about life and connect with a community of music lovers.",
+  // Phiên bản tiếng Việt
+  vi: {
+    title: "Cloudy Melody",
+    description:
+      "Cloudy Melody - Blog chia sẻ lời bài hát, sách lời nhạc và cửa hàng âm nhạc. Khám phá những bản dịch bài hát về cuộc sống và kết nối cộng đồng yêu nhạc.",
+  },
 };
 
 export default function RootLayout({ children, params: { locale } }) {
@@ -20,6 +28,7 @@ export default function RootLayout({ children, params: { locale } }) {
     <html lang={locale}>
       <head>
         <GoogleAnalytic />
+        <GoogleConsole />
         <Adsence pId={process.env.NEXT_PUBLIC_ADSENCE} />
       </head>
       <body>
