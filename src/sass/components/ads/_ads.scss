@@ -113,6 +113,7 @@
     bottom: 15%;
     z-index: 20;
     opacity: 1;
+    overflow: hidden;
   }
   &_content {
     p {
@@ -124,7 +125,11 @@
     }
     .list_content {
       width: 100%;
-      @include dynamicAlign(center, center);
+      @include dynamicAlign(center, center, $direction: column);
+      a {
+        width: 100%;
+        @include dynamicAlign();
+      }
     }
     img {
       width: 100%;
@@ -149,6 +154,15 @@
       bottom: 2%;
       z-index: 20;
       opacity: 1;
+    }
+
+    .list_content {
+      width: 100%;
+      @include dynamicAlign(center, center);
+      a {
+        width: calc((100% / 3));
+        @include dynamicAlign();
+      }
     }
   }
   body.darkmode & {
@@ -186,7 +200,7 @@
     width: 100%;
     height: 0;
     @include transition($second: 1s);
-
+    overflow: hidden;
     &.active {
       height: $spacing * 30;
     }
@@ -194,13 +208,14 @@
       cursor: pointer;
       img {
         width: 100%;
-        height: 100%;
+        height: $spacing * 20;
         object-fit: contain;
       }
       span {
         font-size: $spacing * 1.4;
         color: $color_black;
         margin-top: $spacing;
+        @include longText($line: 3);
       }
     }
   }
@@ -239,7 +254,7 @@
     width: 100%;
     height: 0;
     @include transition($second: 1s);
-
+    overflow: hidden;
     &.active {
       height: $spacing * 30;
     }
@@ -247,13 +262,14 @@
       cursor: pointer;
       img {
         width: 100%;
-        height: 100%;
+        height: $spacing * 20;
         object-fit: contain;
       }
       span {
         font-size: $spacing * 1.4;
         color: $color_black;
         margin-top: $spacing;
+        @include longText($line: 3);
       }
     }
   }
