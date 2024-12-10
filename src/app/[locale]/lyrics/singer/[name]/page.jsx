@@ -33,7 +33,7 @@ const DetailSinger = async ({ searchParams }) => {
       <div className="lyrics_singer_detail_head">
         <Suspense fallback={<p>Loadding...</p>}>
           <LyricsBack />
-          <span>Singer {name}</span>
+          <h1>Singer {name}</h1>
         </Suspense>
       </div>
       {resLyrics?.data?.length > 0 && (

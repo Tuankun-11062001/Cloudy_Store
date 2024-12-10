@@ -13,7 +13,7 @@ export const BookSliderCard = ({ data, key }) => {
   return (
     <div className="book_slider_card" key={data._id || key}>
       <div className="info">
-        <h1>{data.title}</h1>
+        <h2>{data.title}</h2>
         <h3>{data.author}</h3>
         <p className="des">{data.description}</p>
         <div className="other">
@@ -81,7 +81,7 @@ export const BookCard = async ({ data, key }) => {
             query: { name: data?.title, id: data?._id },
           }}
         >
-          <h1>{data?.title}</h1>
+          <h2>{data?.title}</h2>
         </Link>
         <p>By {data?.author}</p>
         <p>Translate</p>
@@ -117,7 +117,7 @@ export const BookCard = async ({ data, key }) => {
               <BookDetailCardButton closeIcon={true} />
             </Suspense>
             <div className="more_detail_content_left_info">
-              <h1>{data?.title}</h1>
+              <h2>{data?.title}</h2>
               <p>By {data?.author}</p>
               <p>Translate</p>
               <p className="des">{data?.description}</p>

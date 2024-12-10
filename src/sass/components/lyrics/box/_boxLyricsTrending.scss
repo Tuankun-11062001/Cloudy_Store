@@ -87,6 +87,9 @@
     &_list {
       .item {
         color: $color_white;
+        &_no {
+          color: $color_white;
+        }
         h4,
         span,
         &_singer {

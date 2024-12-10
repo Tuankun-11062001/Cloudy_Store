@@ -48,6 +48,16 @@
 
 .book_page {
   .head {
+    h1 {
+      font-size: $spacing * 1.4;
+      background: $color_pink;
+      color: $color_white;
+      width: max-content;
+      padding: $spacing $spacing * 2;
+      border-radius: $spacing;
+      font-weight: 600;
+    }
+
     @include dynamicAlign($direction: column, $gap: $spacing * 3);
 
     .book_search {
@@ -181,6 +191,10 @@
   }
   body.darkmode & {
     .head {
+      h1 {
+        background: $color_white;
+        color: $color_blue_dark;
+      }
       @include dynamicAlign($direction: column, $gap: $spacing * 3);
       margin-right: $spacing * 45;
       .book_search {

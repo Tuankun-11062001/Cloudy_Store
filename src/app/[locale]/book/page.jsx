@@ -14,6 +14,7 @@ const BookPage = () => {
   return (
     <div className="book_page">
       <div className="head">
+        <h1>Book</h1>
         <Suspense fallback={<p>Loading..</p>}>
           <BookSearch />
         </Suspense>

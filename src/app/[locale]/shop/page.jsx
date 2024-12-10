@@ -15,6 +15,7 @@ export const metadata = {
 const ShopPage = () => {
   return (
     <div className="shop_page">
+      <h1>Shop</h1>
       <ShopSlider />
       <ShopSearch />
       <ShopSeason />

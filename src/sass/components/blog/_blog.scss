@@ -1,4 +1,14 @@
 .blog_page {
+  h1 {
+    font-size: $spacing * 1.4;
+    padding: $spacing $spacing * 2;
+    border-radius: $spacing;
+    background: $color_pink;
+    color: $color_white;
+    font-weight: 600;
+    width: max-content;
+    margin-bottom: $spacing * 2;
+  }
   &_head {
     .search_blog {
       @include dynamicAlign($align: center);
@@ -38,6 +48,9 @@
         &.active {
           height: $spacing * 60;
           padding: $spacing;
+          .blog_card_horizontal {
+            width: 100%;
+          }
         }
       }
     }
@@ -123,7 +136,7 @@
 
       &_round_bottom_left {
         @include dynamicPosition($pos: absolute, $top: $spacing * 36, $left: 0);
-        background: red;
+        // background: red;
         width: $spacing * 4;
         height: $spacing * 4;
         border-bottom-left-radius: $spacing * 3;
@@ -164,6 +177,10 @@
     }
   }
   body.darkmode & {
+    h1 {
+      background: $color_white;
+      color: $color_blue_dark;
+    }
     &_head {
       &_round_top {
         box-shadow: 16px -16px 0 16px $color_blue_dark;

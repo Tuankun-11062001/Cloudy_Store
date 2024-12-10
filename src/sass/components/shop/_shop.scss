@@ -1,4 +1,14 @@
 .shop_page {
+  h1 {
+    font-size: $spacing * 1.4;
+    padding: $spacing $spacing * 2;
+    border-radius: $spacing;
+    background: $color_pink;
+    color: $color_white;
+    font-weight: 600;
+    width: max-content;
+    margin-bottom: $spacing * 2;
+  }
   .shop_search {
     position: relative;
     background: $color_white;
@@ -373,6 +383,10 @@
     }
   }
   body.darkmode & {
+    h1 {
+      background: $color_white;
+      color: $color_blue_dark;
+    }
     .shop_search {
       background: $color_gray_dark;
 

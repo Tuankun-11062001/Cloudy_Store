@@ -39,6 +39,7 @@ const BlogPage = async () => {
 
   return (
     <div className="blog_page">
+      <h1>Blog</h1>
       <div className="blog_page_head">
         <div className="blog_page_head_round_top"></div>
         <div className="blog_page_head_round_top_right"></div>

@@ -12,9 +12,9 @@ export const BoxSliderBlog = ({ data, key }) => {
     <div className="box_slider_blog" key={key}>
       <img src={data.thumbnail} />
       <div className="info">
-        <h1>
+        <h2>
           <abbr title="title">{data.title}</abbr>
-        </h1>
+        </h2>
         <p className="info_des">{data.description}</p>
         <div className="info_bottom">
           <Link

@@ -40,7 +40,7 @@ export const LyricsSliderCard = ({ data, key }) => {
           <span>Trending</span>
           <span>{data.release}</span>
         </div>
-        <h1>{data.title}</h1>
+        <h2>{data.title}</h2>
         <p>{data.description}</p>
         <Link
           href={{

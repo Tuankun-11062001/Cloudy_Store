@@ -21,6 +21,7 @@ const ProfilePage = async () => {
 
   return (
     <div className="profile_page">
+      <h1>Profile</h1>
       <div className="profile_page_head">
         <img src={data[0].user.banner} className="bg" />
 
@@ -32,7 +33,7 @@ const ProfilePage = async () => {
         </span>
         <div className="info">
           <div className="info_left">
-            <h1>{data[0].user.userName}</h1>
+            <h2>{data[0].user.userName}</h2>
             <p>{data[0].userDetail}</p>
           </div>
           <div className="info_right">

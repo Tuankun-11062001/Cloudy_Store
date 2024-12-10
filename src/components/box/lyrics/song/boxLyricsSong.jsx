@@ -8,7 +8,7 @@ const BoxLyricsSong = ({ data }) => {
         <BoxTabControl tabContentClass=".box_lyrics_song_content_tab" />
       </Suspense>
       <div className="box_lyrics_song_content">
-        <h1>{data.title} Lyrics</h1>
+        <h2>{data.title} Lyrics</h2>
         <div
           className="box_lyrics_song_content_tab active tiptap"
           data-content="lyrics"

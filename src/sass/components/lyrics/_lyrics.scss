@@ -48,6 +48,16 @@
     order: 2;
     width: 100%;
     height: $spacing * 85;
+    h1 {
+      font-size: $spacing * 1.4;
+      color: $color_white;
+      padding: $spacing $spacing * 2;
+      margin-bottom: $spacing * 2;
+      font-weight: 600;
+      background: $color_pink;
+      width: max-content;
+      border-radius: $spacing;
+    }
   }
 
   .right_slider {
@@ -94,6 +104,13 @@
 
   // darkmode
   body.darkmode & {
+    .left {
+      h1 {
+        background: $color_white;
+        color: $color_blue_dark;
+      }
+    }
+
     .right_slider {
       &_black_art {
         background: url("/lyricsDark1.png");
@@ -195,9 +212,10 @@
   @include dynamicAlign($direction: column, $gap: $spacing * 2);
   &_head {
     @include dynamicAlign($align: center);
-    span {
+    h1 {
       font-size: $spacing * 1.6;
       font-style: italic;
+      font-weight: 400;
     }
   }
   &_list {

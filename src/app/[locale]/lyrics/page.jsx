@@ -17,6 +17,7 @@ const LyricsPage = () => {
   return (
     <div className="lyrics_page">
       <div className="left">
+        <h1>Lyrics</h1>
         <Suspense fallback={<p>Loading search...</p>}>
           <Search />
         </Suspense>

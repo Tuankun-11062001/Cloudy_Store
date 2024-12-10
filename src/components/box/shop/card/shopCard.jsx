@@ -10,7 +10,7 @@ export const ShopSliderCard = ({ data, key }) => {
   return (
     <div className="shop_slider_card" key={key}>
       <div className="info">
-        <h1>{data.title}</h1>
+        <h2>{data.title}</h2>
         <div>{data.description}</div>
         <div className="check">
           <Link
@@ -32,7 +32,7 @@ export const ShopCategoryDetailSliderCard = ({ data, key }) => {
   return (
     <div className="shop_category_detail_slider_card" key={data._id}>
       <div className="info">
-        <h1>{data.title}</h1>
+        <h2>{data.title}</h2>
         <p>{data.description}</p>
         <div className="check">
           <Link

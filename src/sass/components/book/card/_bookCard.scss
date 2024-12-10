@@ -10,7 +10,7 @@
   &.active {
     .info {
       opacity: 1;
-      h1,
+      h2,
       h3,
       p,
       .other,
@@ -29,7 +29,7 @@
     padding: $spacing;
     border-radius: $spacing;
     box-shadow: 0 0 $spacing * 2 0 rgba($color_gray_normal, 0.2);
-    h1 {
+    h2 {
       width: 90%;
       font-size: $spacing * 1.4;
       color: $color_black;
@@ -96,7 +96,7 @@
     .info {
       @include dynamicPosition($pos: absolute, $left: 5%, $top: 5%);
 
-      h1 {
+      h2 {
         font-size: $spacing * 1.6;
       }
       h3 {
@@ -124,7 +124,7 @@
     .info {
       @include dynamicPosition($pos: absolute, $left: 2%, $bottom: 5%);
       width: 60%;
-      h1 {
+      h2 {
         font-size: $spacing * 1.8;
       }
       h3 {
@@ -158,8 +158,8 @@
       padding: $spacing * 2;
       border-radius: $spacing * 2;
       @include dynamicPosition($pos: absolute, $left: 6%, $bottom: 5%);
-      h1 {
-        font-size: $spacing * 4;
+      h2 {
+        font-size: $spacing * 3.5;
       }
       h3 {
         font-size: $spacing * 1.8;
@@ -267,7 +267,7 @@
   .info {
     @include dynamicAlign($direction: column);
     flex: 1;
-    h1 {
+    h2 {
       color: $color_black;
       font-size: $spacing * 1.4;
       font-weight: 600;
@@ -304,7 +304,7 @@
 
   @include sm {
     .info {
-      h1 {
+      h2 {
         font-size: $spacing * 1.6;
       }
       p {
@@ -331,7 +331,7 @@
     }
 
     .info {
-      h1 {
+      h2 {
         font-size: $spacing * 2;
       }
       p {
@@ -433,7 +433,7 @@
           }
           &_info {
             @include dynamicAlign($direction: column, $gap: $spacing);
-            h1 {
+            h2 {
               font-size: $spacing * 2.5;
             }
 
@@ -488,7 +488,7 @@
     }
 
     .info {
-      h1 {
+      h2 {
         color: $color_white;
       }
       p {
@@ -533,7 +533,7 @@
           background: $color_gray_dark;
 
           &_info {
-            h1 {
+            h2 {
               color: $color_white;
             }
 

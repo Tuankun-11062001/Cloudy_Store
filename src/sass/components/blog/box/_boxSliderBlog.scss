@@ -30,7 +30,7 @@
     width: 55%;
     padding: $spacing;
     border-radius: $spacing * 2;
-    h1 {
+    h2 {
       font-size: $spacing * 1.6;
       @include longText($line: 2);
       abbr {
@@ -96,7 +96,7 @@
     .info {
       padding: $spacing * 2;
 
-      h1 {
+      h2 {
         font-size: $spacing * 3;
       }
 

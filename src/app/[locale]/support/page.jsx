@@ -19,6 +19,7 @@ const SupportPage = async () => {
 
   return (
     <div className="support_page">
+      <h1>Support</h1>
       <img className="support_page_head" src={data[0].banner} />
 
       <div className="support_page_content">
