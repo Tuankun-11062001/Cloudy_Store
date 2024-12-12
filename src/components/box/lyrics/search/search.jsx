@@ -1,7 +1,14 @@
 "use client";
 import { lyricsApi } from "@/api/lyrics";
 import { appSvg } from "@/data/svg";
+import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import React, { useEffect, useState } from "react";
+
+export const locales = ["en", "vn"];
+export const localePrefix = "always"; // Default
+
+export const { Link, redirect, usePathname, useRouter } =
+  createSharedPathnamesNavigation({ locales, localePrefix });
 
 const Search = () => {
   const [dataSearch, setDataSearch] = useState("");
@@ -34,12 +41,19 @@ const Search = () => {
       <div className="search_list">
         {lyrics?.map((item) => (
           <div className="item" key={item._id}>
-            <img src={item.thumbnail} />
-            <div className="item_content">
-              <h3>{item.title}</h3>
-              <p>Singer: {item.singer.singerName}</p>
-              <p>Lyrics by : Cloudy melody</p>
-            </div>
+            <Link
+              href={{
+                pathname: `/lyrics/${item?._id}`,
+                query: { name: item?.title, id: item?._id },
+              }}
+            >
+              <img src={item.thumbnail} />
+              <div className="item_content">
+                <h3>{item.title}</h3>
+                <p>Singer: {item.singer.singerName}</p>
+                <p>Lyrics by : Cloudy melody</p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

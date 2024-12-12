@@ -43,12 +43,16 @@
       height: $spacing * 35;
     }
     .item {
-      @include dynamicAlign($direction: column);
       box-shadow: 0 0 $spacing * 2 0 rgba($color_gray, 1);
       border-radius: $spacing;
-      width: 100%;
-      cursor: pointer;
+
       padding: $spacing;
+      a {
+        display: block;
+        @include dynamicAlign($direction: column, $align: center);
+        width: 100%;
+        cursor: pointer;
+      }
 
       img {
         width: 100%;
@@ -58,11 +62,13 @@
       }
       &_content {
         @include dynamicAlign($direction: column, $gap: $spacing - 0.5);
-        flex: 1;
+        width: 100%;
+
         h3 {
           font-size: $spacing * 1.4;
           font-weight: 600;
           @include longText($line: 2);
+          color: $color_black;
         }
         p {
           font-size: $spacing * 1.2;
@@ -93,7 +99,7 @@
   @include xl {
     &_list {
       .item {
-        @include dynamicAlign($align: center);
+        @include dynamicAlign($align: center, $direction: column);
 
         img {
           width: $spacing * 15;
@@ -128,7 +134,9 @@
       .item {
         box-shadow: unset;
         &_content {
-          color: $color_white;
+          h3 {
+            color: $color_white;
+          }
         }
         @include transition;
         &:hover {
