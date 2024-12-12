@@ -166,7 +166,7 @@
         &_result {
           @include dynamicAlign($gap: $spacing * 2);
           .book_card_horizal {
-            width: calc((100% / 2) - $spacing * 2);
+            width: calc((100% / 3) - $spacing * 2);
           }
         }
       }
