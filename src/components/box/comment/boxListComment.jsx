@@ -81,7 +81,11 @@ const BoxListComment = ({ data, comment, messageLogin }) => {
     <>
       {newData.comments.map((item) => (
         <div className="comment" key={item._id}>
-          <img src={item?.user?.avatar || item?.avatar} />
+          <img
+            src={item?.user?.avatar || item?.avatar}
+            loading="lazy"
+            alt={`banner`}
+          />
           <div className="comment_content">
             <h5>{item?.user?.userName || item?.userName}</h5>
             <p>{item?.content}</p>
@@ -108,7 +112,11 @@ const BoxListComment = ({ data, comment, messageLogin }) => {
             </div>
             {item?.reply?.map((itemReply) => (
               <div className="comment_content_reply" key={itemReply._id}>
-                <img src={itemReply?.user?.avatar || itemReply?.avatar} />
+                <img
+                  src={itemReply?.user?.avatar || itemReply?.avatar}
+                  loading="lazy"
+                  alt={`banner`}
+                />
                 <div className="content_reply">
                   <h5>{itemReply?.user?.userName || itemReply?.userName}</h5>
                   <p>{itemReply?.content}</p>

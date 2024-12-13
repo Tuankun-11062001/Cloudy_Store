@@ -102,7 +102,7 @@ const BoxCommentSong = ({ data }) => {
       <div className="box_comment_song_list">
         {newComment.content ? (
           <div className="item">
-            <img src={newComment?.avatar} />
+            <img src={newComment?.avatar} loading="lazy" alt={`banner`} />
             <div className="info">
               <h5>{newComment?.userName}</h5>
               <p>{newComment?.content}</p>
@@ -114,7 +114,7 @@ const BoxCommentSong = ({ data }) => {
 
         {saveData?.map((comment) => (
           <div className="item" key={comment._id}>
-            <img src={comment.user.avatar} />
+            <img src={comment.user.avatar} loading="lazy" alt={`banner`} />
             <div className="info">
               <h5>{comment?.user?.userName}</h5>
               <p>{comment?.content}</p>

@@ -39,7 +39,7 @@ export const BookSliderCard = ({ data, key }) => {
         </div>
       </div>
       <div className="image">
-        <img src={data.thumbnailBanner} alt="" />
+        <img src={data.thumbnailBanner} loading="lazy" alt={`banner`} />
       </div>
     </div>
   );
@@ -73,7 +73,12 @@ export const BookCard = async ({ data, key }) => {
   const resDemo = await demo?.json();
   return (
     <div className="book_card" key={key}>
-      <img className="book_card_image" src={data?.thumbnail} />
+      <img
+        className="book_card_image"
+        src={data?.thumbnail}
+        loading="lazy"
+        alt={`banner`}
+      />
       <div className="info">
         <Link
           href={{
@@ -112,7 +117,7 @@ export const BookCard = async ({ data, key }) => {
       <div className="more_detail">
         <div className="more_detail_content">
           <div className="more_detail_content_left">
-            <img src={data?.thumbnail} />
+            <img src={data?.thumbnail} loading="lazy" alt={`banner`} />
             <Suspense>
               <BookDetailCardButton closeIcon={true} />
             </Suspense>
@@ -163,7 +168,7 @@ export const BookCardHorizal = ({ data, key }) => {
           query: { name: data?.title, id: data?._id },
         }}
       >
-        <img src={data.thumbnail} />
+        <img src={data.thumbnail} loading="lazy" alt={`banner`} />
         <div className="info">
           <h3>{data.title}</h3>
           <p>{data.author}</p>
@@ -201,7 +206,7 @@ export const BookCategorySliderCard = ({ data, key }) => {
         </div>
       </div>
       <div className="image">
-        <img src={data.thumbnailBanner} alt="" />
+        <img src={data.thumbnailBanner} loading="lazy" alt={`banner`} />
       </div>
     </div>
   );

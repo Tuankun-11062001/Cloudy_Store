@@ -13,7 +13,7 @@ const Header = () => {
     <div className="header">
       <div className="header_content_xl">
         <Link href="/" className="logo">
-          <img src="/logowhite.png" />
+          <img src="/logowhite.png" loading="lazy" alt={`banner`} />
         </Link>
         <div className="other">
           <Theme />

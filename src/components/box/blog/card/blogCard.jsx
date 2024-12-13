@@ -35,7 +35,7 @@ export const BlogMostViewCard = ({ data }) => {
           {appSvg.comment} {data.comments.length} comments
         </p>
       </div>
-      <img src={data.thumbnail} />
+      <img src={data.thumbnail} loading="lazy" alt={`banner`} />
     </div>
   );
 };
@@ -43,7 +43,7 @@ export const BlogMostViewCard = ({ data }) => {
 export const BlogCardHorizontal = ({ data, key }) => {
   return (
     <div className="blog_card_horizontal" key={key}>
-      <img src={data.thumbnail} />
+      <img src={data.thumbnail} loading="lazy" alt={`banner`} />
       <div className="info">
         <h2>
           <Link
@@ -78,7 +78,7 @@ export const BlogCardVertical = ({ data, nameCategory, key }) => {
       <div className="blog_card_vertical_head">
         <div className="round_top"></div>
         <div className="round_bottom"></div>
-        <img src={data.thumbnail} />
+        <img src={data.thumbnail} loading="lazy" alt={`banner`} />
         <div className="extend">
           <Suspense fallback={<p>Loading...</p>}>
             <ButtonExtendBlogVertical />
@@ -175,7 +175,7 @@ export const BlogCommentCard = ({ data, idUser, idBlog, setComments, key }) => {
   };
   return (
     <div className="blog_comment_card" key={key}>
-      <img src={data.user.avatar} />
+      <img src={data.user.avatar} loading="lazy" alt={`banner`} />
       <div className="info">
         <h4>{data.user.userName}</h4>
         <p>{data.content}</p>

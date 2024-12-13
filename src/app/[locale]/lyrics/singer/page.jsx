@@ -25,7 +25,11 @@ const Singer = async () => {
     <div className="lyrics_singer">
       <LyricsBack />
       <div className="lyrics_singer_banner">
-        <img src={data[0]?.bannerCategorySinger} />
+        <img
+          src={data[0]?.bannerCategorySinger}
+          loading="lazy"
+          alt={`banner`}
+        />
       </div>
 
       {Object?.entries(resSingers?.data).map(([country, singers]) => (

@@ -23,10 +23,15 @@ const ProfilePage = async () => {
     <div className="profile_page">
       <h1>Profile</h1>
       <div className="profile_page_head">
-        <img src={data[0].user.banner} className="bg" />
+        <img
+          src={data[0].user.banner}
+          className="bg"
+          loading="lazy"
+          alt={`user`}
+        />
 
         <div className="avatar">
-          <img src={data[0].user.avatar} />
+          <img src={data[0].user.avatar} alt={`banner-avatar`} loading="lazy" />
         </div>
         <span className="role">
           {data[0].user.admin && "Admin Cloudy melody"}

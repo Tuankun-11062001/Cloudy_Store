@@ -20,7 +20,12 @@ const SupportPage = async () => {
   return (
     <div className="support_page">
       <h1>Support</h1>
-      <img className="support_page_head" src={data[0].banner} />
+      <img
+        className="support_page_head"
+        src={data[0].banner}
+        loading="lazy"
+        alt={`banner`}
+      />
 
       <div className="support_page_content">
         {data[0].content.map((item, index) => (

@@ -9,7 +9,7 @@ const CommunicationCard = ({ data, userId, key }) => {
     <div className="communication_card" key={key}>
       <div className="communication_card_head">
         <div className="communication_card_left">
-          <img src={data.user.avatar} />
+          <img src={data.user.avatar} loading="lazy" alt={`banner`} />
           <div className="user">
             <h3>{data.user.userName}</h3>
             <p>{data.feeling}</p>

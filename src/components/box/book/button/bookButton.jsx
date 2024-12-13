@@ -212,7 +212,7 @@ export const BookDetailControl = ({ data, changeChapter, chapterState }) => {
         <div className="book_detail_control_comment_list">
           {dataLocal.comments.map((comment) => (
             <div className="item" key={comment._id}>
-              <img src={comment.user.avatar} />
+              <img src={comment.user.avatar} loading="lazy" alt={`banner`} />
               <div className="item_content">
                 <h4>{comment.user.userName}</h4>
                 <p>{comment.content}</p>

@@ -58,7 +58,7 @@ const BookDetail = async ({ params, searchParams }) => {
   return (
     <div className="book_detail">
       <div className="book_detail_head">
-        <img src={data.thumbnail} />
+        <img src={data.thumbnail} loading="lazy" alt={`banner-${data.title}`} />
         <div className="book_detail_head_info">
           <h1>{data.title}</h1>
           <p>{data.author}</p>

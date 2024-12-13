@@ -27,7 +27,7 @@ const BoxTopSinger = async () => {
                 query: { name: singer.singerName, id: singer._id },
               }}
             >
-              <img src={singer.singerImage} />
+              <img src={singer.singerImage} loading="lazy" alt={`banner`} />
               <h3>{singer.singerName}</h3>
             </Link>
           </div>

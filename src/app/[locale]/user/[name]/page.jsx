@@ -170,9 +170,14 @@ const UserDetail = ({ searchParams }) => {
   return (
     <div className="detail_user">
       <div className="detail_user_head">
-        <img src={infoUser?.banner} className="bg" />
+        <img
+          src={infoUser?.banner}
+          className="bg"
+          loading="lazy"
+          alt={`banner`}
+        />
         <div className="avatar">
-          <img src={infoUser?.avatar} />
+          <img src={infoUser?.avatar} loading="lazy" alt={`banner`} />
         </div>
         <span className="role">
           {infoUser?.admin ? "admin" : "Member"} Cloudy Melody
@@ -221,6 +226,8 @@ const UserDetail = ({ searchParams }) => {
                   key={item._id}
                   onClick={() => handleChangeAvatar(item.avatar)}
                   src={item.avatar}
+                  loading="lazy"
+                  alt={`banner`}
                 />
               ))}
             </div>
@@ -234,6 +241,8 @@ const UserDetail = ({ searchParams }) => {
                   key={item._id}
                   onClick={() => handleChangeBanner(item.banner)}
                   src={item.banner}
+                  loading="lazy"
+                  alt={`banner`}
                 />
               ))}
             </div>
@@ -309,7 +318,12 @@ const UserDetail = ({ searchParams }) => {
           </p>
         </div>
         <div className="detail_user_create_view">
-          <img src={infoUser?.banner} className="banner" />
+          <img
+            src={infoUser?.banner}
+            className="banner"
+            loading="lazy"
+            alt={`banner`}
+          />
           <div className="view_user">
             <div className="info">
               <img
@@ -317,6 +331,8 @@ const UserDetail = ({ searchParams }) => {
                   infoUser?.avatar ||
                   "https://i.pinimg.com/564x/f6/3e/2f/f63e2fa676d8bd34ed21cc48f449dffd.jpg"
                 }
+                loading="lazy"
+                alt={`banner`}
               />
               <h3>{infoUser?.userName}</h3>
               <p>{infoUser?.userEmail}</p>

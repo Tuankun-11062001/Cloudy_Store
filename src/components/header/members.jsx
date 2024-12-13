@@ -29,7 +29,12 @@ const Members = () => {
       <div className="list_member">
         {users.map((user, index) => (
           <abbr title={user.userName} key={user._id || index}>
-            <img src={user.avatar} key={user._id} />
+            <img
+              src={user.avatar}
+              key={user._id}
+              loading="lazy"
+              alt={`banner`}
+            />
           </abbr>
         ))}
       </div>

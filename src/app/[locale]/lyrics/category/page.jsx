@@ -37,7 +37,7 @@ const LyricsCategoryPage = async () => {
       </div>
 
       <div className="lyrics_category_page_banner">
-        <img src={data[0].bannerCategoryLyrics} />
+        <img src={data[0].bannerCategoryLyrics} loading="lazy" alt={`banner`} />
       </div>
 
       <div className="country">

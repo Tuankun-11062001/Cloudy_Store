@@ -18,7 +18,11 @@ export const LyricsCard = ({ data, key }) => {
           query: { name: data?.title, id: data?._id },
         }}
       >
-        <img src={data?.thumbnail} />
+        <img
+          src={data?.thumbnail}
+          loading="lazy"
+          alt={`thumbnail-${data.title}`}
+        />
 
         <div className="lyrics_card_content">
           <h3>{data?.title}</h3>
@@ -33,7 +37,11 @@ export const LyricsCard = ({ data, key }) => {
 export const LyricsSliderCard = ({ data, key }) => {
   return (
     <div className="lyrics_slider_card" key={key}>
-      <img src={data.thumbnailBanner} />
+      <img
+        src={data.thumbnailBanner}
+        loading="lazy"
+        alt={`thumbnail-${data.title}`}
+      />
       <div className="info">
         <div className="info_head">
           <span>{data.category.categoryName}</span>
@@ -65,7 +73,11 @@ export const LyricsSingerSliderCard = ({ data, key }) => {
           query: { name: data.title, id: data._id },
         }}
       >
-        <img src={data?.thumbnailBanner} />
+        <img
+          src={data?.thumbnailBanner}
+          loading="lazy"
+          alt={`banner-${data.title}`}
+        />
       </Link>
     </div>
   );
@@ -80,7 +92,11 @@ export const SingerCard = ({ data, key }) => {
           query: { name: data.singerName, id: data._id },
         }}
       >
-        <img src={data?.singerImage} />
+        <img
+          src={data?.singerImage}
+          loading="lazy"
+          alt={`thumbnail-${data.singerName}`}
+        />
         <p>{data?.singerName}</p>
       </Link>
     </div>
@@ -96,7 +112,11 @@ export const LyricsSingerCardHorizal = ({ data, key }) => {
           query: { name: data.singerName, id: data._id },
         }}
       >
-        <img src={data.singerImage} alt="" />
+        <img
+          src={data.singerImage}
+          alt={`thubmail-${data.singerName}`}
+          loading="lazy"
+        />
         <p>{data.singerName}</p>
       </Link>
     </div>
@@ -112,7 +132,11 @@ export const LyricsCategoryCard = ({ data, key }) => {
           query: { id: data._id, name: data.categoryName },
         }}
       >
-        <img src={data.categoryImage} />
+        <img
+          src={data.categoryImage}
+          loading="lazy"
+          alt={`thumbnail-${data.categoryName}`}
+        />
         <p>{data.categoryName}</p>
       </Link>
     </div>
@@ -128,7 +152,11 @@ export const LyricsCategoryCountryCard = ({ data, key }) => {
           query: { name: data.countryName, id: data._id },
         }}
       >
-        <img src={data.countryImage} />
+        <img
+          src={data.countryImage}
+          loading="lazy"
+          alt={`thumbnail-${data.countryName}`}
+        />
         <p>{data.countryName}</p>
       </Link>
     </div>
@@ -144,7 +172,11 @@ export const LyricsDetailCategorySliderCard = ({ data, key }) => {
           query: { name: data.title, id: data._id },
         }}
       >
-        <img src={data.thumbnailBanner} />
+        <img
+          src={data.thumbnailBanner}
+          alt={`banner-${data.title}`}
+          loading="lazy"
+        />
       </Link>
     </div>
   );
@@ -159,7 +191,7 @@ export const LyricsDetailCategoryCountrySliderCard = ({ data, key }) => {
           query: { name: data.title, id: data._id },
         }}
       >
-        <img src={data.thumbnailBanner} />
+        <img src={data.thumbnailBanner} loading="lazy" alt={`banner`} />
       </Link>
     </div>
   );

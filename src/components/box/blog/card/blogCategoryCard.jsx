@@ -10,7 +10,7 @@ export const { Link, redirect, usePathname, useRouter } =
 export const BlogCategoryGridCard = ({ data, key }) => {
   return (
     <div className="blog_category_grid_card" key={key}>
-      <img src={data.categoryImage} alt="" />
+      <img src={data.categoryImage} loading="lazy" alt={`banner`} />
       <div className="info">
         <span>{data.categoryName}</span>
         <h3>{data.categoryName}</h3>
@@ -36,7 +36,7 @@ export const BlogCategoryCard = ({ data, key }) => {
           query: { name: data.categoryName, id: data._id },
         }}
       >
-        <img src={data.categoryImage} alt="" />
+        <img src={data.categoryImage} loading="lazy" alt={`banner`} />
         <span>{data.categoryName}</span>
       </Link>
     </div>

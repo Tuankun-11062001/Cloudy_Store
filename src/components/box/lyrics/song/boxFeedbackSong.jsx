@@ -98,7 +98,7 @@ const BoxFeedbackSong = ({ data }) => {
           onClick={handleLayoutFeedbackUser}
           key={item._id}
         >
-          <img src={item.user.avatar} alt={item.user.userName} />
+          <img src={item.user.avatar} alt={item.user.userName} loading="lazy" />
           <div className="info">
             <h3>{item.user.userName}</h3>
             <div className="info_other">

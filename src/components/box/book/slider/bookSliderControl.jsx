@@ -99,7 +99,7 @@ export const BookSliderControl = ({ data }) => {
               onClick={(e) => handleDots(e, indx)}
               key={item._id || indx}
             >
-              <img src={item.thumbnailBanner} />
+              <img src={item.thumbnailBanner} loading="lazy" alt={`banner`} />
               <div className="dot_info">
                 <div className="left">
                   <h3>{item.title}</h3>

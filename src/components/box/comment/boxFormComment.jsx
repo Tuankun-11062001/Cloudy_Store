@@ -48,7 +48,7 @@ const BoxFormComment = ({ data, comment }) => {
 
   return (
     <div className="box_form_comment">
-      <img src={userInfo?.avatar} />
+      <img src={userInfo?.avatar} loading="lazy" alt={`banner`} />
       <textarea
         placeholder="Your Comment...."
         onChange={handleChange}

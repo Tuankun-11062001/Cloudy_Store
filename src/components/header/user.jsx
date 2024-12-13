@@ -68,7 +68,7 @@ const User = () => {
                   query: { id: infoUser?._id },
                 }}
               >
-                <img src={infoUser?.avatar} />
+                <img src={infoUser?.avatar} loading="lazy" alt={`banner`} />
               </Link>
               <p className="exit" onClick={handleExit}>
                 {appSvg.exit}
@@ -89,7 +89,7 @@ const User = () => {
         {user ? (
           <div className="user">
             <div className="left">
-              <img src={infoUser?.avatar} />
+              <img src={infoUser?.avatar} loading="lazy" alt={`banner`} />
               <div className="info">
                 <h3>{infoUser?.userName}</h3>
                 <p>{infoUser?.admin ? "Admin" : "Member"}</p>

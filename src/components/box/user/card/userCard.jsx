@@ -4,7 +4,7 @@ import React from "react";
 const UserCard = ({ data, key }) => {
   return (
     <div className="user_card" key={key}>
-      <img src={data.avatar} />
+      <img src={data.avatar} loading="lazy" alt={`banner`} />
       <div className="info">
         <h3>{data.userName}</h3>
         <div className="info_social">

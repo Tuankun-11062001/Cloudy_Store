@@ -47,7 +47,7 @@ export const AdsPopup = () => {
           <a href={ads[0]?.linkAds} target="_blank">
             <h4>{ads[0]?.title}</h4>
 
-            <img src={ads[0]?.imageAds} />
+            <img src={ads[0]?.imageAds} loading="lazy" alt={`banner`} />
             <span>{ads[0]?.detail}</span>
           </a>
         </div>
@@ -80,7 +80,7 @@ export const AdsBottom = () => {
         <div className="list_content">
           {ads.map((item, index) => (
             <a href={item?.linkAds} target="_blank" key={item._id || index}>
-              <img src={item?.imageAds} />
+              <img src={item?.imageAds} loading="lazy" alt={`banner`} />
               <span>{item?.detail}</span>
             </a>
           ))}
@@ -105,7 +105,7 @@ export const AdsVertical = ({ data, key }) => {
       </div>
       <div className="ads_vertical_content">
         <a href={data?.linkAds} target="_blank">
-          <img src={data?.imageVerticalAds} />
+          <img src={data?.imageVerticalAds} loading="lazy" alt={`banner`} />
           <span>{data?.detail}</span>
         </a>
       </div>
@@ -138,7 +138,7 @@ export const AdsHorizal = () => {
       </div>
       <div className="ads_horizal_content">
         <a>
-          <img src={ads[0]?.imageAds} />
+          <img src={ads[0]?.imageAds} loading="lazy" alt={`banner`} />
           <span>{ads[0]?.detail}</span>
         </a>
       </div>

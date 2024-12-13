@@ -67,7 +67,7 @@ const Feeling = () => {
         </div>
       ) : (
         <div className="feeling" onClick={handleBoxFeeling}>
-          <img src={userInfo.avatar} />
+          <img src={userInfo.avatar} loading="lazy" alt={`banner`} />
           <div className="feeling_content">
             <div className="good">
               {getting.svg}

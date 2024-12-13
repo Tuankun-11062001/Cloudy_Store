@@ -15,11 +15,18 @@ const LocalSwich = () => {
 
   return (
     <div className="language">
-      <img src="/vietFlag.png" onClick={(e) => onActiveLanguage(e, "vn")} />
+      <img
+        src="/vietFlag.png"
+        onClick={(e) => onActiveLanguage(e, "vn")}
+        loading="lazy"
+        alt={`banner`}
+      />
       <img
         src="/usFlag.png"
         onClick={(e) => onActiveLanguage(e, "en")}
         className="active"
+        loading="lazy"
+        alt={`banner`}
       />
     </div>
   );

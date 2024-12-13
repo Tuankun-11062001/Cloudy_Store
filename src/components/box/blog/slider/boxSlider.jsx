@@ -10,7 +10,7 @@ export const { Link, redirect, usePathname, useRouter } =
 export const BoxSliderBlog = ({ data, key }) => {
   return (
     <div className="box_slider_blog" key={key}>
-      <img src={data.thumbnail} />
+      <img src={data.thumbnail} loading="lazy" alt={`banner`} />
       <div className="info">
         <h2>
           <abbr title="title">{data.title}</abbr>
@@ -45,7 +45,7 @@ export const BoxSliderBlog = ({ data, key }) => {
 export const BoxBlogCategorySlider = ({ data, key }) => {
   return (
     <div className="box_blog_category_slider" key={key}>
-      <img src={data.thumbnail} />
+      <img src={data.thumbnail} loading="lazy" alt={`banner`} />
       <div className="info">
         <span>{data.category.categoryName}</span>
         <h3>{data.title}</h3>

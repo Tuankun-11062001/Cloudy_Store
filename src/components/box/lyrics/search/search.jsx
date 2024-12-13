@@ -47,7 +47,7 @@ const Search = () => {
                 query: { name: item?.title, id: item?._id },
               }}
             >
-              <img src={item.thumbnail} />
+              <img src={item.thumbnail} loading="lazy" alt={`banner`} />
               <div className="item_content">
                 <h3>{item.title}</h3>
                 <p>Singer: {item.singer.singerName}</p>

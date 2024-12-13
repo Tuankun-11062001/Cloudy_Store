@@ -20,7 +20,7 @@ const BlogCategoryPage = async () => {
   return (
     <div className="blog_category_page">
       <div className="blog_category_page_head">
-        <img src={data[0]?.bannerCategoryBlog} />
+        <img src={data[0]?.bannerCategoryBlog} loading="lazy" alt={`banner`} />
         <div className="border_top"></div>
         <div className="border_bottom"></div>
         <Suspense fallback={<p>Loadding...</p>}>
