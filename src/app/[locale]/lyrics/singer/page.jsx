@@ -3,6 +3,12 @@ import { SingerCard } from "@/components/box/lyrics/card/lyricsCard";
 
 import React, { Suspense } from "react";
 
+export const metadata = {
+  title: "Singer",
+  description:
+    "Explore the best songs from the world’s top artists. Stay updated with the latest chart-topping hits and timeless classics from your favorite singers. Whether you're into pop, rock, hip-hop, or any other genre, you'll find the most popular tracks and iconic performances right here, constantly updated with new releases.",
+};
+
 const Singer = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const singers = await fetch(`${baseUrl}/lyrics/singerByCountry`, {

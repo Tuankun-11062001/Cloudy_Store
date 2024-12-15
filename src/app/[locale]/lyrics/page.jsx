@@ -8,9 +8,9 @@ import { LyricsSlider } from "../../../components/box/lyrics/slider/lyricsSlider
 import LyricsCategories from "@/components/box/lyrics/category/lyricsCategories";
 
 export const metadata = {
-  title: "Lyrics - Cloudy Melody",
+  title: "Lyrics",
   description:
-    "Hot Lyrics - New Song Lyrics - Multi language sub 🎶 Lyrics: Đây là nơi lưu giữ những lời bài hát yêu thích của bạn. Tôi muốn khuyến khích mọi người không chỉ đọc lời bài hát mà còn chia sẻ bản dịch và cách hiểu của riêng mình. Âm nhạc là ngôn ngữ chung của nhân loại, và tôi tin rằng việc khám phá ý nghĩa của từng bài hát sẽ làm cho trải nghiệm nghe nhạc trở nên sâu sắc hơn.",
+    "Hot Lyrics - New Song Lyrics - Multi-language sub 🎶 Lyrics: This is where you can find the lyrics of your favorite songs. I encourage everyone not only to read the lyrics but also to share their own translations and interpretations. Music is a universal language, and I believe that exploring the meaning of each song will make the music experience even more meaningful.",
 };
 
 const LyricsPage = () => {

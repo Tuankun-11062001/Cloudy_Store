@@ -27,14 +27,14 @@ export async function generateMetadata({ params, searchParams }) {
     openGraph: {
       title: data.title,
       description: data.description,
-      images: [data.thumbnail[0]],
+      images: data.thumbnail,
       url: `${baseUrl}/blog/${id}`,
       type: "website",
     },
     twitter: {
       title: data.title,
       description: data.description,
-      image: data.thumbnail[0],
+      image: data.thumbnail,
       card: "summary_large_image",
     },
     icons: {

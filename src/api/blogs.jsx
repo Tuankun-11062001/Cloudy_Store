@@ -3,6 +3,14 @@ import axios from "axios";
 const API = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export const blogsApi = {
+  getBlogs: async () => {
+    try {
+      const res = await axios.get(`${API}/blogs`);
+      return res;
+    } catch (error) {
+      return error;
+    }
+  },
   searchBlogs: async (data) => {
     try {
       const res = await axios.get(`${API}/blogs?title=${data}`);

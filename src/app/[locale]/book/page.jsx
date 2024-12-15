@@ -5,9 +5,9 @@ import { BookSlider } from "@/components/box/book/slider/bookSlider";
 import React, { Suspense } from "react";
 
 export const metadata = {
-  title: "Book - Cloudy Melody",
+  title: "Book ",
   description:
-    "Story - Love  📚 Book: Tôi sẽ giới thiệu những câu chuyện và tiểu thuyết nổi tiếng, mang đến cho bạn những giây phút thư giãn và cảm hứng sáng tạo. Đọc sách không chỉ mở rộng kiến thức mà còn giúp nuôi dưỡng tâm hồn.",
+    "Story - Love 📚 Book: I will introduce famous stories and novels, offering you moments of relaxation and creative inspiration. Reading books not only broadens your knowledge but also nurtures the soul.",
 };
 
 const BookPage = () => {

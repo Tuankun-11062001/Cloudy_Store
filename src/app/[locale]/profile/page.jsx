@@ -2,9 +2,9 @@ import { appSvg } from "@/data/svg";
 import React from "react";
 
 export const metadata = {
-  title: "Profile - Cloudy Melody",
+  title: "Profile",
   description:
-    "😀 Profile: Trang này sẽ cho bạn cái nhìn sâu hơn về bản thân tôi, những trải nghiệm và dự định tương lai. Đây cũng là nơi tôi mời gọi sự hợp tác từ các nhà quảng cáo muốn đồng hành cùng tôi trong hành trình này.",
+    "😀 Profile: This page offers you a deeper insight into my personal journey, experiences, and future plans. It's also a place where I invite collaboration from advertisers who want to join me on this journey.",
 };
 
 const ProfilePage = async () => {

@@ -7,9 +7,9 @@ import { ShopSeason } from "@/components/box/shop/season/shopSeason";
 import { ShopSlider } from "@/components/box/shop/slider/shopSlider";
 
 export const metadata = {
-  title: "Store - Cloudy Melody",
+  title: "Store ",
   description:
-    "🏬 Store: Ở đây, bạn sẽ tìm thấy những sản phẩm độc đáo mà tôi thiết kế, từ áo thun đến các món quà ý nghĩa. Tôi hy vọng rằng những sản phẩm này sẽ mang lại cho bạn niềm vui và phong cách riêng.",
+    "🏬 Store: Here, you will find unique products that I have designed, from t-shirts to meaningful gifts. I hope these products bring you joy and a sense of personal style.",
 };
 
 const ShopPage = () => {

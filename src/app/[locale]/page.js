@@ -6,7 +6,7 @@ import { AdsHorizal, ListVertical } from "@/components/ads/ads";
 import { appSvg } from "@/data/svg";
 
 export const metadata = {
-  title: "Communication - Cloudy Melody",
+  title: "Communication",
   description: "Can you share your feeling?",
 };
 

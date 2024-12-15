@@ -10,9 +10,9 @@ import { BlogSlider } from "@/components/slider/slider";
 import React, { Suspense } from "react";
 
 export const metadata = {
-  title: "Blog - Cloudy Melody",
+  title: "Blog",
   description:
-    "blog tình yêu - blog cuộc sống - nâng cao chất lượng cuộc sống ❤️️ Blog: Trong phần này, tôi sẽ viết về cuộc sống, những bài học lập trình, và chia sẻ kiến thức bổ ích. Mỗi bài viết là một cơ hội để chúng ta cùng nhau khám phá và học hỏi, giúp bạn chuẩn bị tốt hơn cho những thử thách trong cuộc sống.",
+    "Love blog - Life blog - Enhance quality of life ❤️️ Blog: In this section, I will write about life, programming lessons, and share valuable knowledge. Each post is an opportunity for us to explore and learn together, helping you better prepare for life's challenges.",
 };
 
 const BlogPage = async () => {

@@ -17,25 +17,26 @@ export async function generateMetadata({ params, searchParams }) {
 
   const resProduct = await fetch(`${serverUrl}/lyrics/${id}`, {
     next: {
-      revalidate: 100,
+      revalidate: 10,
     },
   });
 
   const { data } = await resProduct.json();
 
   // Đảm bảo rằng hình ảnh thumbnail và dữ liệu khác có thể được lấy đúng
-  const thumbnailUrl = data.thumbnail && data.thumbnail[0];
+  const thumbnailUrl = data.thumbnail;
 
   return {
-    title: `${data.title} | Lyrics Song New Song Hits Song`,
+    title: `${data.title} | lyrics & multi language vietsub`,
     description: data.description,
     keywords: `${data.title}, ${data.category.name}, Lyrics Song New Song Hits Song`,
     openGraph: {
       title: data.title,
       description: data.description,
-      images: [thumbnailUrl],
+      images: thumbnailUrl,
       url: `${baseUrl}/lyrics/${id}`,
       type: "website",
+      siteName: "cloudyMelody",
     },
     twitter: {
       title: data.title,

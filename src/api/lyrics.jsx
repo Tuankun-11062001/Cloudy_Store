@@ -3,6 +3,14 @@ import axios from "axios";
 const API = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export const lyricsApi = {
+  getLyrics: async () => {
+    try {
+      const res = axios.get(`${API}/lyrics`);
+      return res;
+    } catch (error) {
+      return error;
+    }
+  },
   searchLyrics: async (data) => {
     try {
       const res = await axios.get(`${API}/lyrics?title=${data}`);

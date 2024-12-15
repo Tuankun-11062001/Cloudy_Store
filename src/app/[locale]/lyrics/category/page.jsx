@@ -5,6 +5,12 @@ import {
 } from "@/components/box/lyrics/card/lyricsCard";
 import React, { Suspense } from "react";
 
+export const metadata = {
+  title: "Category lyrics",
+  description:
+    "Discover the latest songs and music genres in our ever-expanding collection. Stay updated with fresh lyrics and explore new categories that cater to diverse musical tastes. Whether you're into trending hits or niche genres, you'll find the newest tracks here, regularly updated to keep you in tune with the latest musical trends.",
+};
+
 const LyricsCategoryPage = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
   const lyricsCategories = await fetch(`${baseUrl}/category?q=lyrics`, {

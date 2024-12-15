@@ -2,9 +2,9 @@ import SupportForm from "@/components/support/supportForm";
 import React from "react";
 
 export const metadata = {
-  title: "Support - Cloudy Melody",
+  title: "Support",
   description:
-    "🙌 Support: Tôi rất coi trọng ý kiến của bạn! Hãy cho tôi biết những khó khăn bạn gặp phải hoặc những vấn đề cần cải thiện trên trang web. Mỗi ý kiến đóng góp đều là động lực để tôi hoàn thiện hơn.",
+    "🙌 Support: I highly value your feedback! Let me know any difficulties you encounter or areas that need improvement on the website. Every piece of feedback is a motivation for me to improve and get better.",
 };
 
 const SupportPage = async () => {

@@ -3,6 +3,14 @@ import axios from "axios";
 const API = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export const shopApi = {
+  getProduct: async () => {
+    try {
+      const res = await axios.get(`${API}/shop`);
+      return res;
+    } catch (error) {
+      return error;
+    }
+  },
   searchProduct: async (data) => {
     try {
       const res = await axios.get(`${API}/shop${data}`);
