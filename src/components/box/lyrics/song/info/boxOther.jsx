@@ -11,27 +11,27 @@ const BoxOther = ({ data }) => {
   const [like, setLike] = useState(false);
 
   useEffect(() => {
-    const localId = getLocalStorage("_CM_id");
-    setUserId(localId);
-    if (!localId) {
-      return;
-    }
+    const updateView = async () => {
+      try {
+        const res = await lyricsApi.updateView(data._id);
+        console.log(res.data.message);
+      } catch (error) {
+        console.log("Error updating view:", error);
+      }
+    };
 
     if (!data?._id) {
       console.error("Invalid song ID");
       return;
     }
 
-    const updateView = async () => {
-      try {
-        const res = await lyricsApi.updateView(data._id);
-        console.log(res.data.message);
-      } catch (error) {
-        console.error("Error updating view:", error);
-      }
-    };
-
     updateView();
+
+    const localId = getLocalStorage("_CM_id");
+    setUserId(localId);
+    if (!localId) {
+      return;
+    }
 
     const isLiked = data.cloudy.some((item) => item.user == localId);
 

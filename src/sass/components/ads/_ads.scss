@@ -68,6 +68,12 @@
     }
   }
 
+  @include lg {
+    &_content {
+      width: 30%;
+    }
+  }
+
   @include xl {
     &_content {
       width: 30%;
@@ -140,6 +146,23 @@
       margin-top: $spacing;
       font-size: $spacing * 1.4;
       color: $color_black;
+    }
+  }
+
+  @include lg {
+    &.active {
+      bottom: 2%;
+      z-index: 20;
+      opacity: 1;
+    }
+
+    .list_content {
+      width: 100%;
+      @include dynamicAlign(center, center);
+      a {
+        width: calc((100% / 2));
+        @include dynamicAlign();
+      }
     }
   }
   @include xl {

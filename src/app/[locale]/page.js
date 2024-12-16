@@ -7,7 +7,8 @@ import { appSvg } from "@/data/svg";
 
 export const metadata = {
   title: "Communication",
-  description: "Can you share your feeling?",
+  description:
+    "Share your personal experiences or emotions in the moment. Let your feelings be heard and connect with others through your story.",
 };
 
 export default async function Home() {
