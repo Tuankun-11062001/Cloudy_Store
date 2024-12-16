@@ -3,6 +3,8 @@ import { bookApi } from "@/api/book";
 import { lyricsApi } from "@/api/lyrics";
 import { shopApi } from "@/api/shop";
 
+export const revalidate = 10;
+
 export default async function sitemap() {
   // lyrics
   const lyricsAPI = async () => {
