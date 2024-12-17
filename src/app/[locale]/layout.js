@@ -9,6 +9,8 @@ import Adsence from "../../../components/adsence";
 import GoogleAnalytic from "../../../components/googleAnalytic";
 import GoogleConsole from "../../../components/googleConsole";
 import { GoogleTag, GoogleTagBody } from "../../../components/googleTag";
+import CookieBanner from "../../../components/cookieBanner";
+import ConsentMode from "../../../components/consentMode";
 
 export const metadata = {
   title: {
@@ -25,6 +27,7 @@ export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
       <head>
+        <ConsentMode />
         <GoogleAnalytic />
         <GoogleConsole />
         <GoogleTag />
@@ -38,6 +41,7 @@ export default function RootLayout({ children, params: { locale } }) {
           <Suspense>
             <AdsBottom />
             <AdsPopup />
+            <CookieBanner />
           </Suspense>
 
           <Analytics />
