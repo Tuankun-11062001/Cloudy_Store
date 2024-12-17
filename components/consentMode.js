@@ -1,5 +1,6 @@
+"use client";
 import Script from "next/script";
-import React from "react";
+import React, { useEffect } from "react";
 
 // Hàm lấy giá trị cookie
 const getCookie = (name) => {
@@ -14,6 +15,30 @@ const getCookie = (name) => {
 };
 
 const ConsentMode = () => {
+  useEffect(() => {
+    // Cài đặt consent mode mặc định khi tải trang
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      analytics_storage: "denied",
+    });
+
+    // Lấy giá trị cookie consent
+    const cookiesConsent = getCookie("cookiesConsent"); // Kiểm tra cookie đã được thiết lập
+
+    // Cập nhật consent mode sau khi tải xong trang và có trạng thái consent
+    if (cookiesConsent === "allowed") {
+      gtag("consent", "update", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+      });
+    } else {
+      gtag("consent", "update", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+      });
+    }
+  }, []);
+
   return (
     <>
       {/* Tải gtag.js từ Google Tag Manager */}
@@ -30,25 +55,6 @@ const ConsentMode = () => {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-ZBYVS3ZRM8');
-          
-          // Hàm setConsentMode sẽ được gọi sau khi gtag đã được khởi tạo
-          function setConsentMode(consentStatus) {
-            const options = {
-              'ad_storage': consentStatus === 'granted' ? 'granted' : 'denied',
-              'analytics_storage': consentStatus === 'granted' ? 'granted' : 'denied'
-            };
-            gtag('consent', 'update', options);
-          }
-
-          // Kiểm tra trạng thái cookie consent từ cookie (được thiết lập trong banner cookie của bạn)
-          const cookiesConsent = document.cookie.split('; ').find(row => row.startsWith('cookiesConsent='))?.split('=')[1] || null;
-
-          // Cập nhật consent mode dựa trên sự đồng ý của người dùng
-          if (cookiesConsent === 'allowed') {
-            setConsentMode('granted');
-          } else {
-            setConsentMode('denied');
-          }
         `}
       </Script>
     </>
