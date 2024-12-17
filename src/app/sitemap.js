@@ -10,7 +10,7 @@ export default async function sitemap() {
   const lyricsAPI = async () => {
     try {
       const data = await lyricsApi.getLyrics();
-      return data.data;
+      return data?.data || [];
     } catch (error) {
       console.error("Error fetching lyrics:", error);
       return [];
@@ -19,46 +19,61 @@ export default async function sitemap() {
 
   const lyrics = await lyricsAPI();
 
-  const lyricsUrls = lyrics?.data.map((lyric) => ({
+  const lyricsUrls = lyrics?.data?.map((lyric) => ({
     url: `https://www.storecloudy.com/en/lyrics/${lyric._id}`,
     lastModified: new Date(lyric.updatedAt),
   }));
 
   // book
   const getBooks = async () => {
-    const data = await bookApi.getBook();
-    return data.data;
+    try {
+      const data = await bookApi.getBook();
+      return data?.data || []; // Đảm bảo trả về mảng nếu không có dữ liệu
+    } catch (error) {
+      console.error("Error fetching books:", error);
+      return []; // Trả về mảng rỗng nếu có lỗi
+    }
   };
 
   const books = await getBooks();
 
-  const booksUrls = books?.data.map((book) => ({
+  const booksUrls = books?.data?.map((book) => ({
     url: `https://www.storecloudy.com/en/book/${book._id}`,
     lastModified: new Date(book.updatedAt),
   }));
 
   // blog
   const getBlogs = async () => {
-    const data = await blogsApi.getBlogs();
-    return data.data;
+    try {
+      const data = await blogsApi.getBlogs();
+      return data?.data || []; // Đảm bảo trả về mảng nếu không có dữ liệu
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+      return []; // Trả về mảng rỗng nếu có lỗi
+    }
   };
 
   const blogs = await getBlogs();
 
-  const blogsUrls = blogs?.data.map((blog) => ({
+  const blogsUrls = blogs?.data?.map((blog) => ({
     url: `https://www.storecloudy.com/en/blog/${blog._id}`,
     lastModified: new Date(blog.updatedAt),
   }));
 
   // shop
   const getProducts = async () => {
-    const data = await shopApi.getProduct();
-    return data.data;
+    try {
+      const data = await shopApi.getProduct();
+      return data?.data || []; // Đảm bảo trả về mảng nếu không có dữ liệu
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      return []; // Trả về mảng rỗng nếu có lỗi
+    }
   };
 
   const products = await getProducts();
 
-  const productsUrls = products?.data.map((product) => ({
+  const productsUrls = products?.data?.map((product) => ({
     url: `https://www.storecloudy.com/en/shop/${product._id}`,
     lastModified: new Date(product.updatedAt),
   }));
