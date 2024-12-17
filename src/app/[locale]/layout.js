@@ -8,6 +8,7 @@ import { AdsBottom, AdsPopup } from "@/components/ads/ads";
 import Adsence from "../../../components/adsence";
 import GoogleAnalytic from "../../../components/googleAnalytic";
 import GoogleConsole from "../../../components/googleConsole";
+import { GoogleTag, GoogleTagBody } from "../../../components/googleTag";
 
 export const metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function RootLayout({ children, params: { locale } }) {
       <head>
         <GoogleAnalytic />
         <GoogleConsole />
+        <GoogleTag />
         <Adsence pId={process.env.NEXT_PUBLIC_ADSENCE} />
       </head>
       <body>
@@ -39,6 +41,7 @@ export default function RootLayout({ children, params: { locale } }) {
           </Suspense>
 
           <Analytics />
+          <GoogleTagBody />
         </NextIntlClientProvider>
         <SpeedInsights />
       </body>
