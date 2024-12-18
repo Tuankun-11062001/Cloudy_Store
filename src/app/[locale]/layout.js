@@ -31,7 +31,7 @@ export default function RootLayout({ children, params: { locale } }) {
         <GoogleAnalytic />
         <GoogleConsole />
         <GoogleTag />
-        <Adsence pId={process.env.NEXT_PUBLIC_ADSENCE} />
+        <Adsence />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
